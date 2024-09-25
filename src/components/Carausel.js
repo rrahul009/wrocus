@@ -119,41 +119,76 @@ const Carausel = () => {
                 infiniteLoop={true}
                 showArrows={true}
                 transitionTime={1000}
+                 showStatus={false}
                 className="carouselStyle"
             >
+                {/* testiing slide */}
+                <div className='py-6 text-center'>
+                <h1 className='text-4xl font-bold'>Exceptional Talent Recruitment Services</h1>
+                <p className='mt-2 mb-8 font-sans'>"Connecting you with the best talent for your business needs"</p>
+
+                <div className='flex justify-between items-center gap-4 mx-5 mt-8'>
+
+                    <div className='flex flex-col items-start w-full max-w-md ml-10 mt-8'>
+                        <p className='text-blue-600 text-3xl font-bold'>  Wrocus Technology</p>
+                        <p className='text-justify text-3xl' style={{ fontSize: '18px', fontFamily: 'Roboto' }}>
+                            Choosing Wrocus Technology means partnering with a trusted ally committed to your success.
+                            We prioritize quality and efficiency, allowing you to focus on what you do best—growing your business.
+                            Let us help you find the talent that will elevate your team and propel your organization forward.
+                        </p>
+
+                        <div className='mt-8'>
+                            <button className='text-white bg-blue-600 p-3' style={{ width: '150px' }}>
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className='flex hidden md:block'>
+                        <img
+                            src='https://media.licdn.com/dms/image/D5612AQH5mTMa4AjznQ/article-cover_image-shrink_600_2000/0/1690446669155?e=2147483647&v=beta&t=4U1ItFfFblYZJQSlUBv6AZCv22hr12fVeLFzkq9osWQ'
+                            alt='Recruitment Visual'
+                            className='object-fill h-auto max-w-xl'
+                            style={{height:'290px'}}
+                        />
+                    </div>
+                </div>
+            </div>
+
                 {/* First slide */}
-                <div className='bg-gray-100  flex flex-col md:flex-row items-center justify-between py-2 px-4'>
-                    <div className="max-w-6xl p-4 flex-1 mx-5">
-                        <p className="text-2xl sm:text-2xl md:text-4xl font-bold leading-tight mb-4">
-                            Software Development Services
+                <div className='bg-white flex mt-6 flex-col md:flex-row items-center justify-between py-5 px-4'>
+                    <div className="max-w-6xl bg-white p-4 flex-1 mx-5">
+                        <p className="text-2xl sm:text-2xl  md:text-4xl text-blue-600 font-bold leading-tight mb-4">
+                            {/* Software Development Services */}
+                            Software Development Service
                         </p>
-                        <p className="hidden sm:block font-serif text-base sm:text-lg md:text-2xl text-black mt-2 leading-relaxed mb-4">
-                            We meet your expectations where most fall short,<br /> <span className='md:mr-7'>from low-Touch to high-Touch engagements.</span>
+                        <p className="hidden sm:block  text-base sm:text-lg md:text-xl text-black mt-2 leading-relaxed mb-4">
+                            We exceed your expectations where others may falter,<br /> <span className='md:mr-7'>ranging from minimal to extensive engagement models.</span>
                         </p>
-                        <p className="text-sm sm:text-base md:text-md text-gray-800 leading-relaxed md:mb-3 mb-4 md:mr-1">
-                            Low-Touch: Hire on an hourly rate, starting remotely with a few hours/week.
-
-
+                        <p className="text-sm sm:text-base md:text-md leading-relaxed md:mb-3 mb-4">
+                            Low-Touch: Engage on an hourly basis, starting with a few hours per week remotely.
                         </p>
-                        <p className='text-sm sm:text-base md:text-md text-gray-800 leading-relaxed md:mb-5 mb-4 '>High-Touch: We build the entire thing, operate, and then transfer to you when you want it.</p>
+                        <p className='text-sm sm:text-base md:text-md leading-relaxed md:mb-2 mb-4'>
+                            High-Touch: We handle the entire project, manage operations, and transfer ownership to you when desired.
+                        </p>
                         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 ">
-                            <div className="flex-1 flex items-center justify-center  rounded-lg text-start">
+                            <div className="flex-1 flex items-center justify-center rounded-lg text-start">
                                 <div>
                                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black md:mt-5 ">
-                                        200K+
+                                        100K+
                                     </h3>
                                     <p className="text-sm sm:text-base md:text-lg text-black md:mt-4">
-                                        pre-verified resumes of Software Professionals
+                                        pre-screened profiles of Software Experts
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex-1 flex items-center justify-center  rounded-lg text-start">
+                            <div className="flex-1 flex items-center justify-center rounded-lg text-start">
                                 <div>
-                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black md:mt-5">
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black md:mt-7">
                                         57%
                                     </h3>
                                     <p className="text-sm sm:text-base md:text-lg text-black font-medium md:mt-4">
-                                        profiles in latest trending and in-demand skill clusters
+                                        profiles equipped with the latest trending and in-demand skill sets
                                     </p>
                                 </div>
                             </div>
@@ -161,8 +196,64 @@ const Carausel = () => {
                         <div>
                             <Link href="/services">
                                 <button className="flex items-center border-2 border-black py-3 px-6
-                             text-black hover:bg-blue-200 transition-colors duration-300 rounded-lg mt-4 md:mt-8">
+                 text-black hover:bg-blue-200 transition-colors duration-300 rounded-lg mt-4 md:mt-2">
                                     <span className="mr-2">Learn More</span>
+                                    {/* <ArrowDownwardIcon /> */}
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='hidden md:flex flex-1 justify-center items-center mt-1'>
+                        <img
+                            src='https://www.pngitem.com/pimgs/m/534-5348813_software-development-company-png-transparent-png.png'
+                            alt='Custom Software Development'
+                            className='object-cover rounded-lg shadow-lg max-w-full h-auto'
+                            style={{ maxWidth: '900px', maxHeight: '600px' }}
+                        />
+                    </div>
+                </div>
+
+                {/*second testng slde  */}
+                <div className='bg-gray-100 flex flex-col md:flex-row items-center justify-between py-8 px-4'>
+                    <div className="max-w-6xl p-4 flex-1 mx-5">
+                        <p className="text-3xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-6 text-gray-800">
+                            Your Collaborator in a Thrilling <span
+                                className="text-blue-600">Product Development
+                            </span> Experience
+                        </p>
+                        <p className="hidden sm:block text-base sm:text-md text-gray-800 leading-relaxed mb-6 mt-4">
+                            Collaborate with our talented team of Product Specialists, Business Analysts, and Data Scientists to achieve:
+                        </p>
+                        <p className="hidden sm:block text-base sm:text-md text-gray-800 leading-relaxed mb-6 mt-2">
+                            Market Analysis, Customer Insights, User Stories, Marketing Materials, and Content Creation.
+                        </p>
+
+                        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 mt-6">
+                            <div className="flex-1 flex items-center justify-center rounded-lg text-start">
+                                <div>
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+                                        100K+
+                                    </h3>
+                                    <p className="text-sm sm:text-base md:text-lg text-gray-800 mt-2">
+                                        curated profiles of Software Experts
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex-1 flex items-center justify-center rounded-lg  text-start">
+                                <div>
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+                                        77%
+                                    </h3>
+                                    <p className="text-sm sm:text-base md:text-lg text-gray-800 mt-2">
+                                        profiles showcasing in-demand skill sets
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-8">
+                            <Link href="/services">
+                                <button className="flex items-center border-2 border-black py-4 px-8 text-black   transition-colors duration-300 rounded-lg">
+                                    <span className="mr-2 font-semibold">Discover More</span>
                                     {/* <ArrowDownwardIcon /> */}
                                 </button>
                             </Link>
@@ -170,101 +261,68 @@ const Carausel = () => {
                     </div>
                     <div className='hidden md:flex flex-1 justify-center items-center mt-6'>
                         <img
-                            src='https://www.oceansoftwares.com/assets/img/Services/customised.webp'
+                            src='https://img.freepik.com/free-vector/hand-drawn-flat-design-intranet-illustration_23-2149379501.jpg?semt=ais_hybrid'
                             alt='Custom Software Development'
-                            className='object-cover rounded-lg max-w-full h-auto'
-                            style={{ maxWidth: '900px', maxHeight: '600px' }}
+                            className='object-cover rounded-lg shadow-lg max-w-full h-auto'
+                            style={{ maxWidth: '800px', height: '400px' }}
                         />
                     </div>
                 </div>
-                {/* second slide */}
-                <div className='flex flex-col md:flex-row bg-gray-100 p-2 mt-2 md:p-5'>
-                    <div className="max-w-5xl mx-auto p-4 flex-1 py-12">
-                        <p className="text-2xl md:text-4xl font-bold leading-tight mb-2 md:mb-6">
-                            Partner In Your Exciting <br />
-                            <span className="text-blue-800 text-3xl">Product Development</span> journey
-                        </p>
-                        <p className="text-md md:text-md text-gray-700 leading-relaxed mb-2 md:mb-3 md:mr-6">
-                            Hire our seasoned Product Specialists, Business Analysts, and Data Scientists for
-                        </p>
-                        <p className="hidden sm:block text-base md:text-md
-                         text-gray-700 leading-relaxed mb-4 md:mb-6 md:ml-3">
-                            Market Research, Customer Surveys, User Stories, Marketing Collaterals, and Content.
-                        </p>
-                        <div className="grid grid-cols-1 gap-6 mb-2 md:mb-6">
-                            <div className=" rounded-lg text-start">
-                                <h3 className="text-2xl md:text-3xl font-bold text-black  md:mb-5 ml-2 md:ml-3">
-                                    50+
-                                </h3>
-                                <p className="text-base md:text-lg text-gray-700 leading-relaxed md:ml-3">
-                                    Years of combined experience of our experts in delivering Software Products <br /> in diverse Industry Verticals and Technology Horizontals.
-                                </p>
-                            </div>
-                        </div>
-                        <div style={{ width: '170px' }}>
-                            <Link href="/services/#ai" >
-                                <p className="flex items-center border-2 border-black py-3 px-6
-                                 text-black hover:bg-blue-200 transition-colors duration-300
-                                  rounded-lg mt-10 md:mb-8 md:ml-3">
-                                    <span className="mr-2 ">Learn More</span>
-                                    {/* <ArrowDownwardIcon /> */}
-                                </p>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className='hidden md:flex justify-center items-center mt-6 md:mt-0 flex-shrink-0'>
-                        <img
-                            src='https://freedesignfile.com/upload/2018/10/Company-Product-Development-Group-Meeting-Stock-Photo-04.jpg'
-                            alt='Product Development'
-                            className='object-cover rounded-sm max-w-full'
-                            style={{ maxWidth: '1000px', height: 'auto' }}
-                        />
-                    </div>
-                </div>
+
                 {/* Third slde */}
-                <div className='flex flex-col md:flex-row bg-gray-100 p-2 mt-2 md:p-5'>
-                    <div className="max-w-5xl mx-auto p-4 flex-1 py-12">
-                        <p className="text-2xl md:text-4xl font-bold leading-tight mb-2 md:mb-6">
-                            Partner In Your Exciting <br />
-                            <span className="text-blue-800 text-3xl">Product Development</span> journey
+                <div className='bg-gray-100 flex flex-col md:flex-row items-center justify-between py-8 px-4'>
+                    <div className="max-w-6xl p-4 flex-1 mx-5">
+                        <p className="text-3xl sm:text-4xl md:text-4xl font-extrabold leading-tight mb-6 text-gray-800">
+                            <span className="text-black">END TO END</span>
                         </p>
-                        <p className="text-md md:text-md text-gray-700 leading-relaxed mb-2 md:mb-3 md:mr-6">
-                            Hire our seasoned Product Specialists, Business Analysts, and Data Scientists for
+
+                        <p className="text-3xl sm:text-3xl md:text-xl font-extrabold leading-tight mb-4 text-blue-600">
+                            DEVELOPMENT, INTEGRATION, IMPLEMENTATION
                         </p>
-                        <p className="hidden sm:block text-base md:text-md
-                         text-gray-700 leading-relaxed mb-4 md:mb-6 md:ml-3">
-                            Market Research, Customer Surveys, User Stories, Marketing Collaterals, and Content.
+
+                        <p className="text-md text-gray-700 mb-4">
+                            We specialize in integrating various systems and platforms, maximizing efficiency and enhancing functionality for your business.
                         </p>
-                        <div className="grid grid-cols-1 gap-6 mb-2 md:mb-6">
-                            <div className=" rounded-lg text-start">
-                                <h3 className="text-2xl md:text-3xl font-bold text-black  md:mb-5 ml-2 md:ml-3">
-                                    50+
-                                </h3>
-                                <p className="text-base md:text-lg text-gray-700 leading-relaxed md:ml-3">
-                                    Years of combined experience of our experts in delivering Software Products <br /> in diverse Industry Verticals and Technology Horizontals.
-                                </p>
+
+                        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 mt-6">
+                            <div className="flex-1 flex items-center justify-center  text-start">
+                                <div>
+                                    <h3 className="text-2xl font-bold text-black mb-2">Full-Cycle Development</h3>
+
+                                </div>
+                            </div>
+                            <div className="flex-1 flex items-center justify-center  text-start">
+                                <div>
+                                    <h3 className="text-2xl font-bold text-black mb-2">Robust Integration Solutions</h3>
+
+                                </div>
                             </div>
                         </div>
-                        <div style={{ width: '170px' }}>
-                            <Link href="/services/#ai" >
-                                <p className="flex items-center border-2 border-black py-3 px-6
-                                 text-black hover:bg-blue-200 transition-colors duration-300
-                                  rounded-lg mt-10 md:mb-8 md:ml-3">
-                                    <span className="mr-2 ">Learn More</span>
-                                    {/* <ArrowDownwardIcon /> */}
-                                </p>
-                            </Link>
+
+                        <div className="hidden md:block mt-8">
+                            <h3 className="text-2xl font-bold text-blue-600 mb-4 text-center">Why Choose Us?</h3>
+                            <ul className="list-disc list-inside text-gray-700 pl-4 text-start" >
+                                <li className="mb-2">Expert team with extensive industry experience</li>
+                                <li className="mb-2">Tailored solutions that fit your unique business needs</li>
+                                <li className="mb-2">Commitment to quality and customer satisfaction</li>
+                                <li className="mb-2">Ongoing support and maintenance to ensure success</li>
+                            </ul>
                         </div>
+
+
+
                     </div>
-                    <div className='hidden md:flex justify-center items-center mt-6 md:mt-0 flex-shrink-0'>
+                    <div className='hidden md:flex flex-1 justify-center items-center mt-6'>
                         <img
-                            src='https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/styles/webp/public/2024-02/Leveraging%20Analytics%20to%20Smooth%20Out%20the%20Customer%20Journey.png.webp?itok=bfjUXL81'
-                            alt='Product Development'
-                            className='object-cover rounded-sm max-w-full'
-                            style={{ width: '500px', height: '400px' }}
+                            src='https://img.freepik.com/free-vector/isometric-cms-concept_23-2148807389.jpg'
+                            alt='Custom Software Development'
+                            className='object-cover rounded-lg shadow-lg max-w-full h-auto'
+                            style={{ maxWidth: '800px', height: '400px' }}
                         />
                     </div>
                 </div>
+
+
 
             </Carousel>
         </>

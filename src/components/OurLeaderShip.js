@@ -18,8 +18,8 @@ const OurLeaderShip = () => {
                     src='slider/Aseemsir.jpg'
                   alt='Aseem Sir'
                 />
-                <p className='text-center'>Aseem Gupta</p>
-                <h2 className='text-center'>ASSOCIATE DIRECTOR</h2>
+                <p className='text-center font-bold text-2xl'>Aseem Gupta</p>
+                <h2 className='text-center '>ASSOCIATE DIRECTOR</h2>
                  
             </div>
                 <div>
@@ -28,7 +28,7 @@ const OurLeaderShip = () => {
                     src='slider/Atulsir.jpeg'
                     alt='Atul Sir'
                 />
-                    <p className='text-center'>Aseem Gupta</p>
+                    <p className='text-center font-bold text-2xl'>Atul Singhal</p>
                     <h2 className='text-center'>ASSOCIATE DIRECTOR</h2>
                 </div>
             </div>

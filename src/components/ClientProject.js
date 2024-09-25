@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const ClientProject = () => {
     return (
@@ -49,7 +50,7 @@ const ClientProject = () => {
                             <div className='mb-4'>
                                 <span className='font-semibold'>Mobile Development</span>
                                 <div className='bg-gray-300 rounded-full h-4 w-full'>
-                                    <div className='bg-blue-600 h-4 rounded-full' style={{ width: '70%' }} />
+                                    <div className='bg-custommBlue h-4 rounded-full' style={{ width: '70%' }} />
                                 </div>
                                 <span className='text-sm ml-2'>70%</span>
                             </div>
@@ -58,7 +59,7 @@ const ClientProject = () => {
                             <div className='mb-4'>
                                 <span className='font-semibold'>Web Development</span>
                                 <div className='bg-gray-300 rounded-full h-4 w-full'>
-                                    <div className='bg-blue-600 h-4 rounded-full' style={{ width: '90%' }} />
+                                    <div className='bg-custommBlue h-4 rounded-full' style={{ width: '90%' }} />
                                 </div>
                                 <span className='text-sm ml-2'>90%</span>
                             </div>
@@ -76,7 +77,7 @@ const ClientProject = () => {
                             <div className='mb-4'>
                                 <span className='font-semibold'>Quality Assurance</span>
                                 <div className='bg-gray-300 rounded-full h-4 w-full'>
-                                    <div className='bg-blue-600 h-4 rounded-full' style={{ width: '100%' }} />
+                                    <div className='bg-custommBlue h-4 rounded-full' style={{ width: '100%' }} />
                                 </div>
                                 <span className='text-sm ml-2'>100%</span>
                             </div>
@@ -92,6 +93,7 @@ const ClientProject = () => {
                 </div>
 
             </div>
+            <Footer />
         </>
     );
 };

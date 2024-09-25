@@ -128,7 +128,7 @@ const Navbar = () => {
                 <div className="container mx-auto flex items-center justify-between px-4">
                     <div className="text-white text-lg font-bold">
                         <Link href="/">
-                            <img src="https://wrocus.com/wp-content/uploads/2021/08/cropped-184252468_1423965431288367_8692085974845679262_n.jpg" height="50px" width="60px" alt="Logo" />
+                            <img src="https://media.licdn.com/dms/image/v2/D560BAQEoGKndHrp88w/company-logo_200_200/company-logo_200_200/0/1726744040758/wrocus_logo?e=2147483647&v=beta&t=kWbtChGnL8NdFa28L1sZOBT0TsDNXLqFcKLi5HCUooI" height="50px" width="60px" alt="Logo" />
                         </Link>
                     </div>
                     <button
@@ -186,11 +186,14 @@ const Navbar = () => {
                                 )}
                             </li> */}
                             {/* Home  */}
-                             <li className=' text-gray-700 font-medium hover:text-blue-800'>Home
-                             </li>
+                            <li><Link href="/" className="text-gray-700 font-medium hover:text-blue-800">Home</Link></li>
+
+                            
                             {/* Talent Recruitment */}
-                            <li className=' text-gray-700 font-medium hover:text-blue-800'>Talent Recruitment
-                            </li>
+                             
+                            <li><Link href="/talentrecruitment" className="text-gray-700 font-medium hover:text-blue-800">Talent Recruitment</Link></li>
+
+                            
 
                             {/* Services Dropdown */}
                             {/* <li className="relative">
@@ -214,13 +217,13 @@ const Navbar = () => {
                                 )}
                             </li> */}
                             {/* servce */}
-                            <li><Link href="/contact" className="text-gray-700 font-medium hover:text-blue-800">Service</Link></li>
+                            <li><Link href="/service" className="text-gray-700 font-medium hover:text-blue-800">Service</Link></li>
 
 
                             <li><Link href="/contact" className="text-gray-700 font-medium hover:text-blue-800">Odoo</Link></li>
-                            <li><Link href="/contact" className="text-gray-700 font-medium hover:text-blue-800"> Resource Center</Link></li>
-                           
-                            <li><Link href="/contact" className="text-gray-700 font-medium hover:text-blue-800">About</Link></li>
+                            <li><Link href="/resourcecenter" className="text-gray-700 font-medium hover:text-blue-800"> Resource Center</Link></li>
+
+                            <li><Link href="/about" className="text-gray-700 font-medium hover:text-blue-800">About</Link></li>
                             {/* <li><Link href="/blog" className="text-black font-medium hover:text-blue-800">Contact</Link></li> */}
                         </ul>
                     </div>

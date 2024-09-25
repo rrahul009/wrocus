@@ -12,31 +12,31 @@ const cardData = [
   {
     id: 1,
     title: 'People with the Right Skill Sets',
-    icon: <UserGroupIcon className="w-12 h-12 text-blue-600" />,
+    img: "https://cdn.elearningindustry.com/wp-content/uploads/2019/10/7-Benefits-That-Highlight-The-Importance-Of-Soft-Skills-In-The-Workplace.png",
     description: 'People with the Right Skill Sets'
   },
   {
     id: 2,
     title: 'Process ideas from concept to market launch',
-    icon: <CogIcon className="w-12 h-12 text-blue-600" />,
+    img: 'https://cdn-proxy.slickplan.com/wp-content/uploads/2022/03/NPD-process-1.png',
     description: 'Process ideas from concept to market launch'
   },
   {
     id: 3,
     title: 'Adoption of latest Technology',
-    icon: <DevicePhoneMobileIcon className="w-12 h-12 text-blue-600" />,
+    img: 'https://media.licdn.com/dms/image/C5612AQH0p0dxAbZ4LQ/article-cover_image-shrink_720_1280/0/1650207211200?e=2147483647&v=beta&t=aKBzHGskD3MkhBNB2nnNvfEN--77wwDjxqyzgLP0xrU',
     description: 'Adoption of latest Technology'
   },
   {
     id: 4,
     title: 'Scalability and customization of each prototype',
-    icon: <GlobeAltIcon className="w-12 h-12 text-blue-600" />,
+    img: 'https://autoprotoway.com/wp-content/uploads/2022/12/from-ideal-to-production.jpg',
     description: 'Scalability and customization of each prototype'
   },
   {
     id: 5,
     title: 'Usability of design in enterprise eco-system',
-    icon: <AcademicCapIcon className="w-12 h-12 text-blue-600" />,
+    img: 'https://static.infragistics.com/marketing/Website/whitepapers/Design-Usability-Impact/design-usability-and-complex-systems-header-480.png',
     description: 'Usability of design in enterprise eco-system'
   },
 ];
@@ -137,35 +137,38 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className='bg-gray-100 p-10'>
-        <p className='text-2xl font-semibold text-center text-gray-600 leading-8 mb-4'>
-          WROCUS is known to make IT happen with end-to-end engineering with strict deadlines.<br />
-          Our deep strategic organization is built on the five pillars.
+      <hr/>
+      <section className='bg-white p-5 mt-2'>
+        <p className='text-4xl font-semibold text-center text-black   mb-6'>
+          {/* WROCUS is known to make IT happen with end-to-end engineering with strict deadlines.<br /> */}
+          Our deep strategic organization is built on five pillars.
         </p>
-        <div className="bg-white p-5 container mx-auto px-4 py-8">
+        <div className="bg-white p-5 container mx-auto rounded-lg shadow-md">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cardData.map(({ id, title, icon, description }) => (
+            {cardData.map(({ id, title, img, description }) => (
               <div
                 key={id}
-                className=" text-black rounded-lg shadow-lg overflow-hidden p-2 transition-transform transform hover:scale-105 hover:bg-white hover:text-blue-600 duration-300 ease-in-out flex flex-col items-center"
-                style={{ width: '300px' }}
+                className="text-black rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out flex flex-col items-center p-6 bg-white hover:bg-white"
               >
-                <div className="mb-4">{icon}</div>
-                <h2 className="text-center text-xl font-semibold mb-4">{title}</h2>
-                {/* <p className="text-center">{description}</p> */}
+                <h2 className="text-center text-2xl font-bold mb-5">{title}</h2>
+
+                <img src={img} alt='skill' className='mb-5'></img>
+                <p className="text-center text-gray-700 mt-5">{description}</p>
+
               </div>
             ))}
           </div>
         </div>
       </section>
+
       <section>
-        <ActualWork/>
+        <ActualWork />
       </section>
       <section>
-        <OurLeaderShip/>
+        <OurLeaderShip />
       </section>
       <section>
-        <ClientProject/>
+        <ClientProject />
       </section>
 
 
