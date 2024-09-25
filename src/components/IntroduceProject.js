@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import { initializeAOS } from '@/app/utils/Aos_setup';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 // Sample data for the cards
 const cardData = [
@@ -15,33 +16,35 @@ const cardData = [
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project8-e1635161793154.jpg',
         title: 'Basic Project ',
         description: 'DESIGN / DEVELOPMENT',
-        name: 'go to next page'
+        name: <ArrowForwardIcon/>
     },
     {
         id: 2,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project-details-7.jpg',
         title: 'Social Media App',
         description: 'DESIGN / TECHNOLOGY',
-        name: 'go to next page',
+        name:  <ArrowForwardIcon/>
     },
     {
         id: 3,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project1.jpg',
         title: 'App for Virtual Reality',
         description: 'DESIGN / IDEA',
-        name: 'go to next page'
+        name:  <ArrowForwardIcon/>
     },
     {
         id: 4,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project3.jpg',
         title: 'Analysis Of Security',
-        description: 'IDEAS / TECHNOLOGY'
+        description: 'IDEAS / TECHNOLOGY',
+        name:  <ArrowForwardIcon/>
     },
     {
         id: 5,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project4.jpg',
         title: 'eCommerce Website',
-        description: 'DESIGN / IDEA'
+        description: 'DESIGN / IDEA',
+        name:  <ArrowForwardIcon/>
     },
 
 ];
@@ -110,7 +113,7 @@ const CardGrid = () => {
                             <div className="p-6 bg-customNavyBlue text-white">
                                 <h2 className="text-xl font-bold mb-2 text-white text-center">{card.title}</h2>
                                 {card.description && <p className="text-white text-center font-2xl">{card.description}</p>}
-                                <Link href="/about"><p>{card.name}</p></Link>
+                                <Link href="/about"><p className='text-end text-blue-500'>{card.name}</p></Link>
                             </div>
                         </div>
                     ))}

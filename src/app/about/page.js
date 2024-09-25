@@ -7,6 +7,7 @@ import { AcademicCapIcon, DevicePhoneMobileIcon, GlobeAltIcon, CogIcon, UserGrou
 import ActualWork from '@/components/ActualWork';
 import OurLeaderShip from '@/components/OurLeaderShip';
 import ClientProject from '@/components/ClientProject';
+import Link from 'next/link';
 
 const cardData = [
   {
@@ -69,7 +70,7 @@ const Page = () => {
         </div>
         <div>
           <ul className='flex gap-5 text-white font-bold'>
-            <li>HOME</li>
+            <li> <Link href="/">HOME</Link></li>
             <li>ABOUT US</li>
           </ul>
         </div>

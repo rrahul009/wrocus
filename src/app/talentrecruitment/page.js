@@ -41,7 +41,8 @@ const Page = () => {
 
             {/* service we offering */}
             {/* 1st */}
-            <div className='py-1'>
+            <div className='bg-gray-100 py-1 mt-5'>
+            {/* <div></div> */}
                 <p className='text-center mt-5 text-4xl font-bold mb-5 text-black-600'>Service Offerings</p>
 
                 <div className='flex flex-col md:flex-row justify-center items-center md:space-x-8'>
