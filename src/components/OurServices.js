@@ -1,81 +1,60 @@
-import Link from 'next/link';
-import { FaCodepen, FaMobileAlt, FaCheckCircle, FaLaptopCode, FaPaintBrush, FaUserFriends } from 'react-icons/fa';
+import React from 'react';
 
-const services = [
-    { icon: FaCodepen, title: 'Web Development', description: [
-      'We carry more than just good coding skills.',
-      'Our experience makes us stand out from other web development firms.'
-    ]},
-    { icon: FaMobileAlt, title: 'Mobile Development', description: [
-      'Expertise in creating seamless mobile applications.',
-      'Innovative solutions for both iOS and Android platforms.'
-    ]},
-    { icon: FaCheckCircle, title: 'QA and Testing', description: [
-      'Ensuring quality with rigorous testing processes.',
-      'Delivering reliable and bug-free software.'
-    ]},
-    { icon: FaLaptopCode, title: 'IT Consulting', description: [
-      'Strategic IT consulting to optimize your business.',
-      'Tailored solutions for your unique IT needs.'
-    ]},
-    { icon: FaPaintBrush, title: 'UX/UI Design', description: [
-      'Designing intuitive and user-friendly interfaces.',
-      'Enhancing user experience through creative solutions.'
-    ]},
-    { icon: FaUserFriends, title: 'Dedicated Team', description: [
-      'Providing a dedicated team for your projects.',
-      'Skilled professionals working as an extension of your team.'
-    ]}
-];
+const OurServices = () => {
+  const services = [
+    {
+      title: 'Web Development',
+      description: 'We carry more than just good coding skills. Our experience makes us stand out from other web development.',
+      icon: "https://cdn-icons-png.freepik.com/512/8713/8713437.png"
+    },
+    {
+      title: 'Mobile Development',
+      description: 'Create complex enterprise software, ensure reliable software integration, modernise your legacy system.',
+      icon: "https://static.vecteezy.com/system/resources/previews/031/022/358/non_2x/mobile-development-icon-vector.jpg",
+    },
+    {
+      title: 'UI/UX Design',
+      description: 'Build the product you need on time with an experienced team that uses a clear and effective design process.',
+      icon: "https://cdn-icons-png.freepik.com/256/12098/12098127.png?semt=ais_hybrid"
+    },
+    {
+      title: 'QA & Testing',
+      description: 'Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.',
+      icon: "https://img.freepik.com/premium-vector/qa-testing-icon-vector-image-can-be-used-agile_120816-102975.jpg",
+    },
+    {
+      title: 'IT Consultancy',
+      description: 'Trust our top minds to eliminate workflow pain points, implement new tech, and consolidate app portfolios.',
+      icon: "https://cdn-icons-png.freepik.com/256/14510/14510945.png?semt=ais_hybrid",
+    },
+    {
+      title: 'Odoo Development',
+      description: 'Customizing and implementing Odoo solutions to streamline your business processes.',
+      icon: "https://www.magictechnolabs.com/assets/images/odoo.webp",
+    },
+  ];
 
-const ServiceCards = () => {
   return (
-    <>
-      <div className="flex flex-col md:flex-row justify-between items-center p-10">
-        <div className="text-center md:text-left mb-6 md:mb-0">
-          <h2 className="text-purple-700 font-bold text-lg md:text-xl uppercase mb-2">
-            Our Services
-          </h2>
-          <p className="text-black text-2xl md:text-4xl font-bold">
-            We offer a wide variety<br /> of IT services.
-          </p>
-        </div>
-
-        <div>
-        <Link href="/service">
-        <button className="bg-customBlue text-white py-3 px-8 hover:bg-purple-600 transition-colors duration-300">
-            All Services
-          </button>
-        </Link>
-        </div>
+    <div className="max-w-6xl mx-auto p-6">
+      <h1 className="text-4xl font-bold text-center mb-8">Solutions We Provide</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <div className='flex justify-center mb-4'>
+              <img src={service.icon} alt={service.title} className="h-20 w-20 object-contain" />
+            </div>
+            <h2 className="text-2xl font-bold text-center mt-5 text-gray-800">{service.title}</h2>
+            <p className="text-gray-600 mt-3 text-center text-md">{service.description}</p>
+            <div className="flex justify-center mt-4">
+              <button className='bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-4 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg'>
+                Read More
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="p-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <Link
-              href="/about"
-              key={index}
-              className="bg-white text-black p-6 rounded-lg shadow-lg transition-transform transition-shadow duration-300 ease-out hover:shadow-2xl hover:scale-105 flex items-start hover:bg-gray-100"
-              data-aos="zoom-in-down"
-            >
-              <div className="flex-shrink-0 mr-4">
-                <service.icon className="text-blue-500 text-5xl transition-transform duration-300 hover:scale-110" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <div className="text-gray-700">
-                  {service.description.map((line, idx) => (
-                    <p key={idx} className='mt-1'>{line}</p>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
-export default ServiceCards;
+export default OurServices;

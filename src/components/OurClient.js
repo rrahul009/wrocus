@@ -1,145 +1,110 @@
-'use client'
-import { initializeAOS } from '@/app/utils/Aos_setup';
-import React, { useEffect } from 'react';
-
-// Inline styles for the partner logos slider
-const containerStyle = {
-  position: 'relative',
-  overflow: 'hidden',
-  width: '100%',
-  height: '300px',
-  backgroundColor: 'white', // Set background color to black
-  padding: '20px 0', // Add padding to the top and bottom
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center', // Center the content horizontally
-  overflow: 'hidden'
-};
-
-const sliderStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  height: '100%',
-  whiteSpace: 'nowrap',
-  animation: 'scroll 10s linear infinite'
-};
-
-// Calculate the total width of the logos and use it in the keyframes
-const logoStyle = {
-  flex: '0 0 auto',
-  marginRight: '6rem', // Increased gap between logos
-  display: 'inline-block'
-};
-
-const imgStyle = {
-  width: '200px', // Set a specific width for consistency
-  height: '100px', // Set a specific height for consistency
-  objectFit: 'contain', // Ensures that logos are contained within the specified width and height
-  display: 'block' // Ensure the logo images are block elements
-};
-
-// Keyframes animation for scrolling effect
-const keyframesStyle = `
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-`;
+import React from 'react';
 
 const OurClient = () => {
-  useEffect(() => {
-    const cleanupAOS = initializeAOS();
-    return cleanupAOS; // Cleanup AOS on unmount
-  }, []);
+  const logos = [
+    {
+      src: "https://images.seeklogo.com/logo-png/53/1/aaj-tak-news-logo-png_seeklogo-534139.png",
+      alt: "Aaj Tak",
+      size: { width: 80, height: 60 }
+    },
+    {
+      src: "https://www.pluginhive.com/wp-content/uploads/2021/09/DELHIVERY-VAN.jpg",
+      alt: "Delhivery",
+      size: { width: 120, height: 80 }
+    },
+    {
+      src: "https://yt3.googleusercontent.com/rxxycwwjFXuC-eQNBcklj4P-uduSg-aHJJ7w77Ynf_LZV742N5tvTFSnJwRmV5CnNhFNbj7uKdQ=s900-c-k-c0x00ffffff-no-rj",
+      alt: "Client Logo",
+      size: { width: 80, height: 80 }
+    },
+    {
+      src: "https://wrocus.com/wp-content/uploads/2021/08/timesinternetlimited.png",
+      alt: "Times Internet",
+      size: { width: 80, height: 80 }
+    },
+    {
+      src: "https://cdn.brandfetch.io/id0rnPjco0/w/400/h/400/theme/dark/icon.png?k=id64Mup7ac&t=1668516570940",
+      alt: "Brand Logo",
+      size: { width: 80, height: 60 }
+    },
+    {
+      src: "https://www.saasbuddy.in/community/wp-content/uploads/2024/03/magicbrick-1200x900.png",
+      alt: "Magicbricks",
+      size: { width: 80, height: 60 }
+    },
+    {
+      src: "https://exchange4media.gumlet.io/news-photo/110551-hungamadigital1.jpg",
+      alt: "Hungama",
+      size: { width: 80, height: 80 }
+    }
+  ];
+
   return (
-    <div className='mt-5' data-aos="zoom-in-up">
-      <style>{keyframesStyle}</style>
-      <div style={containerStyle} className='mt-2' >
-        <div style={{ textAlign: 'center', width: '100%' }} data-aos="fede-left">
-          <h2 style={{ color: 'black', fontSize: '2rem', fontWeight: 'bold', marginBottom: '30px' }}>
-            Our Client
-          </h2>
-          <div style={sliderStyle}>
-            {/* Display logos */}
-            <div style={logoStyle}>
-              <img src="https://etimg.etb2bimg.com/photo/87261183.cms" alt="Partner 1" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CQIMiyn44Rj9rbUflyH69dj0MaObVOeQPw&s' alt="Partner 2" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://mir-s3-cdn-cf.behance.net/projects/404/306764204888467.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png' alt="Partner 3" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://garciamedia.com/wp-content/uploads/2020/08/Screen-Shot-2020-08-31-at-7.11.00-AM-1024x806.png' alt="Partner 4" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://img.staticmb.com/mbcontent/images/crop/uploads/2015/5/MB%20Logo_0_1200.JPG' alt="Partner 5" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://wrocus.com/wp-content/uploads/2021/08/timesinternetlimited.png' alt="Partner 6" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://img.staticmb.com/mbcontent/images/crop/uploads/2015/5/MB%20Logo_0_1200.JPG' alt="Partner 7" style={imgStyle} />
-            </div>
-            {/* Repeat logos to ensure continuous scrolling */}
-            <div style={logoStyle}>
-              <img src="https://etimg.etb2bimg.com/photo/87261183.cms" alt="Partner 1" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2CQIMiyn44Rj9rbUflyH69dj0MaObVOeQPw&s' alt="Partner 2" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://mir-s3-cdn-cf.behance.net/projects/404/306764204888467.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png' alt="Partner 3" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://garciamedia.com/wp-content/uploads/2020/08/Screen-Shot-2020-08-31-at-7.11.00-AM-1024x806.png' alt="Partner 4" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://img.staticmb.com/mbcontent/images/crop/uploads/2015/5/MB%20Logo_0_1200.JPG' alt="Partner 5" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://wrocus.com/wp-content/uploads/2021/08/timesinternetlimited.png' alt="Partner 6" style={imgStyle} />
-            </div>
-            <div style={logoStyle}>
-              <img src='https://img.staticmb.com/mbcontent/images/crop/uploads/2015/5/MB%20Logo_0_1200.JPG' alt="Partner 7" style={imgStyle} />
+    <>
+      <div className='p-3 py-5 bg-gray-100'>
+        <h2 className='text-4xl font-bold text-center mb-8'>Clients We Support</h2>
+
+        {/* Inline style for animation */}
+        <style>
+          {`
+            @keyframes slide {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-100%);
+              }
+            }
+            .sliderr {
+              display: flex;
+              animation: slide 15s linear infinite;
+              white-space: nowrap;
+            }
+            
+            .logo-container {
+              display: flex;
+              flex-shrink: 0;
+            }
+            .logo-container .logo {
+              flex: 0 0 auto; /* Prevent shrinking */
+              margin-right: 20px; /* Space between logos */
+            }
+          `}
+        </style>
+
+        <div className='overflow-hidden bg-white p-4'>
+          <div className='sliderr'>
+            <div className='logo-container flex justify-between gap-20'>
+              {logos.map((logo, index) => (
+                <div key={index} className='logo flex items-center p-2 bg-gray-50 hover:shadow-xl transition-shadow duration-300 rounded-lg'>
+                  <img
+                    src={logo.src}
+                    width={logo.size.width}
+                    height={logo.size.height}
+                    alt={logo.alt}
+                    className='object-contain'
+                  />
+                </div>
+              ))}
+              {/* Duplicate logos for seamless effect */}
+              {logos.map((logo, index) => (
+                <div key={`duplicate-${index}`} className='logo flex justify-between items-center 
+                p-4 bg-gray-50 hover:shadow-xl transition-shadow duration-300 rounded-lg'>
+                  <img
+                    src={logo.src}
+                    width={logo.size.width}
+                    height={logo.size.height}
+                    alt={logo.alt}
+                    className='object-contain'
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <div className="flex mt-10 p-10 gap-10 w-full" data-aos="zoom-in-up">
-        {/* First Half */}
-        <div
-          className="flex-1 bg-cover bg-center h-[300px]"
-          style={{ backgroundImage: 'url(https://wrocus.com/wp-content/uploads/2021/08/country-worlwide-1.jpg)' }}
-          data-aos="zoom-in-left"
-        >
-          <p className='p-10 text-5xl text-white font-bold'>5 +</p>
-          <p className='p-2 text-3xl text-white font-bold'>Countries Worldwide</p>
-          <p className='p-2  text-white'>
-
-            WROCUS serves businesses in Australia, Singapore, UK, USA and India with a dedicated team providing software development solutions.</p>
-        </div>
-
-        {/* Second Half */}
-        <div
-          className="flex-1 bg-cover bg-center h-[300px]"
-          style={{ backgroundImage: 'url(https://wrocus.com/wp-content/uploads/2021/08/happy-customers.jpg)' }}
-          data-aos="zoom-in-right"
-        >
-          <p className='p-10 text-5xl text-white font-bold'>250 +</p>
-          <p className='p-2 text-3xl text-white font-bold'>  Happy Customers</p>
-          <p className='p-2  text-white'>
-
-            We retain our customers through proactive support, transparency and</p>
-        </div>
-      </div>
-    </div>
+    </>
   );
-};
+}
 
 export default OurClient;

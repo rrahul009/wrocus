@@ -16,11 +16,14 @@ const Home = () => {
     <div>
         <Navbar/>
         <Carausel/>
+        <OurClient/>
         <Services/>
+     
+        
         <OurServices/>
         {/* <OurPartner/> */}
        
-        <OurClient/>
+       
         <ContactPage/>
         <IntroduceProject/>
         <TechnologyIndex/>

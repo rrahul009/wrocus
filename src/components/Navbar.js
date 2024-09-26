@@ -221,7 +221,7 @@ const Navbar = () => {
 
 
                             <li><Link href="/contact" className="text-gray-700 font-medium hover:text-blue-800">Odoo</Link></li>
-                            <li><Link href="/resourcecenter" className="text-gray-700 font-medium hover:text-blue-800"> Resource Center</Link></li>
+                            {/* <li><Link href="/resourcecenter" className="text-gray-700 font-medium hover:text-blue-800"> Resource Center</Link></li> */}
 
                             <li><Link href="/about" className="text-gray-700 font-medium hover:text-blue-800">About</Link></li>
                             {/* <li><Link href="/blog" className="text-black font-medium hover:text-blue-800">Contact</Link></li> */}
