@@ -83,12 +83,13 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
-                    <ul className="flex flex-col space-y-4 text-center">
+                    <ul className="flex flex-col space-y-4 text-center text-sm" style={{fontSize:'10px'}}>
                         <li>
                             <Link href="/" passHref>
-                                <div className="text-black text-lg transition-transform duration-300 transform hover:scale-105 hover:bg-red-500 cursor-pointer px-4 py-2">
+                                <p className="text-black text-sm transition-transform duration-300 transform 
+                                hover:scale-105 hover:bg-red-500 cursor-pointer px-4 py-2" style={{fontSize:'10px'}}>
                                     Home
-                                </div>
+                                </p>
                             </Link>
                         </li>
                         <li>
@@ -149,7 +150,7 @@ const Navbar = () => {
                         </svg>
                     </button>
                     <div className="hidden lg:flex lg:items-center lg:justify-center flex-grow">
-                        <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 gap-2">
+                        <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 gap-2 text-sm">
                             {/* Industries Dropdown */}
                             {/* <li className="relative">
                                 <button 
@@ -186,12 +187,12 @@ const Navbar = () => {
                                 )}
                             </li> */}
                             {/* Home  */}
-                            <li><Link href="/" className="text-gray-700 font-medium hover:text-blue-800">Home</Link></li>
+                            <li><Link href="/" className="text-black  hover:text-blue-800">Home</Link></li>
 
                             
                             {/* Talent Recruitment */}
                              
-                            <li><Link href="/talentrecruitment" className="text-gray-700 font-medium hover:text-blue-800">Talent Recruitment</Link></li>
+                            <li><Link href="/talentrecruitment" className="text-black  hover:text-blue-800">Talent Recruitment</Link></li>
 
                             
 
@@ -217,14 +218,14 @@ const Navbar = () => {
                                 )}
                             </li> */}
                             {/* servce */}
-                            <li><Link href="/service" className="text-gray-700 font-medium hover:text-blue-800">Service</Link></li>
+                            <li><Link href="/service" className="text-black  hover:text-blue-800">Service</Link></li>
 
 
-                            <li><Link href="/contact" className="text-gray-700 font-medium hover:text-blue-800">Odoo</Link></li>
+                            <li><Link href="/contact" className="text-black  hover:text-blue-800">Odoo</Link></li>
                             {/* <li><Link href="/resourcecenter" className="text-gray-700 font-medium hover:text-blue-800"> Resource Center</Link></li> */}
 
-                            <li><Link href="/about" className="text-gray-700 font-medium hover:text-blue-800">About</Link></li>
-                            {/* <li><Link href="/blog" className="text-black font-medium hover:text-blue-800">Contact</Link></li> */}
+                            <li><Link href="/about" className="text-black  hover:text-blue-800">About</Link></li>
+                            <li><Link href="/blog" className="text-black  hover:text-blue-800">Contact</Link></li>
                         </ul>
                     </div>
                     <div className="text-gray-800 text-lg  flex items-center space-x-4">

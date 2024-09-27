@@ -20,11 +20,12 @@ const Carausel = () => {
 
             <Carousel
                 autoPlay={true}
-                interval={6000}
+                interval={4000}
                 infiniteLoop={true}
                 showArrows={true}
                 transitionTime={1000}
                 showStatus={false}
+                showIndicators={false}
             // className="carouselStyle"
             >
 

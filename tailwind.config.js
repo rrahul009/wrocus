@@ -26,6 +26,7 @@ module.exports = {
       customvoilet:'#211F3B',
       customPurplee:'#7141b1',
       custommBlue: '#45B9FB',
+      aboutBackground:'#262051'
 
       },
       

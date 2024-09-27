@@ -1,5 +1,6 @@
 import Carausel from '@/components/Carausel';
 import ClientTestimonial from '@/components/ClientTestimonial';
+import Comparision from '@/components/Comparision';
 import ContactPage from '@/components/ContactPage';
 import Footer from '@/components/Footer';
 import IntroduceProject from '@/components/IntroduceProject';
@@ -18,9 +19,8 @@ const Home = () => {
         <Carausel/>
         <OurClient/>
         <Services/>
-     
-        
         <OurServices/>
+        <Comparision/>
         {/* <OurPartner/> */}
        
        

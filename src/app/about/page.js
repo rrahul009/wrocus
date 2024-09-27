@@ -1,6 +1,6 @@
 'use client';
 import Navbar from '@/components/Navbar';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import CloseIcon from '@mui/icons-material/Close'; // Import the close icon
 import { AcademicCapIcon, DevicePhoneMobileIcon, GlobeAltIcon, CogIcon, UserGroupIcon } from '@heroicons/react/24/outline';
@@ -8,6 +8,7 @@ import ActualWork from '@/components/ActualWork';
 import OurLeaderShip from '@/components/OurLeaderShip';
 import ClientProject from '@/components/ClientProject';
 import Link from 'next/link';
+import { initializeAOS } from '../utils/Aos_setup';
 
 const cardData = [
   {
@@ -43,8 +44,47 @@ const cardData = [
 ];
 
 const Page = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  useEffect(() => {
+    const cleanupAOS = initializeAOS();
+    return cleanupAOS; // Cleanup AOS on unmount
+  }, []);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [hoverIndex, setHoverIndex] = useState(null)
+  const images = [
+    { src: '/slider/box1.jpg', alt: 'Box 1', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
+    { src: '/slider/box2.jpg', alt: 'Box 2', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
+    { src: '/slider/box3.jpg', alt: 'Box 3', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
+    { src: '/slider/box4.jpg', alt: 'Box 4', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
+  ];
 
+
+  const items = [
+    { 
+      number: '01',
+       text: 'People with the right skill sets.' ,
+      img:'https://cdn-icons-png.flaticon.com/512/2773/2773117.png'
+      },
+    {
+       number: '02',
+        text: 'Process ideas from concept to market launch.',
+         img:'https://img.lovepik.com/png/20231024/White-shopping-cart-round-cartoon-instagram-icon-social-cart-icons_332314_wh1200.png'
+      },
+    { number: '03',
+       text: 'Adoption of the latest technology.',
+         img:'https://img.freepik.com/premium-vector/technology-adoption-icon-vector-image-can-be-used-business-performance_120816-346904.jpg'
+      },
+    { 
+      number: '04',
+       text: 'Scalability and customization of each prototype.',
+         img:'https://miro.medium.com/v2/resize:fit:1400/1*jnVaAudSAchg9hzZAI2USQ.jpeg'
+      },
+    { 
+      number: '05',
+       text: 'Usability of design in the enterprise ecosystem.',
+       img:'https://e7.pngegg.com/pngimages/310/332/png-clipart-computer-icons-home-house-desktop-service-home-blue-logo.png' 
+      },
+  ];
   const handlePlayClick = () => {
     setIsVideoVisible(true);
   };
@@ -75,8 +115,8 @@ const Page = () => {
           </ul>
         </div>
       </div>
-      <section className='p-5 flex mt-6 py-6'>
-        <div className='w-1/2 py-12'>
+      <section className='p-5 flex mt-6 py-4'>
+        <div className='w-1/2 py-4'>
           <h3 className='text-md mt-5 mb-5 font-semibold text-violet-700 px-8'>// OVERVIEW</h3>
           <p className='text-4xl font-bold mb-6 px-8'>IT Partner</p>
           <p className='text-gray-600 leading-8 px-8'>
@@ -113,54 +153,77 @@ const Page = () => {
             )}
           </div>
         </div>
+
+
         <div className='w-1/2 p-2'>
-          <div className='grid grid-cols-2 gap-2'>
-            <img
-              src='/slider/box1.jpg'
-              alt='Box 1'
-              className='w-full h-auto object-cover'
-            />
-            <img
-              src='/slider/box2.jpg'
-              alt='Box 2'
-              className='w-full h-auto object-cover'
-            />
-            <img
-              src='/slider/box3.jpg'
-              alt='Box 3'
-              className='w-full h-auto object-cover'
-            />
-            <img
-              src='/slider/box4.jpg'
-              alt='Box 4'
-              className='w-full h-auto object-cover'
-            />
+          <div className='grid grid-cols-2 gap-2 '>
+
+            {
+              images.map((image, index) => (
+                <div data-aos="zoom-in-down"
+                  key={index}
+                  className='relative group'
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(null)}
+                >
+                  <img
+                    src={image.src}
+                    alt='image.alt'
+                    className='w-full h-48 object-cover  duration-300'
+                  />
+                  {hoverIndex === index && (
+                    <div className='absolute inset-0 bg-aboutBackground flex items-center justify-center' data-aos="flip-right">
+                      <p className='text-white text-sm p-2 text-center' >{image.description}</p>
+                    </div>
+                  )}
+
+                </div>
+
+              ))
+            }
           </div>
         </div>
+ 
       </section>
-      <hr/>
-      <section className='bg-white p-5 mt-2'>
-        <p className='text-4xl font-semibold text-center text-black   mb-6'>
-          {/* WROCUS is known to make IT happen with end-to-end engineering with strict deadlines.<br /> */}
-          Our deep strategic organization is built on five pillars.
-        </p>
-        <div className="bg-white p-5 container mx-auto rounded-lg shadow-md">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cardData.map(({ id, title, img, description }) => (
-              <div
-                key={id}
-                className="text-black rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out flex flex-col items-center p-6 bg-white hover:bg-white"
-              >
-                <h2 className="text-center text-2xl font-bold mb-5">{title}</h2>
+      <hr />
 
-                <img src={img} alt='skill' className='mb-5'></img>
-                <p className="text-center text-gray-700 mt-5">{description}</p>
+      {/* wrocus known for */}
+      <section className="p-6 bg-gray-50">
+    <p className="text-center text-2xl font-semibold text-gray-800 mb-6">
+        WROCUS is known to make IT happen with end-to-end engineering and strict deadlines. Our deep strategic organization is built on five key pillars.
+    </p>
 
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5">
+        {items.map((item, index) => (
+            <div
+                key={index}
+                className="relative p-4 bg-aboutBackground hover:bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 flex flex-col justify-between"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+            >
+                <div>
+                    <h3 className={`text-3xl font-bold ${hoveredIndex === index ? 'text-black' : 'text-white'}`}>
+                        {item.number}
+                    </h3>
+                    <p className={`text-xl font-bold ${hoveredIndex === index ? 'text-black' : 'text-white'}`}>
+                        {item.text}
+                    </p>
+                </div>
+                <div className='flex items-end justify-end mt-4'>
+                    <img
+                        src={item.img}
+                        alt={`Icon for ${item.number}`}
+                        className='h-20'
+                        style={{backgroundColor:'white'}}
+                    />
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
+
+
+
 
       <section>
         <ActualWork />
