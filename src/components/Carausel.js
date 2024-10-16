@@ -19,7 +19,7 @@ const Carausel = () => {
         <>
 
             <Carousel
-                autoPlay={true}
+                // autoPlay={true}
                 interval={4000}
                 infiniteLoop={true}
                 showArrows={true}
@@ -36,8 +36,8 @@ const Carausel = () => {
 
                         <div className=" bg-white  flex-1 ">
                             <p className="text-3xl font-bold  mt-5 mb-2 text-start mx-12">Full Cycle <span className="text-blue-600">Software</span> Development</p>
-                            <p className="text-6xl font-extrabold text-start mx-11">FROM <span className="ml-2 text-blue-600">IDEA</span></p>
-                            <p className="text-6xl font-extrabold mt-2 text-start mx-10">TO <span className="text-blue-600">PRODUCT</span></p>
+                            <p className="text-5xl font-extrabold text-start mx-11">FROM <span className="ml-2 text-blue-600">IDEA</span></p>
+                            <p className="text-5xl font-extrabold mt-2 text-start mx-10">TO <span className="text-blue-600">PRODUCT</span></p>
                             <p className="mt-4 text-start mx-11  ">
                                 Consultancy Service from an idea to strategy and enhancement
 
@@ -101,8 +101,8 @@ const Carausel = () => {
 
                             <p className="text-2xl font-bold  mt-5 mb-2 text-start ">We Create <span className="text-blue-600">leading Digital </span> Products</p>
                             <p className="text-3xl mb-2 text-start font-bold" style={{ fontSize: '22px' }}>  </p>
-                            <p className="text-6xl font-extrabold text-start">END-TO-END </p>
-                            <p className="text-6xl font-extrabold text-start mt-2 text-blue-600">DEVELOPMENT </p>
+                            <p className="text-5xl font-extrabold text-start">END-TO-END </p>
+                            <p className="text-5xl font-extrabold text-start mt-2 text-blue-600">DEVELOPMENT </p>
 
                             {/* <p className="text-6xl font-extrabold mt-2 text-start mx-10">TO <span className="text-blue-600">PRODUCT</span></p> */}
                             <p className="mt-2 text-start text-xl md:mt-4 ">
@@ -162,8 +162,8 @@ const Carausel = () => {
 
                             <p className="text-start text-2xl mx-5 font-bold">Only <span className="text-blue-600">High-Quality</span> Services </p>
 
-                            <p className="text-start text-6xl font-extrabold mt-5  mx-5">SOFTWARE IT</p>
-                            <p className="text-start text-blue-600 text-6xl font-extrabold mt-2 mb-6  mx-5">OUTSOURCING</p>
+                            <p className="text-start text-5xl font-extrabold mt-5  mx-5">SOFTWARE IT</p>
+                            <p className="text-start text-blue-600 text-5xl font-extrabold mt-2 mb-6  mx-5">OUTSOURCING</p>
                             <p className="text-start  mx-5">Our team puts hard skills to understand your <span className="text-blue-600"><strong>business needs</strong></span> </p>
                             <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mx-5  text-start">
                                 <div className="flex-1 flex items-center justify-center rounded-lg text-start">

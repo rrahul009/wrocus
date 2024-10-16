@@ -20,7 +20,6 @@ export default function ServiceCards() {
             <h1 className="text-4xl mt-4 font-bold text-center"> Partner for Software Innovation</h1>
             <div className="flex flex-col md:flex-row w-full">
                 {/* Text Content Section */}
-
                 <div className="text-content flex-1 p-6 md:p-12" data-aos="zoom-in-down">
 
                     <ul

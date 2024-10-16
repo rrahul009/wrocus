@@ -1,78 +1,51 @@
-import CloudConsulting from '@/components/CloudConsulting';
-import CRMSolutionsPage from '@/components/CrmSoluton';
-import CustomDevelopment from '@/components/CustomDevelopment';
-import DataAnalytics from '@/components/DataAnalytics';
-import ErpHrms from '@/components/ErpHrms';
-import Footer from '@/components/Footer';
+import ITConsulting from '@/components/ITConsulting';
+import MobileDevelopment from '@/components/MobileDevelopment';
 import Navbar from '@/components/Navbar';
+import OdooDevelopment from '@/components/OdooDevelopment';
+import QaTesting from '@/components/QaTesting';
+import WebDesignDevelopment from '@/components/WebDesignDevelopment';
 import React from 'react';
 
 const Page = () => {
     return (
-        <>
-
+        <div className="relative">
             <Navbar />
-
-            <div className='bg-gray-100 flex flex-col md:flex-row items-center justify-between py-12 px-4'>
-                <div className="max-w-6xl p-4 flex-1 mx-5">
-                    <p className="text-3xl sm:text-4xl md:text-4xl font-extrabold leading-tight mb-6 text-gray-800">
-                        <span className="text-black">END TO END</span>
+            <div className="relative z-10 container mx-auto px-4 text-black text-center">
+                <h1 className="text-4xl font-bold mt-5 text-blue-600">"Your Vision, Our Expertise"</h1>
+                <p className="text-lg mb-2">Transform your online presence and drive results with our tailored services.</p>
+            </div>
+            <div className="flex flex-col md:flex-row justify-between items-center p-5 gap-5">
+                <div className="flex-1 text-center md:text-left ">
+                    <h2 className="text-3xl font-semibold mt-5 md:mt-4">Introduction</h2>
+                    <p className="text-sm mt-4 max-w-3xl mx-auto leading-relaxed leading-[2]">
+                        At Wrocus Technology, we understand that every business has unique challenges and goals.
+                        Our mission is to provide tailored solutions that empower your brand to thrive in the digital landscape.
+                        With a dedicated team of experts in web development, UI/UX design, SEO, and digital marketing,
+                        we leverage cutting-edge technologies such as Odoo for enterprise resource planning, Python for robust application development,
+                        and .NET for building high-performance applications.
+                        Whether you’re looking to build a new website, enhance user experience, or boost your online presence,
+                        we’re here to guide you every step of the way. Let’s embark on this journey together and achieve remarkable results!
                     </p>
-
-                    <p className="text-3xl sm:text-3xl md:text-xl font-extrabold leading-tight mb-4 text-blue-600">
-                        DEVELOPMENT, INTEGRATION, IMPLEMENTATION
-                    </p>
-
-                    <p className="text-md text-gray-700 mb-4">
-                        We specialize in integrating various systems and platforms, maximizing efficiency and enhancing functionality for your business.
-                    </p>
-
-                    <div className="flex flex-col md:grid md:grid-cols-2 gap-8 mt-6">
-                        <div className="flex-1 flex items-center justify-center  text-start">
-                            <div>
-                                <h3 className="text-2xl font-bold text-black mb-2">Full-Cycle Development</h3>
-
-                            </div>
-                        </div>
-                        <div className="flex-1 flex items-center justify-center  text-start">
-                            <div>
-                                <h3 className="text-2xl font-bold text-black mb-2">Robust Integration Solutions</h3>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="mt-8">
-                        <h3 className="text-2xl font-bold text-blue-600 mb-4 text-center">Why Choose Us?</h3>
-                        <ul className="list-disc list-inside text-gray-700 pl-4 text-start" >
-                            <li className="mb-2">Expert team with extensive industry experience</li>
-                            <li className="mb-2">Tailored solutions that fit your unique business needs</li>
-                            <li className="mb-2">Commitment to quality and customer satisfaction</li>
-                            <li className="mb-2">Ongoing support and maintenance to ensure success</li>
-                        </ul>
-                    </div>
-
-
 
                 </div>
-                <div className='hidden md:flex flex-1 justify-center items-center mt-6'>
+                <div className="flex-1 text-center mt-5 md:mt-5">
                     <img
-                        src='https://img.freepik.com/free-vector/isometric-cms-concept_23-2148807389.jpg'
-                        alt='Custom Software Development'
-                        className='object-cover rounded-lg shadow-lg max-w-full h-auto'
-                        style={{ maxWidth: '800px', height: '400px' }}
+                        src='https://cdn.vectorstock.com/i/500p/77/82/it-service-delivery-cdn-software-program-app-vector-38707782.jpg'
+                        alt="Cloud Computing"
+                        className="max-w-full h-auto"
                     />
                 </div>
             </div>
 
-            <CustomDevelopment />
-            <CRMSolutionsPage />
-            <ErpHrms />
-            <CloudConsulting/>
-            <DataAnalytics/>
-            <Footer/>
-        </>
+            <WebDesignDevelopment />
+            <MobileDevelopment/>
+            <QaTesting/>
+            <ITConsulting/>
+            <OdooDevelopment/>
 
+
+
+        </div>
     );
 };
 

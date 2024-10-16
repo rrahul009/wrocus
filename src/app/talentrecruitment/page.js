@@ -33,7 +33,7 @@ const Page = () => {
             <div className='flex justify-between items-center mx-5 mt-5' data-aos="fade-up-left">
                 <div className="p-3 mx-5 rounded-lg  w-2/5">
                     <h2 className="text-2xl font-bold text-black mb-2">Welcome to Wrocus Technology!</h2>
-                    <p className="text-md text-gray-600">
+                    <p className="text-md text-gray-600 mt-12">
                         We specialize in providing top-notch recruitment services tailored to meet the unique needs of your organization.
                         Our dedicated team of experts is committed to finding the right talent to elevate your business and drive success.
                         Partner with us to discover skilled professionals who align with your company’s goals and culture.
@@ -45,10 +45,10 @@ const Page = () => {
 
                 <div className="flex justify-center items-center w-2/5 mt-2">
                     <img
-                        src='https://t4.ftcdn.net/jpg/02/74/24/07/360_F_274240703_amNOwIyE7g9jdGEHGyOM8WxBOrbWLb7l.jpg'
+                        src='https://media.licdn.com/dms/image/D5612AQE3ifh6UbMB3g/article-cover_image-shrink_720_1280/0/1679283002104?e=2147483647&v=beta&t=EN1mEcjp7vqoci35-564zAexavjWOiRzfXKFZABovgE'
                         alt='Recruitment Image'
                         className="w-full     "
-                        style={{ height: '350px' }}
+                        style={{ height: '370px' }}
                     />
                 </div>
 
@@ -172,20 +172,7 @@ const Page = () => {
                     </div>
                 </div>
 
-                <div className='mt-8 flex flex-col items-center'data-aos="flip-right">
-                    <img
-                        src='https://media.licdn.com/dms/image/D5612AQFVzG_XZTJyug/article-cover_image-shrink_600_2000/0/1703655196031?e=2147483647&v=beta&t=gJVvSs5mVJpy6-4FmLxEO_Y5Skj1oCOPO2zpvl-yxAM'
-                        alt='Recruitment Process Flowchart'
-                        className='shadow-xl object-cover rounded-lg w-full max-w-4xl'
-                        style={{ height: '360px', width: '600px' }}
-                    />
-                    <div className='mt-6 text-center'>
-                        <p className='text-lg text-gray-800 italic'>Join us on this journey to find the perfect fit for your team!</p>
-                        <button className='text-white text-lg bg-blue-600 p-3 rounded-lg mt-5 transition duration-300 hover:bg-blue-700' style={{ width: '200px' }}>
-                            CONTACT US
-                        </button>
-                    </div>
-                </div>
+                
             </div>
 
 

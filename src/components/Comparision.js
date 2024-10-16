@@ -5,7 +5,7 @@ const Comparision = () => {
         {
             title: "Innovation",
             description: "At Wrocus Technology, we prioritize innovation as the cornerstone of our success. Our commitment to continuous investment in cutting-edge technology allows us to stay ahead in a rapidly evolving digital landscape.",
-            img: "https://cfotech.co.uk/uploads/story/2024/02/02/img-OSGvVY98go6plQo9PLpj7Vas.webp"
+            img: "https://www.simplilearn.com/ice9/free_resources_article_thumb/IT_Engineer_Salary.jpg"
         },
         {
             title: "Expert Team",
