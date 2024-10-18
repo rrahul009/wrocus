@@ -1,23 +1,19 @@
 'use client'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel'
-import banner1 from '../assets/slider/banner1.jpg'
-import banner2 from '../assets/slider/banner2.jpg'
-import banner3 from '../assets/slider/banner3.jpg'
-import Image from "next/image";
 import { initializeAOS } from "@/app/utils/Aos_setup";
 import Link from "next/link";
 
-
-
-
 const Carausel = () => {
+    useEffect(() => {
+        const cleanupAOS = initializeAOS();
 
+        return cleanupAOS; // Cleanup AOS on unmount
+    }, []);
 
     return (
         <>
-
             <Carousel
                 // autoPlay={true}
                 interval={4000}
@@ -28,194 +24,158 @@ const Carausel = () => {
                 showIndicators={false}
             // className="carouselStyle"
             >
-
                 {/* First slide */}
-                <div className="mt-2 py-3">
-                    {/* <p className="text-3xl font-bold">Software Development Services</p> */}
-                    <div className='bg-white flex mt-4 flex-col md:flex-row   '>
+                <div>
+                    <div className='bg-white  flex flex-col md:flex-row items-center justify-between py-8 shadow-lg rounded-lg'>
+                        <div className="max-w-6xl flex-1 mx-6 animate-fade-in">
+                            <div className="ml-12">
+                                <p className="text-3xl font-bold mt-5 mb-2 text-start" data-aos="zoom-in-up">
+                                    We Create <span className="text-blue-600">Leading Digital</span> Products
+                                </p>
+                                <div className="text-5xl font-extrabold text-start mt-4" data-aos="fade-down"
+                                    data-aos-easing="linear"
+                                    data-aos-duration="1500">
+                                    {[" ", "END-TO-END", "DEVELOPMENT"].map((word, index) => (
+                                        <span
 
-                        <div className=" bg-white  flex-1 ">
-                            <p className="text-3xl font-bold  mt-5 mb-2 text-start mx-12">Full Cycle <span className="text-blue-600">Software</span> Development</p>
-                            <p className="text-5xl font-extrabold text-start mx-11">FROM <span className="ml-2 text-blue-600">IDEA</span></p>
-                            <p className="text-5xl font-extrabold mt-2 text-start mx-10">TO <span className="text-blue-600">PRODUCT</span></p>
-                            <p className="mt-4 text-start mx-11  ">
-                                Consultancy Service from an idea to strategy and enhancement
+                                            key={index}
+                                            className={`inline-block opacity-0 transform translate-y-4 animate-appear mt-4`}
+                                            style={{ animationDelay: `${index * 0.6}s` }}
+                                        >
+                                            {word}
+                                        </span>
+                                    ))}
+                                </div>
+                                <p className="mt-4 text-start text-xl md:mt-4" data-aos="fade-down" data-aos-delay="400"
+                                    data-aos-easing="linear"
+                                    data-aos-duration="1500" style={{ animationDelay: 0.6 }}>
+                                    Trigger <span className="text-blue-600 font-bold">100%</span> Successful Customer Experience
+                                </p>
+                            </div>
 
-                            </p>
-
-
-                            <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mx-5  text-start">
+                            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 mt-10" data-aos="zoom-in-left" data-aos-delay="800">
                                 <div className="flex-1 flex items-center justify-center rounded-lg text-start">
-                                    <div className="">
-                                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black md:mt-8 text-start ml-5 ">
-                                            100<span className="text-blue-600">K+</span>
-                                        </h3>
-                                        <p className="text-sm sm:text-base md:text-md text-black md:mt-1 ml-5">
-                                            pre-screened profiles of Software Experts
+                                    <div>
+                                        <h3 className="text-3xl font-bold text-blue-600">10K+</h3>
+                                        <p className="text-md text-gray-950 mt-2">
+                                            Curated Profiles of Software Experts
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex-1 flex items-center justify-center rounded-lg text-start mt-8">
+                                <div className="flex items-center justify-center rounded-lg">
                                     <div>
-                                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black ">
-                                            57%
-                                        </h3>
-                                        <p className="text-sm sm:text-base md:text-md text-black md:mt-1">
-                                            profiles equipped with the latest trending and in-demand skill sets
+                                        <h3 className="text-3xl font-bold text-blue-600">77%</h3>
+                                        <p className="text-md text-gray-950 mt-2">
+                                            Profiles Showcasing In-Demand Skill Sets
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="mt-12 mx-12 ml-8 mb  ">
+
+                            <div className="flex justify-between mt-12 ml-7 text-gray-700" data-aos="zoom-in-left" data-aos-delay="1600">
+                                <p className="text-gray-950 font-semibold">Expert Software Development <span className="ml-3">|</span></p>
+                                <p className="text-gray-950 font-semibold">Cost-Effective Solutions <span className="ml-3">|</span></p>
+                                <p className="text-gray-950 font-semibold">24/7 Dedicated Support</p>
+                            </div>
+                            <div className="mx-12 ml-8 mt-12" data-aos="flip-right" data-aos-delay="3000">
                                 <Link href="/services">
-                                    <button className="flex items-center bg-blue-600  border-2   py-3 px-8 ml-5
-                 text-black hover:bg-blue-200 transition-colors duration-300 rounded-lg mt-4 md:mt-2">
-                                        <span className="mr-2  text-white">Read  More</span>
+                                    <button className="flex items-center bg-blue-600 border-2 border-blue-600 py-3 px-8 ml-5 text-white hover:bg-blue-200 hover:text-black transition-colors duration-300 rounded-lg md:mt-2">
+                                        <span className="mr-2">Read More</span>
                                         {/* <ArrowDownwardIcon /> */}
                                     </button>
                                 </Link>
                             </div>
                         </div>
-                        <div className='hidden md:flex flex-1 justify-center items-center mt-1'>
-                            <img
-                                src='https://www.pngitem.com/pimgs/m/534-5348813_software-development-company-png-transparent-png.png'
-                                alt='Custom Software Development'
-                                className='object-cover rounded-lg shadow-lg max-w-full h-auto'
 
+                        <div className='hidden md:flex flex-1 justify-center items-center mt-6 animate-fade-in'>
+                            <img
+                                src='https://opencybersecurityalliance.org/wp-content/uploads/2023/06/Agile_Development-1200x675.jpg'
+                                alt='Custom Software Development'
+                                className='object-cover rounded-lg'
+                                style={{ maxWidth: '700px', height: '400px' }}
                             />
                         </div>
                     </div>
+
+                    <style jsx>{`
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.8s ease forwards;
+        }
+
+        @keyframes appear {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-appear {
+            animation: appear 1s ease forwards;
+        }
+    `}</style>
                 </div>
-
-                {/*second testng slde  */}
-
-                <div>
-                    {/* <p className="text-3xl text-center mt-3 sm:text-3xl md:text-2xl font-bold leading-tight text-gray-800">
-                        Your Collaborator in a Thrilling <span
-                            className="text-blue-600">Product Development
-                        </span> Experience
-                    </p> */}
-                    <div className='bg-white flex flex-col md:flex-row items-center justify-between py-4'>
-
-                        <div className="max-w-6xl p-4 flex-1 mx-5">
-
-                            <p className="text-2xl font-bold  mt-5 mb-2 text-start ">We Create <span className="text-blue-600">leading Digital </span> Products</p>
-                            <p className="text-3xl mb-2 text-start font-bold" style={{ fontSize: '22px' }}>  </p>
-                            <p className="text-5xl font-extrabold text-start">END-TO-END </p>
-                            <p className="text-5xl font-extrabold text-start mt-2 text-blue-600">DEVELOPMENT </p>
-
-                            {/* <p className="text-6xl font-extrabold mt-2 text-start mx-10">TO <span className="text-blue-600">PRODUCT</span></p> */}
-                            <p className="mt-2 text-start text-xl md:mt-4 ">
-                                Trigger <span className="text-blue-600 font-bold">100 %</span> Successful customer experience
-
-                            </p>
-
-                            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 mt-6">
-                                <div className="flex-1 flex items-center justify-center rounded-lg text-start">
-                                    <div>
-                                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-                                            100<span className="text-blue-600 " >K+</span>
-                                        </h3>
-                                        <p className="text-sm sm:text-base md:text-lg text-gray-800 mt-2">
-                                            curated profiles of Software Experts
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex-1 flex items-center justify-center rounded-lg  text-start">
-                                    <div>
-                                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-                                            77%
-                                        </h3>
-                                        <p className="text-sm sm:text-base md:text-lg text-gray-800 mt-2">
-                                            profiles showcasing in-demand skill sets
-                                        </p>
-                                    </div>
-                                </div>
+                {/*second slide  */}
+                <div className="py-6 bg-white">
+                    <div className="container mx-auto py-12 flex flex-col lg:flex-row justify-between items-center h-auto px-5">
+                        <div className="text-left flex-grow flex flex-col" data-aos="zoom-in-up">
+                            <p className="text-gray-950 font-semibold text-3xl">Full Cycle Software Development</p>
+                            <p className="text-7xl mt-4 text-gray-950 font-extrabold">FROM IDEA</p>
+                            <p className="text-7xl mt-4 text-gray-950 font-extrabold">TO PRODUCT</p>
+                            <p className="text-gray-950 mt-4 text-lg">Consultancy services from an idea to strategy and enhancement.</p>
+                            <p>Explore our range of resources to enhance your development projects. we provide the tools and frameworks that empower your development teams to create outstanding applications.</p>
+                            <div className="mt-5 text-gray-950">
+                                <p className="mb-2 text-lg font-semibold">6+ Years of Outsourcing Excellence</p>
+                                <p className="mb-4 text-lg font-semibold">
+                                    <span className="mr-2">250+ Talented Professionals</span> |
+                                    <span className="ml-2">1200+ Successful Client Projects</span>
+                                </p>
                             </div>
-
-                        </div>
-                        <div className='hidden md:flex flex-1 justify-center items-center mt-6'>
-                            <img
-                                src='https://img.freepik.com/free-vector/hand-drawn-flat-design-intranet-illustration_23-2149379501.jpg?semt=ais_hybrid'
-                                alt='Custom Software Development'
-                                className='object-cover rounded-lg shadow-lg max-w-full h-auto'
-                                style={{ maxWidth: '800px', height: '400px' }}
-                            />
-                        </div>
-                    </div>
-                    <div className=" mx-12 ml-8  ">
-                        <Link href="/services">
-                            <button className="flex items-center bg-blue-600  border-2   py-3 px-8 ml-5
-                 text-black hover:bg-blue-200 transition-colors duration-300 rounded-lg   md:mt-2">
-                                <span className="mr-2  text-white">Read  More</span>
-                                {/* <ArrowDownwardIcon /> */}
+                            <button className="bg-blue-600 text-white p-4 mt-6 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 flex items-center justify-center" style={{ width: "200px" }}>
+                                Learn More
                             </button>
-                        </Link>
+                        </div>
+                        <div className="mt-10 lg:mt-0 flex-shrink-0 flex justify-center items-end">
+                            <img src="https://softjourn.com/media/images/Articles/Full_cycle_software_dev/full-cycle-software-dev-article-image-03.png" alt="DevOps Engineers" className="rounded-lg shadow-md object-cover" style={{ maxWidth: '100%', height: 'auto', maxHeight: '400px' }} />
+                        </div>
                     </div>
                 </div>
-
-
-                {/* Third slde */}
-                <div>
-                    <div className='bg-white flex flex-col md:flex-row  justify-between py-4 mt-5 '>
-                        <div className=" p-4 flex-1">
-
-                            <p className="text-start text-2xl mx-5 font-bold">Only <span className="text-blue-600">High-Quality</span> Services </p>
-
-                            <p className="text-start text-5xl font-extrabold mt-5  mx-5">SOFTWARE IT</p>
-                            <p className="text-start text-blue-600 text-5xl font-extrabold mt-2 mb-6  mx-5">OUTSOURCING</p>
-                            <p className="text-start  mx-5">Our team puts hard skills to understand your <span className="text-blue-600"><strong>business needs</strong></span> </p>
-                            <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mx-5  text-start">
-                                <div className="flex-1 flex items-center justify-center rounded-lg text-start">
-                                    <div className="">
-                                        <h3 className="text-xl mr-3 sm:text-2xl md:text-3xl font-bold text-black md:mt-8 text-start ml-5 ">
-                                            100<span className="text-blue-600">K+</span>
-                                        </h3>
-                                        <p className="text-sm sm:text-base md:text-md text-black md:mt-1 ml-5">
-                                            pre-screened profiles of Software Experts
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex-1 flex items-center justify-center rounded-lg text-start mt-8">
-                                    <div>
-                                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black ">
-                                            57%
-                                        </h3>
-                                        <p className="text-sm sm:text-base md:text-md text-black md:mt-1">
-                                            profiles equipped with the latest trending and in-demand skill sets
-                                        </p>
-                                    </div>
-                                </div>
+                {/* Third slide  */}
+                <div className="py-8 p-6 bg-gray-200 flex flex-col md:flex-row items-center">
+                    <div className="md:w-1/2 p-4 rounded-lg">
+                        <p className="text-4xl font-bold mt-4">OUR EXPERTISE</p>
+                        <p className="text-5xl font-bold mt-2">End to End <span className="text-blue-600">Implementation</span> &</p>
+                        <p className="text-5xl font-bold"><span className="text-blue-600">Integration</span> Services</p>
+                        <div className="mt-8 text-md text-gray-600">
+                            <p>Our expert team specializes in seamless integration of Salesforce and Odoo.</p>
+                            <p className="mt-2">We ensure that your business processes are optimized for success</p>
+                            <p className="mt-2">with tailored solutions that meet your unique needs.</p>
+                        </div>
+                        <div className="flex mt-8 justify-between">
+                            <div className="flex-1 flex flex-col">
+                                <p className="text-2xl font-semibold text-blue-600 text-start ml-3">Our Commitment</p>
+                                <p className="text-gray-600 text-md">We continuously explore cutting-edge solutions to meet the   needs of our clients.</p>
+                            </div>
+                            <div className="flex-1 flex flex-col text-right">
+                                <p className="text-2xl font-semibold text-blue-600 text-start ml-4">Our Promise</p>
+                                <p className="text-gray-600">We guarantee personalized attention and expert guidance throughout your journey.</p>
                             </div>
                         </div>
-                        <div className='hidden md:flex flex-1 justify-center items-center mt-6'>
-                            <img
-                                src='https://img.freepik.com/free-vector/isometric-cms-concept_23-2148807389.jpg'
-                                alt='Custom Software Development'
-                                className='object-cover rounded-lg shadow-lg max-w-full h-auto'
-                                style={{ maxWidth: '800px', height: '400px' }}
-                            />
-                        </div>
-
-
-                    </div>
-
-
-                    <div className=" mx-12 ml-8  ">
-                        <Link href="/services">
-                            <button className="flex items-center bg-blue-600  border-2   py-3 px-8 ml-5
-                 text-black hover:bg-blue-200 transition-colors duration-300 rounded-lg mt-4 md:mt-2">
-                                <span className="mr-2  text-white">Read  More</span>
-                                {/* <ArrowDownwardIcon /> */}
+                        <div className="text-start mt-4 ml-4">
+                            <button className="bg-blue-600 text-white p-4 mt-6 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105" style={{ width: "200px" }}>
+                                Learn More
                             </button>
-                        </Link>
+                        </div>
+                    </div>
+                    <div className="md:w-1/2 p-4 rounded-lg flex justify-center">
+                        <img
+                            src="https://www.infomazeelite.com/wp-content/uploads/2022/02/Custom-API-Integration-and-Development.png"
+                            alt="Programmer at work"
+                            className="w-full h-auto rounded-lg  mt-8"
+
+                        />
                     </div>
                 </div>
-
-
-
-
-
             </Carousel>
         </>
     )

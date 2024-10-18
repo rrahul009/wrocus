@@ -1,8 +1,10 @@
 import Carausel from '@/components/Carausel';
 import ClientTestimonial from '@/components/ClientTestimonial';
+import CompanyOverview from '@/components/CompanyOverview';
 import Comparision from '@/components/Comparision';
 import ContactPage from '@/components/ContactPage';
 import Footer from '@/components/Footer';
+import Industriserve from '@/components/Industriserve';
 import IntroduceProject from '@/components/IntroduceProject';
 import Navbar from '@/components/Navbar';
 import OurClient from '@/components/OurClient';
@@ -21,12 +23,14 @@ const Home = () => {
         <Services/>
         <OurServices/>
         <Comparision/>
+        <Industriserve/>
+        <CompanyOverview/>
         {/* <OurPartner/> */}
        
        
         <ContactPage/>
         <IntroduceProject/>
-        <TechnologyIndex/>
+        {/* <TechnologyIndex/> */}
         <ClientTestimonial/>
         <Footer/> 
       

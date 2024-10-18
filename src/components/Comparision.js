@@ -1,6 +1,12 @@
-import React from 'react';
+'use client'
+import { initializeAOS } from '@/app/utils/Aos_setup';
+import React, { useEffect } from 'react';
 
 const Comparision = () => {
+    useEffect(() => {
+        const cleanupAOS = initializeAOS();
+        return cleanupAOS; // Cleanup AOS on unmount
+    }, []);
     const features = [
         {
             title: "Innovation",
@@ -20,27 +26,27 @@ const Comparision = () => {
     ];
 
     return (
-        <div className="mt-4 py-4 px-4 bg-gray-100 rounded-lg shadow-md">
+        <div className="mt-4 py-4 px-4 bg-gray-100 rounded-lg shadow-md"data-aos="zoom-in">
             <div className="text-center">
                 <h2 className="text-3xl font-medium text-gray-800 mb-4">
-                    What sets 
+                    What sets
                     <span className="text-blue-600"> Wrocus Technology</span> apart from the competition?
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-                            
-                            <img 
-                                src={feature.img} 
-                                alt={feature.title} 
-                                className="h-48 w-full object-cover mb-4 rounded" 
+                        <div key={index} className="bg-white rounded-lg shadow-md cursor-pointer p-6 hover:shadow-lg transition-shadow duration-300">
+
+                            <img
+                                src={feature.img}
+                                alt={feature.title}
+                                className="h-48 w-full object-cover mb-4 rounded"
                             />
                             <h3 className="text-2xl font-semibold mb-2">{feature.title}</h3>
                             <p className="text-gray-600 text-sm mb-2">{feature.description}</p>
-                            <button className=" mt-2 text-blue-500  px-4 rounded transition-colors duration-300">
+                            {/* <button className=" mt-2 text-blue-500  px-4 rounded transition-colors duration-300">
                                 Talk with our experts
-                            </button>
+                            </button> */}
                         </div>
                     ))}
                 </div>

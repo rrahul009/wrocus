@@ -1,7 +1,13 @@
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { initializeAOS } from '@/app/utils/Aos_setup';
 
 const OurServices = () => {
+  useEffect(() => {
+    const cleanupAOS = initializeAOS();
+    return cleanupAOS; // Cleanup AOS on unmount
+}, []);
   const services = [
     {
       title: 'Web Design ',
@@ -10,7 +16,8 @@ const OurServices = () => {
       icon: "https://cdn-icons-png.freepik.com/512/8713/8713437.png"
     },
     {
-      title: 'Mobile Apps Development',
+      title: 'Mobile Apps',
+      title2:'Development',
       description: 'Create complex enterprise software, ensure reliable software integration, modernise your legacy system.',
       icon: "https://static.vecteezy.com/system/resources/previews/031/022/358/non_2x/mobile-development-icon-vector.jpg",
     },
@@ -41,17 +48,19 @@ const OurServices = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gray-100">
+    <div className=" mx-auto p-6 "data-aos="zoom-in">
       <h1 className="text-4xl font-bold text-center mb-8">Solutions We Provide</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
         {services.map((service, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
+          <div key={index} className="bg-white rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl"
+          data-aos="zoom-in"
+          >
             <div className='flex justify-center mb-4'>
               <img src={service.icon} alt={service.title} className="h-20 w-20 object-contain" />
             </div>
-            <h2 className="text-2xl font-bold text-center mt-5 text-black">{service.title}</h2>
-            <h2 className="text-2xl font-bold text-center text-black">{service.title2}</h2>
-            <p className="text-gray-600 mt-3 text-center text-md">{service.description}</p>
+            <h2 className="text-xl font-bold text-center mt-5 text-black">{service.title}</h2>
+            <h2 className="text-xl font-bold text-center text-black">{service.title2}</h2>
+            <p className="text-gray-600 mt-3 text-center text-sm">{service.description}</p>
             <div className="flex justify-center mt-4">
               <button className=' text-black  shadow-sm py-2 px-4 rounded-lg 
               transition-transform transform hover:scale-105 hover:shadow-lg'>

@@ -3,7 +3,7 @@ import React from 'react';
 const OurClient = () => {
   const logos = [
     {
-      src: "https://images.seeklogo.com/logo-png/53/1/aaj-tak-news-logo-png_seeklogo-534139.png",
+      src: "https://notcommon-production.s3.amazonaws.com/uploads/collection/image/21109/open-uri20240708-17078-owizqu",
       alt: "Aaj Tak",
       size: { width: 80, height: 60 }
     },
@@ -41,8 +41,8 @@ const OurClient = () => {
 
   return (
     <>
-      <div className='p-3 py-5 bg-gray-100'>
-        <h2 className='text-4xl font-bold text-center mb-8'>Clients We Support</h2>
+      <div className=' '>
+        {/* <h2 className='text-4xl font-bold text-center mb-8'>Clients We Support</h2> */}
 
         {/* Inline style for animation */}
         <style>
@@ -76,7 +76,7 @@ const OurClient = () => {
           <div className='sliderr'>
             <div className='logo-container flex justify-between gap-20'>
               {logos.map((logo, index) => (
-                <div key={index} className='logo flex items-center p-2 bg-gray-50 hover:shadow-xl transition-shadow duration-300 rounded-lg'>
+                <div key={index} className='logo flex items-center p-2 hover:shadow-xl transition-shadow duration-300 rounded-lg'>
                   <img
                     src={logo.src}
                     width={logo.size.width}
@@ -89,7 +89,7 @@ const OurClient = () => {
               {/* Duplicate logos for seamless effect */}
               {logos.map((logo, index) => (
                 <div key={`duplicate-${index}`} className='logo flex justify-between items-center 
-                p-4 bg-gray-50 hover:shadow-xl transition-shadow duration-300 rounded-lg'>
+                p-4  hover:shadow-xl transition-shadow duration-300 rounded-lg'>
                   <img
                     src={logo.src}
                     width={logo.size.width}
