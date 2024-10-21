@@ -41,7 +41,7 @@ const OurClient = () => {
 
   return (
     <>
-      <div className=' '>
+      <div className='mt-12 '>
         {/* <h2 className='text-4xl font-bold text-center mb-8'>Clients We Support</h2> */}
 
         {/* Inline style for animation */}
@@ -72,7 +72,7 @@ const OurClient = () => {
           `}
         </style>
 
-        <div className='overflow-hidden bg-white p-4'>
+        <div className='overflow-hidden bg-white p-4 mt-12'>
           <div className='sliderr'>
             <div className='logo-container flex justify-between gap-20'>
               {logos.map((logo, index) => (

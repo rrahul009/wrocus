@@ -16,35 +16,35 @@ const cardData = [
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project8-e1635161793154.jpg',
         title: 'Basic Project ',
         description: 'DESIGN / DEVELOPMENT',
-        name: <ArrowForwardIcon/>
+        name: <ArrowForwardIcon />
     },
     {
         id: 2,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project-details-7.jpg',
         title: 'Social Media App',
         description: 'DESIGN / TECHNOLOGY',
-        name:  <ArrowForwardIcon/>
+        name: <ArrowForwardIcon />
     },
     {
         id: 3,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project1.jpg',
         title: 'App for Virtual Reality',
         description: 'DESIGN / IDEA',
-        name:  <ArrowForwardIcon/>
+        name: <ArrowForwardIcon />
     },
     {
         id: 4,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project3.jpg',
         title: 'Analysis Of Security',
         description: 'IDEAS / TECHNOLOGY',
-        name:  <ArrowForwardIcon/>
+        name: <ArrowForwardIcon />
     },
     {
         id: 5,
         imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project4.jpg',
         title: 'eCommerce Website',
         description: 'DESIGN / IDEA',
-        name:  <ArrowForwardIcon/>
+        name: <ArrowForwardIcon />
     },
 
 ];
@@ -108,7 +108,7 @@ const CardGrid = () => {
                             <img
                                 src={card.imgSrc}
                                 alt={card.title}
-                                style={{ height: '350px', width: '100%' }}
+                                style={{ height: '280px', width: '100%' }}
                             />
                             <div className="p-6 bg-customNavyBlue text-white">
                                 <h2 className="text-xl font-bold mb-2 text-white text-center">{card.title}</h2>

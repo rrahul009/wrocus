@@ -113,7 +113,7 @@ const Navbar = () => {
                                 </button>
                                 {dropdown === 'services' && (
                                     <ul className="absolute top-full left-0  bg-white text-black   rounded-lg" style={{ width: '250px' }}>
-                                        <li><Link href="/about" className="block px-4 py-2 hover:bg-gray-200">Tech Recruitment</Link></li>
+                                        <li><Link href="/techrecruit" className="block px-4 py-2 hover:bg-gray-200">Tech Recruitment</Link></li>
                                         <li><Link href="/service2" className="block px-4 py-2 hover:bg-gray-200">Web Development</Link></li>
                                         <li><Link href="/service3" className="block px-4 py-2 hover:bg-gray-200">Mobile Development</Link></li>
                                         <li><Link href="/service4" className="block px-4 py-2 hover:bg-gray-200">Artificial Intelligence</Link></li>
@@ -152,9 +152,9 @@ const Navbar = () => {
                                     </ul>
                                 )}
                             </li>
-                            <li><Link href="/about" className="text-black hover:text-blue-800">Technologies</Link></li>
+                            {/* <li><Link href="/about" className="text-black hover:text-blue-800">Technologies</Link></li> */}
                             <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li>
-                            <li><Link href="/blog" className="text-black hover:text-blue-800">Contact</Link></li>
+                            {/* <li><Link href="/blog" className="text-black hover:text-blue-800">Contact</Link></li> */}
                         </ul>
                     </div>
                     {/* <div className="text-gray-800 text-lg flex items-center space-x-4">

@@ -108,12 +108,7 @@ const Page = () => {
         <div>
           <h2 className='text-white text-4xl font-extrabold'>ABOUT US</h2>
         </div>
-        <div>
-          <ul className='flex gap-5 text-white font-bold'>
-            <li> <Link href="/">HOME</Link></li>
-            <li>ABOUT US</li>
-          </ul>
-        </div>
+        
       </div>
       <section className='p-5 flex mt-6 py-4'>
         <div className='w-1/2 py-4'>
@@ -188,12 +183,12 @@ const Page = () => {
       <hr />
 
       {/* wrocus known for */}
-      <section className="p-6 bg-gray-50">
+      <section className="p-6 bg-gray-50" data-aos="zoom-in">
     <p className="text-center text-2xl font-semibold text-gray-800 mb-6">
         WROCUS is known to make IT happen with end-to-end engineering and strict deadlines. Our deep strategic organization is built on five key pillars.
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5"data-aos="zoom-in">
         {items.map((item, index) => (
             <div
                 key={index}
@@ -201,7 +196,7 @@ const Page = () => {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
             >
-                <div>
+                <div >
                     <h3 className={`text-3xl font-bold ${hoveredIndex === index ? 'text-black' : 'text-white'}`}>
                         {item.number}
                     </h3>
@@ -225,7 +220,7 @@ const Page = () => {
 
 
 
-      <section>
+      <section data-aos="zoom-in">
         <ActualWork />
       </section>
       <section>

@@ -12,13 +12,13 @@ const ActualWork = () => {
 
             }} >
             <div className='flex'>
-                <div className='p-8'>
+                <div className='p-8 w-1/2'>
                     <img
                         src='slider/image1-about.png'
                         style={{ height: '500px', width: '600px' }}
                     />
                 </div>
-                <div className='p-4'>
+                <div className='p-4 w-1/2'>
                     <p className=' text-xl font-bold text-white'>// Experience. Execution. Excellence.</p>
                     <p className='text-4xl font-bold text-white'>What We Actually Do</p>
                     <p className='text-xl text-white  ml-5'>

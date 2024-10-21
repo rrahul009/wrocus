@@ -29,7 +29,7 @@ const OurLeaderShip = () => {
                     alt='Atul Sir'
                 />
                     <p className='text-center font-bold text-2xl'>Atul Singhal</p>
-                    <h2 className='text-center'>ASSOCIATE DIRECTOR</h2>
+                    <h2 className='text-center'>  DIRECTOR</h2>
                 </div>
             </div>
         </div>

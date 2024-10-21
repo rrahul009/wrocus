@@ -4,36 +4,41 @@ import CompanyOverview from '@/components/CompanyOverview';
 import Comparision from '@/components/Comparision';
 import ContactPage from '@/components/ContactPage';
 import Footer from '@/components/Footer';
+import IndustriesHome from '@/components/IndustriesHome';
 import Industriserve from '@/components/Industriserve';
 import IntroduceProject from '@/components/IntroduceProject';
 import Navbar from '@/components/Navbar';
 import OurClient from '@/components/OurClient';
 import OurPartner from '@/components/OurPartner';
 import OurServices from '@/components/OurServices';
+ 
 import Services from '@/components/Services';
 import TechnologyIndex from '@/components/TechnologyIndex';
+import WordAppreciation from '@/components/WordAppreciation';
 import React from 'react'
 
 const Home = () => {
   return (
     <div>
-        <Navbar/>
-        <Carausel/>
-        <OurClient/>
-        <Services/>
-        <OurServices/>
-        <Comparision/>
-        <Industriserve/>
-        <CompanyOverview/>
-        {/* <OurPartner/> */}
-       
-       
-        <ContactPage/>
-        <IntroduceProject/>
-        {/* <TechnologyIndex/> */}
-        <ClientTestimonial/>
-        <Footer/> 
-      
+      <Navbar />
+      <Carausel />
+      <OurClient />
+      <Services />
+      <OurServices />
+      <Comparision />
+      {/* <Industriserve/> */}
+      <IndustriesHome />
+      <CompanyOverview />
+      {/* <OurPartner/> */}
+
+
+      <ContactPage />
+      <IntroduceProject />
+      {/* <TechnologyIndex/> */}
+      {/* <ClientTestimonial/> */}
+      <WordAppreciation />
+      <Footer />
+
     </div>
   )
 }
