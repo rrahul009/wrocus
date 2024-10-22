@@ -13,7 +13,7 @@ import React from 'react'
 const page = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <p>Odoo preview</p>
       {/* <section>
         <div
