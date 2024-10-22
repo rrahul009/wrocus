@@ -50,7 +50,7 @@ const OdooDevelopment = () => {
   ];
 
   return (
-    <div className='bg-gray-800 py-4 p-5 mt-4'>
+    <div className='bg-red-800 py-4 p-5 mt-4'>
       <div className='py-2'>
         <h2 className='text-4xl text-center py-1 p-4 font-bold text-white'>Odoo Development Services We Offer</h2>
         <p className='text-center mb-5 text-white'>Explore our diverse Odoo ERP solutions and development services to elevate your digital transformation.</p>
