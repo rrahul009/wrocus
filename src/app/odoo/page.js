@@ -14,6 +14,7 @@ const page = () => {
   return (
     <>
       <Navbar />
+      <p>Odoo preview</p>
       {/* <section>
         <div
           className='flex justify-center p-4 py-12 relative'
