@@ -37,7 +37,7 @@ export default function ServiceCards() {
                         <li>Service provider for complete digital transformation of legacy systems.</li>
                         <li>We encourage new talent and adopt leading technologies.</li>
                     </ul>
-                    <div className='flex justify-start gap-10 mb-6 ml-10 mt-8' data-aos="zoom-in-right" data-aos-delay="500">
+                    <div className='flex justify-start gap-10  ml-10 mt-8 '>
                         <div>
                             <img src='https://ivrnet.com/wp-content/uploads/2020/04/icon-aa-1.png' style={{ height: '80px', width: '80px' }} />
                             <p className='text-2xl font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer'>Experience</p>
@@ -45,11 +45,9 @@ export default function ServiceCards() {
                         </div>
                         <div>
                             <img src='https://img.freepik.com/premium-vector/flat-icon-representing-settings_941526-9336.jpg'
-                                className=' hover:border-blue-600 cursor-pointer'
-                                style={{ height: '70px', width: '70px' }} />
-                            <p className='text-2xl  font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer'
-                                style={{ marginTop: '9px' }}
-                            >Quick Support</p>
+                            className=' hover:border-blue-600 cursor-pointer'
+                            style={{ height: '70px', width: '70px' }} />
+                            <p className='text-2xl  font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer'>Quick Support</p>
                             <p className='text-md text-gray-600 mt-2'>The pilot team provides <br /> valuable expertise.</p>
                         </div>
                     </div>
@@ -58,7 +56,7 @@ export default function ServiceCards() {
 
 
                 {/* Image Content Section */}
-                <div className="image-content flex-1 flex items-center justify-center p-10 md:p-12 mt-2" data-aos="flip-left" data-aos-delay="700">
+                <div className="image-content flex-1 flex items-center justify-center p-10 md:p-12 mt-2" data-aos="flip-left">
                     <img
                         src='https://cloud3tech.com/wp-content/uploads/2020/03/image1-home2.png'
                         className='object-cover w-full  '

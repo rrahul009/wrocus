@@ -20,17 +20,17 @@ const OdooDevelopment = () => {
     {
       title: 'Odoo App Development',
       description: 'Create custom applications tailored to your specific needs with our expert development team.',
-      icon: "https://leadmaster.com/wp-content/uploads/2023/08/support.png"
+      icon: "https://techspawn.com/wp-content/uploads/2021/09/Odoo-Dedicated-Developer.png"
     },
     {
       title: 'Odoo Module Development',
       description: 'Develop dynamic modules that enhance the functionality of your Odoo system for better scalability.',
-      icon: "https://leadmaster.com/wp-content/uploads/2023/08/support.png"
+      icon: "https://erp-client.cnt.id/web/content/cms.post/26078/image"
     },
     {
       title: 'Odoo Migration',
       description: 'Seamlessly migrate your data to Odoo with minimal downtime and maximum efficiency.',
-      icon: "https://leadmaster.com/wp-content/uploads/2023/08/support.png"
+      icon: "https://sdlccorp.com/wp-content/uploads/2024/03/Ahmad-Khan-1.png"
     },
     {
       title: 'Odoo Integration',
@@ -42,19 +42,19 @@ const OdooDevelopment = () => {
       description: 'Implement Odoo solutions tailored to your business needs with a focus on successful outcomes.',
       icon: "https://leadmaster.com/wp-content/uploads/2023/08/support.png"
     },
-    {
-      title: 'Odoo Support',
-      description: 'Receive ongoing support and maintenance to ensure your Odoo system runs smoothly and efficiently.',
-      icon: "https://leadmaster.com/wp-content/uploads/2023/08/support.png"
-    },
+    // {
+    //   title: 'Odoo Support',
+    //   description: 'Receive ongoing support and maintenance to ensure your Odoo system runs smoothly and efficiently.',
+    //   icon: "https://leadmaster.com/wp-content/uploads/2023/08/support.png"
+    // },
   ];
 
   return (
     <div className='bg-gray-800 py-4 p-5 mt-4'>
-      <div className='py-6'>
+      <div className='py-2'>
         <h2 className='text-4xl text-center py-1 p-4 font-bold text-white'>Odoo Development Services We Offer</h2>
         <p className='text-center mb-5 text-white'>Explore our diverse Odoo ERP solutions and development services to elevate your digital transformation.</p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4'>
           {odooService.map((item, id) => (
             <div key={id} className='border border-gray-300 p-6 rounded-lg shadow-lg bg-white transition-transform duration-300 transform hover:scale-105'>
               <div className='flex items-center justify-center mb-3'>

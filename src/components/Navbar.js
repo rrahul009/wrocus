@@ -113,14 +113,14 @@ const Navbar = () => {
                                 </button>
                                 {dropdown === 'services' && (
                                     <ul className="absolute top-full left-0  bg-white text-black   rounded-lg" style={{ width: '250px' }}>
-                                        <li><Link href="/techrecruit" className="block px-4 py-2 hover:bg-gray-200">Tech Recruitment</Link></li>
-                                        <li><Link href="/service2" className="block px-4 py-2 hover:bg-gray-200">Web Development</Link></li>
-                                        <li><Link href="/service3" className="block px-4 py-2 hover:bg-gray-200">Mobile Development</Link></li>
-                                        <li><Link href="/service4" className="block px-4 py-2 hover:bg-gray-200">Artificial Intelligence</Link></li>
-                                        <li><Link href="/service5" className="block px-4 py-2 hover:bg-gray-200">Data Analytics</Link></li>
-                                        <li><Link href="/service6" className="block px-4 py-2 hover:bg-gray-200">Data Science</Link></li>
-                                        <li><Link href="/service7" className="block px-4 py-2 hover:bg-gray-200">Client-Based Hiring Solutions</Link></li>
-                                        <li><Link href="/service8" className="block px-4 py-2 hover:bg-gray-200">Executive Search</Link></li>
+                                        <li><Link href="/design" className="block px-4 py-2 hover:bg-gray-200">Design & Build</Link></li>
+                                        <li><Link href="/cloudconsulting" className="block px-4 py-2 hover:bg-gray-200">Cloud consultancy</Link></li>
+                                        <li><Link href="/managedservice" className="block px-4 py-2 hover:bg-gray-200">Advisory & Managed Services</Link></li>
+                                        <li><Link href="/salesforce" className="block px-4 py-2 hover:bg-gray-200"> Salesforce Services</Link></li>
+                                        <li><Link href="/quality" className="block px-4 py-2 hover:bg-gray-200">Quality Automation</Link></li>
+                                        <li><Link href="/analytics" className="block px-4 py-2 hover:bg-gray-200"> Web analytics</Link></li>
+                                        <li><Link href="/staffaugmentation" className="block px-4 py-2 hover:bg-gray-200"> Staff Augmentaion</Link></li>
+                                        
                                     </ul>
                                 )}
                             </li>
@@ -132,12 +132,15 @@ const Navbar = () => {
                                 onMouseLeave={() => setDropdown(null)} // Close on mouse leave
                                 ref={dropdownRef}
                             >
-                                <button
+                              <Link href="/odoo">
+                              <button
                                     className="text-black hover:text-blue-800 focus:outline-none"
                                 >
-                                    Odoo <ArrowDropDownIcon />
+                                    Odoo 
+                                    {/* <ArrowDropDownIcon /> */}
                                 </button>
-                                {dropdown === 'odoo' && (
+                              </Link>
+                                {/* {dropdown === 'odoo' && (
                                     <ul className="absolute top-full left-0  bg-white text-black   rounded-lg" style={{ width: '250px' }}>
                                         <li><Link href="/about" className="block px-4 py-2 hover:bg-gray-200"> Odoo Consulting</Link></li>
                                         <li><Link href="/about" className="block px-4 py-2 hover:bg-gray-200">Odoo Website Development</Link></li>
@@ -150,7 +153,7 @@ const Navbar = () => {
                                         <li><Link href="/service8" className="block px-4 py-2 hover:bg-gray-200"> Odoo Support</Link></li>
 
                                     </ul>
-                                )}
+                                )} */}
                             </li>
                             {/* <li><Link href="/about" className="text-black hover:text-blue-800">Technologies</Link></li> */}
                             <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li>

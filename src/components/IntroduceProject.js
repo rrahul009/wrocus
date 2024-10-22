@@ -110,7 +110,7 @@ const CardGrid = () => {
                                 alt={card.title}
                                 style={{ height: '280px', width: '100%' }}
                             />
-                            <div className="p-6 bg-customNavyBlue text-white">
+                            <div className="p-6 bg-blue-950  text-white">
                                 <h2 className="text-xl font-bold mb-2 text-white text-center">{card.title}</h2>
                                 {card.description && <p className="text-white text-center font-2xl">{card.description}</p>}
                                 <Link href="/about"><p className='text-end text-blue-500'>{card.name}</p></Link>

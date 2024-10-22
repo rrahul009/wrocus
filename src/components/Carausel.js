@@ -111,83 +111,82 @@ const Carausel = () => {
             onChange={handleCarouselChange}
         >
             {/* First Section */}
-            <div className="py-8 bg-gray-100"  >
-                <div className="container md:mx-8  flex flex-col lg:flex-row justify-between items-center h-auto px-8">
-                    <div className="text-left flex-grow flex flex-col" data-aos="zoom-in-up">
-                        <p className=" font-semibold text-3xl mt-6 mb-4"
-                            data-aos="zoom-in-right" data-aos-delay="600"
-                            style={{ color: '#0056b3' }}>Full Cycle Software Development</p>
-                        <p className="text-6xl mt-4  font-extrabold" style={{
-                            fontSize: isMobile ? '2em' : '2.5em',
-                            fontWeight: '700',
-                            lineHeight: '1.3',
-                            margin: '10px 0',
-                            color: '#007bff',
-                        }} data-aos="zoom-in-right" data-aos-delay="800" >FROM IDEA</p>
-                        <p className="text-6xl  text-gray-950 font-extrabold" style={{
-                            fontSize: isMobile ? '2em' : '2.5em',
-                            fontWeight: '700',
-                            // lineHeight: '1.3',
-                            margin: '10px 0',
-                            color: '#007bff',
-                        }} data-aos="zoom-in-right" data-aos-delay="900">TO PRODUCT</p>
-                        <p className="text-gray-950 mt-4 text-lg" style={{
-                            fontSize: isMobile ? '1em' : '1.2em',
-                            // marginBottom: '10px',
-                            lineHeight: '1.6',
-
-                        }} data-aos="zoom-in-right" data-aos-delay="1100">
-                            Consultancy services from an idea to strategy and enhancement.
-                        </p>
-                        <p className="text-gray-950 mt-4" style={{
-                            fontSize: isMobile ? '1em' : '1.2em',
-                            marginBottom: '10px',
-                            lineHeight: '1.6',
-                            // color: '#555',
-                        }} data-aos="zoom-in-right" data-aos-delay="1200">
-                            Explore our range of resources to enhance your development projects. We provide the tools and frameworks that empower your development teams to create outstanding applications.
-                        </p>
-                        <div className="mt-5 text-gray-950 flex flex-col md:flex-row justify-between md:gap-12"
-                            data-aos="zoom-in-right" data-aos-delay="1400"
-                        >
-                            <p className="mb-2 text-lg font-semibold">
-                                6+ Years of Outsourcing Excellence
-                                <br />
-                                <span className="text-gray-700 text-base font-normal">
-                                    Delivering quality solutions to clients worldwide.
-                                </span>
+            <div className='bg-gray-100' style={containerStyle}>
+                <div style={textContainerStyle}>
+                    <h1 className="carousel-text " style={headingStyle}>
+                        Resource Hub
+                    </h1>
+                    <h1 className="carousel-text md:text-3xl text-xl" style={middleTextStyle} data-aos="fade-up">
+                        Develop Big with Our Qualified Tech Resources
+                    </h1>
+                    <p className="carousel-text mb-2" style={paragraphStyle} data-aos="fade-up">
+                        Explore our range of resources to enhance your development projects.
+                        From ReactJs to Angular, we provide the tools and frameworks that
+                        empower your development teams to create outstanding applications.
+                    </p>
+                    {/* Additional Content (Desktop Only) */}
+                    {/* {isMobile && ( */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
+                        <div className='mt-4' style={{ flex: 1, paddingRight: '10px' }}>
+                            <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-1' data-aos="fade-up">Our Technologies</h2>
+                            <p style={paragraphStyle} data-aos="fade-up">
+                                Leverage the latest frameworks and tools for optimal development efficiency.
                             </p>
-
-                            <div className="mb-4 text-lg font-semibold">
-                                <span>250+ Talented Professional<br /> 100+</span>
-                                <span> Ongoing Projects <br /></span>
-
-                                <span>1200+ Successful Client Projects</span>
-                            </div>
                         </div>
-
-
-                        <button className="bg-blue-600 text-white p-4 mt-4 rounded-lg transition duration-300 transform
-                         hover:bg-blue-700 hover:scale-105 flex items-center justify-center" style={{ width: "200px" }}
-                            data-aos="zoom-out-up"
-                        >
+                        <div className='mt-4' style={{ flex: 1, paddingLeft: '10px' }}>
+                            <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-1' data-aos="fade-up">Begin Your Project</h2>
+                            <p style={paragraphStyle} data-aos="fade-up">
+                                Collaborate with us to turn your vision into successful outcomes.
+                            </p>
+                        </div>
+                    </div>
+                    {/* )} */}
+                    <br />
+                    <Link href="/mobileapp">
+                        <button className="bg-blue-600 text-white p-4  rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 flex items-center justify-center" style={{ width: "200px" }}>
                             Learn More
                         </button>
-                    </div>
-                    <div className="mt-10 lg:mt-0 flex-shrink-0 flex justify-end">
-                        {!isMobile && ( // Render image only if not mobile
-                            <img
-                                src="https://softjourn.com/media/images/Articles/Full_cycle_software_dev/full-cycle-software-dev-article-image-03.png"
-                                alt="DevOps Engineers"
-                                className="rounded-lg object-cover mt-12 ml-12"
-                                style={{ maxWidth: '100%', height: 'auto', maxHeight: '400px', marginTop: '20px' }} // Adjusted margin
-                            />
-                        )}
-                    </div>
-
+                    </Link>
                 </div>
+                {!isMobile && <img src={'edit-removebg-preview.png'} alt='Resources Image' style={imageStyle} />}
             </div>
-
+            <div className='bg-gray-100 ' style={containerStyle}>
+                <div style={textContainerStyle}>
+                    <h1 className="carousel-text " style={headingStyle}>
+                        Our Capabilities
+                    </h1>
+                    <h1 className="carousel-text " style={middleTextStyle} data-aos="zoom-in">
+                        Comprehensive Implementation & Integration Solutions
+                    </h1>
+                    <p className="carousel-text " style={paragraphStyle} data-aos="zoom-in">
+                        Our dedicated team specializes in the seamless integration of Salesforce and Odoo, ensuring that your business processes are optimized for success with customized solutions tailored to your unique requirements.
+                    </p>
+                    {/* Additional Content (Desktop Only) */}
+                    {/* {!isMobile && ( */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
+                        <div className='mt-4' style={{ flex: 1, paddingRight: '10px' }}>
+                            <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-3' data-aos="zoom-in">Our Commitment</h2>
+                            <p style={paragraphStyle} data-aos="zoom-in">
+                                We continuously seek innovative solutions to address the evolving needs of our clients.
+                            </p>
+                        </div>
+                        <div className='mt-4' style={{ flex: 1, paddingLeft: '10px' }}>
+                            <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-3' data-aos="zoom-in">Our Assurance</h2>
+                            <p className='text-lg' data-aos="zoom-in">
+                                We promise personalized support and expert guidance throughout your journey.
+                            </p>
+                        </div>
+                    </div>
+                    {/* )} */}
+                    <br />
+                    <Link href="/sfdc">
+                        <button className="bg-blue-600 text-white p-4 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 flex items-center justify-center" style={{ width: "200px" }}>
+                            Discover More
+                        </button>
+                    </Link>
+                </div>
+                {!isMobile && <img src="wrcous image.png" className='md:mb-24' alt='Service Image' style={imageStyle} />}
+            </div>
 
             {/* second Section */}
             <div className='bg-gray-100 ' style={containerStyle}>
