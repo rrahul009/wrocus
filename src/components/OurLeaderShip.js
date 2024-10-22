@@ -11,25 +11,24 @@ const OurLeaderShip = () => {
             <p className='text-center font-serif text-gray-600 font-medium'>
                 product design, QA and consultancy services.
             </p>
-            <div className='flex justify-evenly gap-5 max-w-full overflow-hidden mt-5 rounded-full'>
-            <div>
-            <img
-                    className='rounded-full w-[300px] h-[300px] object-cover'
-                    src='slider/Aseemsir.jpg'
-                  alt='Aseem Sir'
-                />
-                <p className='text-center font-bold text-2xl'>Aseem Gupta</p>
-                <h2 className='text-center '>ASSOCIATE DIRECTOR</h2>
-                 
-            </div>
-                <div>
-                <img
-                    className='rounded-full w-[300px] h-[300px] object-cover'
-                    src='slider/Atulsir.jpeg'
-                    alt='Atul Sir'
-                />
-                    <p className='text-center font-bold text-2xl'>Atul Singhal</p>
-                    <h2 className='text-center'>  DIRECTOR</h2>
+            <div className='flex justify-evenly gap-5 max-w-full mt-5'>
+                <div className='flex flex-col items-center mt-6'>
+                    <img
+                        className='rounded-full w-[380px] h-[380px] object-fill'
+                        src='slider/Aseemsir.jpg'
+                        alt='Aseem Sir'
+                    />
+                    <p className='text-center font-bold text-2xl mt-6'>Aseem Gupta</p>
+                    <h2 className='text-center'>ASSOCIATE DIRECTOR</h2>
+                </div>
+                <div className='flex flex-col items-center mt-6'>
+                    <img
+                        className='rounded-full w-[380px] h-[380px] object-fill'
+                        src='Atulsir.jpg'
+                        alt='Atul Sir'
+                    />
+                    <p className='text-center font-bold text-2xl mt-6'>Atul Singhal</p>
+                    <h2 className='text-center'>DIRECTOR</h2>
                 </div>
             </div>
         </div>

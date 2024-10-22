@@ -150,6 +150,7 @@ const Carausel = () => {
                 </div>
                 {!isMobile && <img src={'edit-removebg-preview.png'} alt='Resources Image' style={imageStyle} />}
             </div>
+            
             <div className='bg-gray-100 ' style={containerStyle}>
                 <div style={textContainerStyle}>
                     <h1 className="carousel-text " style={headingStyle}>

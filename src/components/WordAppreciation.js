@@ -61,23 +61,26 @@ const WordAppreciation = () => {
     };
 
     return (
-        <section className='mt-6 bg-gray-200 py-12 p-6'data-aos="zoom-out">
-            <p className='text-3xl font-bold text-center mb-6 text-gray-950'>Words of Appreciation from Our Clients</p>
-            <Slider {...settings}>
-                {
-                    testimonials.map((item, index) => (
-                        <div key={index} className='border p-12 mr-6 rounded bg-white'>
-                            <p className='font-semibold text-gray-950 mb-3 text-xl'>{item.name}</p>
-                            <p className='text-gray-950'>{item.shortText}</p>
-                            {expendedIndex === index && <p className='text-gray-950'>{item.fullText}</p>}
-                            <button onClick={() => toggleExpanded(index)} className='text-blue-500'>
-                                {expendedIndex === index ? "Read Less" : "Read More"}
-                            </button>
-                        </div>
-                    ))
-                }
-            </Slider>
-        </section>
+        <div style={{ width: '100%', overflowX: 'hidden' }}>
+            <section className='mt-6 bg-gray-200 py-12 ' data-aos="zoom-out">
+                <p className='text-3xl font-bold text-center mb-6 text-gray-950'>Words of Appreciation from Our Clients</p>
+                <Slider {...settings}>
+                    {
+                        testimonials.map((item, index) => (
+                            <div key={index} className='border p-12 mr-6 rounded bg-white'>
+                                <p className='font-semibold text-gray-950 mb-3 text-xl'>{item.name}</p>
+                                <p className='text-gray-950'>{item.shortText}</p>
+                                {expendedIndex === index && <p className='text-gray-950'>{item.fullText}</p>}
+                                <button onClick={() => toggleExpanded(index)} className='text-blue-500'>
+                                    {expendedIndex === index ? "Read Less" : "Read More"}
+                                </button>
+                            </div>
+                        ))
+                    }
+                </Slider>
+            </section>
+        </div>
+
     );
 };
 

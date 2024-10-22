@@ -3,15 +3,15 @@ import React from 'react';
 const OdooCustomization = () => {
     return (
         <>
-            <section className='bg-gray-50  py-4 '>
-                <p className='text-center text-3xl font-bold text-gray-800  py-6 '>Odoo Customization</p>
-                <div className="flex flex-col md:flex-row  justify-between p-6 bg-white shadow-md rounded-lg mx-4 my-8">
+            <section className='bg-white      py-4 '>
+                <p className='text-center text-3xl font-bold text-gray-950  py-6 '>Odoo Customization</p>
+                <div className="flex flex-col md:flex-row  justify-between p-6 rounded-lg mx-4 my-8">
                     <div className='w-full md:w-1/2 mb-6 md:mb-0 py-5'>
-                        <h2 className='text-2xl font-bold text-gray-800 mb-4'>Odoo Customization Services</h2>
+                        <h2 className='text-2xl font-bold text-gray-950 mb-4'>Odoo Customization Services</h2>
                         <p className='mt-4 text-start text-gray-700'>
                             At Wrocus Technology, we understand that every business has unique needs. Our Odoo customization services are designed to tailor the platform specifically for you, enhancing functionality and user experience.
                         </p>
-                        <p className='mt-2 text-start text-gray-700'>
+                        <p className='mt-2 text-start text-gray-950'>
                             Whether you need custom modules, specific workflows, or unique reports, our expert team is here to ensure that Odoo fits your business like a glove.
                         </p>
                         <div className='flex justify-start gap-12  mt-12'>
@@ -30,7 +30,7 @@ const OdooCustomization = () => {
                         <img
                             src='https://www.ksolves.com/wp-content/uploads/2024/04/odoo-dev-banner.svg'
                             alt='Odoo Customization'
-                            className='max-w-full h-76 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105'
+                            className='max-w-full h-76 rounded-lg   transition-transform duration-300 transform hover:scale-105'
                         />
                     </div>
                 </div>
@@ -54,6 +54,7 @@ const OdooCustomization = () => {
                     </div>
                     <div className='w-1/2'>
                         <img src='https://www.infiraise.com/wp-content/uploads/2021/08/QA_1_img_1-1.png' 
+                        className='bg-gray-100 p-5'
                         height="300px"width="500px"
                         />
                     </div>

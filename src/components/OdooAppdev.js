@@ -49,7 +49,7 @@ const OdooAppDev = () => {
                 </div>
             </section>
 
-            <section className='p-6'>
+            {/* <section className='p-6'>
              <div className='flex'>
 
              <div>
@@ -65,7 +65,7 @@ const OdooAppDev = () => {
                     />
                 </div>
              </div>
-            </section>
+            </section> */}
 
 
 

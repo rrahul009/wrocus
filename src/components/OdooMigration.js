@@ -4,26 +4,29 @@ const OdooMigration = () => {
     return (
         <>
             <section className="bg-gray-50 p-8">
-                <h1 className="text-center text-3xl font-bold text-gray-800 mb-2">Odoo Migration Services</h1>
-                <p className="text-center text-gray-600 mb-2">
+                <h1 className="text-center text-3xl font-bold text-gray-950 mb-2">Odoo Migration Services</h1>
+                <p className="text-center text-gray-950 mb-2">
                     Seamlessly transition to the latest version of Odoo with our expert migration services.
                 </p>
-                <p className="text-center text-gray-600 mb-8">
+                <p className="text-center text-gray-950 mb-8">
                     At Wrocus Technology, we ensure a smooth migration process tailored to your business needs.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-white shadow-md rounded-lg p-6">
+                <div className="flex justify-between gap-8 ">
+                    <div className="bg-gray-50  rounded-lg p-16 flex justify-start flex-col">
                         <h2 className="text-xl font-semibold text-gray-800 mb-4">Why Migrate to Odoo?</h2>
                         <ul className="list-disc list-inside text-gray-600">
                             <li className="mb-2">Access to the latest features and improvements.</li>
                             <li className="mb-2">Enhanced performance and security.</li>
                             <li className="mb-2">Improved user experience with a modern interface.</li>
                             <li className="mb-2">Better integration with third-party applications.</li>
+                            <li className="mb-2">Increased scalability to support business growth.</li>
+                            <li className="mb-2">Regular updates and maintenance to keep systems running smoothly.</li>
                         </ul>
+
                     </div>
 
-                    <div className="bg-white shadow-md rounded-lg p-6">
+                    <div className="bg-gray-50 rounded-lg p-6 lg:mt-8">
                         <h2 className="text-xl font-semibold text-gray-800 mb-4">Our Migration Process</h2>
                         <ol className="list-decimal list-inside text-gray-600">
                             <li className="mb-2">Assessment of current system and data.</li>
@@ -53,7 +56,7 @@ const OdooMigration = () => {
                             <li className="mb-2">Post-migration optimization for improved performance.</li>
                             <li className="mb-2">Customized reporting and analytics features to enhance decision-making.</li>
                             <li className="mb-2">Ongoing maintenance options to keep your system up-to-date.</li>
-                           
+
                         </ul>
 
                     </div>

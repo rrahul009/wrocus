@@ -3,6 +3,7 @@ import OdooAppdev from '@/components/OdooAppdev'
 import OdooConsulting from '@/components/OdooConsulting'
 import OdooCustomization from '@/components/OdooCustomization'
 import OdooDevelopment from '@/components/OdooDevelopment'
+import OdooImplementation from '@/components/OdooImplementation'
 import OdooIntegration from '@/components/OdooIntegration'
 import OdooMigration from '@/components/OdooMigration'
 import OdooModuleDevelopment from '@/components/OdooModuleDevelopment'
@@ -13,43 +14,44 @@ import React from 'react'
 const page = () => {
   return (
     <>
-      <Navbar/>
-     
-      {/* <section>
+      <Navbar />
+
+      <section>
         <div
           className='flex justify-center p-4 py-12 relative'
           style={{
             backgroundImage: 'url(/bg-pheader.jpg)', // Ensure the image path is correct
             backgroundSize: 'cover', // Optional: Adjust background size
             backgroundPosition: 'center', // Optional: Adjust background position
-            height: '130px'
+            height: '110px'
+
           }}
         >
           <ul className="absolute flex bottom-3  left-0 w-full text-white p-4">
-            <li><Link href="/about" className="block px-4 py-2  ">Odoo Consulting</Link></li>
-            <li><Link href="/about" className="block px-4 py-2  ">Odoo Website Development</Link></li>
-            <li><Link href="/service3" className="block px-4 py-2  ">Odoo App Development</Link></li>
-            <li><Link href="/service4" className="block px-4 py-2  ">Odoo Theme Development</Link></li>
-            <li><Link href="/service5" className="block px-4 py-2  ">Odoo Customization</Link></li>
-            <li><Link href="/service6" className="block px-4 py-2 ">Odoo Migration</Link></li>
-            <li><Link href="/service7" className="block px-4 py-2 ">Odoo Integration</Link></li>
-            <li><Link href="/service8" className="block px-4 py-2 ">Odoo Implementation</Link></li>
-            <li><Link href="/service9" className="block px-4 py-2 ">Odoo Support</Link></li>
+            <li><Link href="#odoo-consulting" className="block px-4 py-2  ">Odoo Consulting</Link></li>
+            <li><Link href="#odoo-website-dev" className="block px-4 py-2  ">Odoo Website Development</Link></li>
+            <li><Link href="#odoo-appdev" className="block px-4 py-2  ">Odoo App Development</Link></li>
+            <li><Link href="#odoo-module-developement" className="block px-4 py-2  ">Odoo Theme Development</Link></li>
+            <li><Link href="#odoo-customization" className="block px-4 py-2  ">Odoo Customization</Link></li>
+            <li><Link href="#odoo-migration" className="block px-4 py-2 ">Odoo Migration</Link></li>
+            <li><Link href="#odoo-integration" className="block px-4 py-2 ">Odoo Integration</Link></li>
+            <li><Link href="#odoo-implementaion" className="block px-4 py-2 ">Odoo Implementation</Link></li>
+            {/* <li><Link href="/service9" className="block px-4 py-2 ">Odoo Support</Link></li> */}
           </ul>
         </div>
-      </section> */}
+      </section>
 
       <section>
-        <OdooDevelopment/>
+        <OdooDevelopment />
       </section>
       <section>
 
-      <section className="mb-2 py-6 flex flex-col md:flex-row items-center bg-gray-50" data-aos="zoom-in-up">
+        <section className="mb-2 py-6 flex flex-col md:flex-row items-center bg-gray-50" data-aos="zoom-in-up">
           <div className="md:w-1/2 p-4">
-            <img 
-              src="https://media.licdn.com/dms/image/D5612AQFvVi1RQi2s4A/article-cover_image-shrink_720_1280/0/1683108858545?e=2147483647&v=beta&t=vuDPF_SxmJR5QSAwLD1GpECwLw3FYiDw1z_eK1CrRBc" 
+            <img
+              src="https://media.licdn.com/dms/image/D5612AQFvVi1RQi2s4A/article-cover_image-shrink_720_1280/0/1683108858545?e=2147483647&v=beta&t=vuDPF_SxmJR5QSAwLD1GpECwLw3FYiDw1z_eK1CrRBc"
               alt="Development Process"
-              className="rounded-lg shadow-lg" 
+              className="rounded-lg "
             />
           </div>
           <div className="md:w-1/2 p-4">
@@ -126,33 +128,33 @@ const page = () => {
         </section>  */}
 
       </section>
-      <section>
-
-      <OdooConsulting/>
-
+      <section id='odoo-consulting'>
+        <OdooConsulting />
+      </section>
+      <section id='odoo-website-dev'>
+        <OdooWebsiteDev />
       </section>
 
-      <section>
-      <OdooWebsiteDev/>
+      <section id='odoo-customization'>
+        <OdooCustomization />
+      </section>
+      <section id='odoo-appdev'>
+        <OdooAppdev />
+      </section>
+      <section id='odoo-module-developement'>
+        <OdooModuleDevelopment />
+      </section>
+      <section id='odoo-migration'>
+        <OdooMigration />
+      </section>
+      <section id='odoo-integration'>
+        <OdooIntegration />
+      </section>
+      <section id='odoo-implementaion'>
+        <OdooImplementation />
       </section>
 
-      <section>
-        <OdooCustomization/>
-      </section>
-      <section>
-        <OdooAppdev/>
-      </section>
-      <section>
-        <OdooModuleDevelopment/>
-      </section>
-      <section>
-        <OdooMigration/>
-      </section>
-      <section>
-        <OdooIntegration/>
-      </section>
 
-     
     </>
   )
 }
