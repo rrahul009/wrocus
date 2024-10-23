@@ -4,7 +4,7 @@ import Footer from './Footer';
 const OdooImplementation = () => {
   return (
     <>
-      <section className="p-8 mt-2">
+      <section className="p-8 mt-2" id='odoo-implementaion' >
         <h1 className="text-center  text-2xl lg:text-4xl font-bold lg:mb-4" style={{ color: '#0056b3' }}>
           Odoo Implementation Services
         </h1>

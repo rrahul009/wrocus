@@ -10,7 +10,7 @@ const OdooCustomization = () => {
 
     return (
         <>
-            <section className='bg-white py-4' data-aos="zoom-in-left">
+            <section className='bg-white py-4' id='odoo-customization'>
                 <p className='text-center text-3xl font-bold text-gray-950 lg:py-6'>Odoo Customization</p>
                 
                 <div className="flex flex-col md:flex-row justify-between p-6 rounded-lg mx-4 lg:my-8" data-aos="zoom-in-left">

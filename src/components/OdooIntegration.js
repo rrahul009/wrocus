@@ -3,7 +3,7 @@ import React from 'react';
 const OdooIntegration = () => {
     return (
         <>
-            <section className='bg-gray-100 py-8'>
+            <section className='bg-gray-100 py-8' id='odoo-integration'>
                 <h2 className='text-3xl font-bold text-blue-800 text-center mt-12'>Odoo Integration Services</h2>
                 <div className='container mx-auto flex flex-col md:flex-row'>
                     <div className='w-full md:w-1/2 p-6 flex flex-col justify-center'>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const OdooAppDev = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-4">
+        <div className="bg-gray-100 min-h-screen py-4"id='odoo-appdev'>
             {/* Hero Section */}
             <section className="relative bg-white   ">
 

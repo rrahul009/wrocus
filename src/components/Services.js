@@ -18,7 +18,7 @@ export default function ServiceCards() {
     return (
         <>
 
-            <div className="flex flex-col md:flex-row w-full">
+            <div className="flex flex-col md:flex-row w-full" >
                 {/* Text Content Section */}
                 <div className="text-content flex-1  md:p-12 " data-aos="zoom-in-down">
                     <h1 className="text-4xl mt-4 font-bold ml-2 md:ml-3 md:pl-8"> Your Partner for </h1>

@@ -9,7 +9,7 @@ const OdooConsulting = () => {
 
     return (
         <>
-            <section className='bg-white px-5 py-2 shadow-inner' data-aos="zoom-in">
+            <section className='bg-white px-5 py-2 shadow-inner'  id='odoo-consulting'>
                 <div className='mt-2'>
                     <p className='text-center text-3xl lg:text-4xl font-bold mb-4' style={{ color: '#0056b3' }}>Odoo Consulting</p>
                     <div className='mt-2 flex flex-col md:flex-row justify-between items-center'>

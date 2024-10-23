@@ -9,7 +9,7 @@ const OdooModuleDevelopment = () => {
 
     return (
         <>
-            <section className="bg-gray-50 p-8" data-aos="zoom-in-up">
+            <section className="bg-gray-50 p-4"id='odoo-module-developement'>
                 <div className="container mx-auto text-center">
                     <h1 className="text-3xl font-bold text-gray-800 mb-6">Odoo Module Development</h1>
                     <p className="text-gray-600 mb-8">

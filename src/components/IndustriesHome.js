@@ -71,7 +71,7 @@ const IndustriesHome = () => {
     };
 
     return (
-        <div className="bg-blue-50  flex flex-col">
+        <div className="bg-blue-50  flex flex-col" id='odoo'>
             {/* Hero Section */}
             <section className="py-5 text-center  text-black" data-aos="zoom-in-up">
                 <div className="container mx-auto px-4">

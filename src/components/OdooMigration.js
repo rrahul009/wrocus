@@ -10,7 +10,7 @@ const OdooMigration = () => {
 
     return (
         <>
-            <section className="bg-gray-50 p-8" data-aos="flip-up">
+            <section className="bg-gray-50 p-4"  id='odoo-migration' >
                 <h1 className="text-center text-2xl lg:text-3xl font-bold text-blue-800 mb-2">Odoo Migration Services</h1>
                 <p className="text-center text-gray-950 mb-2">
                     Seamlessly transition to the latest version of Odoo with our expert migration services.

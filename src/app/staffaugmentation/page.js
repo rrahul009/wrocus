@@ -111,7 +111,7 @@ const StaffAugmentationServices = () => {
           <div className="flex flex-col lg:flex-row items-center lg:justify-between">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <p className="text-lg mb-4 text-gray-800">
-                At <strong>[AnbruchIT],</strong> we follow a structured process to ensure that we meet your staffing needs efficiently and effectively. Our approach includes:
+                At <strong>[Wrocus Technology],</strong> we follow a structured process to ensure that we meet your staffing needs efficiently and effectively. Our approach includes:
               </p>
               <ol className="list-decimal pl-5 space-y-4 text-gray-800">
                 <li>
