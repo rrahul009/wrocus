@@ -23,7 +23,8 @@ const page = () => {
             backgroundImage: 'url(/bg-pheader.jpg)', // Ensure the image path is correct
             backgroundSize: 'cover', // Optional: Adjust background size
             backgroundPosition: 'center', // Optional: Adjust background position
-            height: '110px'
+            height: '110px',
+             
 
           }}
         >
@@ -41,7 +42,7 @@ const page = () => {
         </div>
       </section>
 
-      <section>
+      <section className='scroll-m-4'>
         <OdooDevelopment />
       </section>
       <section>

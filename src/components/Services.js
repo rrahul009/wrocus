@@ -37,13 +37,13 @@ export default function ServiceCards() {
                         <li>Service provider for complete digital transformation of legacy systems.</li>
                         <li>We encourage new talent and adopt leading technologies.</li>
                     </ul>
-                    <div className='flex justify-start gap-10  ml-10 mt-8 '>
-                        <div>
+                    <div className='flex justify-start gap-10  ml-10 mt-8'>
+                        <div data-aos="zoom-in-left" data-aos-delay="400">
                             <img src='https://ivrnet.com/wp-content/uploads/2020/04/icon-aa-1.png' style={{ height: '80px', width: '80px' }} />
                             <p className='text-2xl font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer'>Experience</p>
                             <p className='text-md text-gray-600 mt-2'>Our great team of more than <br />250+ software experts.</p>
                         </div>
-                        <div>
+                        <div data-aos="zoom-in-left" data-aos-delay="400">
                             <img src='https://img.freepik.com/premium-vector/flat-icon-representing-settings_941526-9336.jpg'
                             className=' hover:border-blue-600 cursor-pointer'
                             style={{ height: '70px', width: '70px' }} />

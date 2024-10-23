@@ -113,7 +113,7 @@ const Carausel = () => {
             {/* First Section */}
             <div className='bg-gray-100' style={containerStyle}>
                 <div style={textContainerStyle}>
-                    <h1 className="carousel-text " style={headingStyle}>
+                    <h1 className="carousel-text " style={headingStyle} data-aos="zoom-in">
                         Resource Hub
                     </h1>
                     <h1 className="carousel-text md:text-3xl text-xl" style={middleTextStyle} data-aos="fade-up">
