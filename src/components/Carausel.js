@@ -105,13 +105,14 @@ const Carausel = () => {
             showThumbs={false}
             showStatus={false}
             infiniteLoop={true}
-            // autoPlay={true}
+            autoPlay={true}
             interval={3000}
             swipeable={false}
             onChange={handleCarouselChange}
         >
             {/* First Section */}
-            <div className='bg-gray-100' style={containerStyle}>
+          <div>
+          <div className='bg-gray-100' style={containerStyle}>
                 <div style={textContainerStyle}>
                     <h1 className="carousel-text " style={headingStyle} data-aos="zoom-in">
                         Resource Hub
@@ -150,6 +151,8 @@ const Carausel = () => {
                 </div>
                 {!isMobile && <img src={'edit-removebg-preview.png'} alt='Resources Image' style={imageStyle} />}
             </div>
+          </div>
+             {/* second Section */}
             
             <div className='bg-gray-100 ' style={containerStyle}>
                 <div style={textContainerStyle}>
@@ -189,7 +192,7 @@ const Carausel = () => {
                 {!isMobile && <img src="wrcous image.png" className='md:mb-24' alt='Service Image' style={imageStyle} />}
             </div>
 
-            {/* second Section */}
+         {/* third section */}
             <div className='bg-gray-100 ' style={containerStyle}>
                 <div style={textContainerStyle}>
                     <h1 className="carousel-text " style={headingStyle}>
@@ -230,46 +233,7 @@ const Carausel = () => {
                 {!isMobile && <img src="od-removebg.png" alt='Service Image' style={imageStyle} />}
             </div>
 
-            {/* third Section */}
-            <div className='bg-gray-100' style={containerStyle}>
-                <div style={textContainerStyle}>
-                    <h1 className="carousel-text " style={headingStyle}>
-                        Resource Hub
-                    </h1>
-                    <h1 className="carousel-text md:text-3xl text-xl" style={middleTextStyle} data-aos="fade-up">
-                        Develop Big with Our Qualified Tech Resources
-                    </h1>
-                    <p className="carousel-text mb-2" style={paragraphStyle} data-aos="fade-up">
-                        Explore our range of resources to enhance your development projects.
-                        From ReactJs to Angular, we provide the tools and frameworks that
-                        empower your development teams to create outstanding applications.
-                    </p>
-                    {/* Additional Content (Desktop Only) */}
-                    {/* {isMobile && ( */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
-                        <div className='mt-4' style={{ flex: 1, paddingRight: '10px' }}>
-                            <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-1' data-aos="fade-up">Our Technologies</h2>
-                            <p style={paragraphStyle} data-aos="fade-up">
-                                Leverage the latest frameworks and tools for optimal development efficiency.
-                            </p>
-                        </div>
-                        <div className='mt-4' style={{ flex: 1, paddingLeft: '10px' }}>
-                            <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-1' data-aos="fade-up">Begin Your Project</h2>
-                            <p style={paragraphStyle} data-aos="fade-up">
-                                Collaborate with us to turn your vision into successful outcomes.
-                            </p>
-                        </div>
-                    </div>
-                    {/* )} */}
-                    <br />
-                    <Link href="/mobileapp">
-                        <button className="bg-blue-600 text-white p-4  rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 flex items-center justify-center" style={{ width: "200px" }}>
-                            Learn More
-                        </button>
-                    </Link>
-                </div>
-                {!isMobile && <img src={'edit-removebg-preview.png'} alt='Resources Image' style={imageStyle} />}
-            </div>
+            
 
 
         </Carousel>

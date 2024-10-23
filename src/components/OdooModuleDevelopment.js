@@ -1,9 +1,15 @@
-import React from 'react';
+import { initializeAOS } from '@/app/utils/Aos_setup';
+import React, { useEffect } from 'react';
 
 const OdooModuleDevelopment = () => {
+    useEffect(() => {
+        const cleanupAOS = initializeAOS();
+        return cleanupAOS; // Cleanup AOS on unmount
+    }, []);
+
     return (
         <>
-            <section className="bg-gray-50 p-8">
+            <section className="bg-gray-50 p-8" data-aos="zoom-in-up">
                 <div className="container mx-auto text-center">
                     <h1 className="text-3xl font-bold text-gray-800 mb-6">Odoo Module Development</h1>
                     <p className="text-gray-600 mb-8">
@@ -33,37 +39,33 @@ const OdooModuleDevelopment = () => {
                 </div>
             </section>
 
-            <section className="bg-white p-8 ">
+            <section className="bg-white p-8" data-aos="flip-up">
                 <div className="container mx-auto text-center">
                     <h2 className="text-2xl font-bold text-gray-800 mb-4">Why Choose Our Odoo Module Development Services?</h2>
                     <p className="text-gray-600 mb-4 text-center">
                         With years of experience and a dedicated team of experts, we deliver high-quality Odoo modules that drive results and streamline your operations.
                     </p>
-                   <div className='flex'>
-                    <div className='w-1/2'>
-                    <ul className="list-disc list-inside text-start text-gray-600 mt-12">
-                        <li className="mb-2">Tailored solutions to fit your unique business needs.</li>
-                        <li className="mb-2">Robust support and maintenance for all modules.</li>
-                        <li className="mb-2">Proven track record of successful implementations.</li>
-                        <li className="mb-2">Focus on maximizing your return on investment.</li>
-                        <li className="mb-2">Expert team with extensive knowledge of Odoo’s capabilities.</li>
-                        <li className="mb-2">Agile development approach to ensure timely delivery.</li>
-                        <li className="mb-2">Comprehensive testing to guarantee module performance and stability.</li>
-                         
-                    </ul>
+                    <div className='flex flex-col md:flex-row justify-between'>
+                        <div className='w-full md:w-1/2'>
+                            <ul className="list-disc list-inside text-start text-gray-600 mt-12">
+                                <li className="mb-2">Tailored solutions to fit your unique business needs.</li>
+                                <li className="mb-2">Robust support and maintenance for all modules.</li>
+                                <li className="mb-2">Proven track record of successful implementations.</li>
+                                <li className="mb-2">Focus on maximizing your return on investment.</li>
+                                <li className="mb-2">Expert team with extensive knowledge of Odoo’s capabilities.</li>
+                                <li className="mb-2">Agile development approach to ensure timely delivery.</li>
+                                <li className="mb-2">Comprehensive testing to guarantee module performance and stability.</li>
+                            </ul>
+                        </div>
+                        <div className='w-full md:w-1/2 flex justify-center'>
+                            <img
+                                src='https://smarttek.solutions/wp-content/uploads/odoo-versions-1170x516.jpg'
+                                alt="Odoo Versions"
+                                className='mt-6 object-contain w-full h-auto max-w-sm' // Responsive image
+                            />
+                        </div>
                     </div>
-                    <div className='w-1/2 flex justify-center'>
-                        <img
-                        src='https://smarttek.solutions/wp-content/uploads/odoo-versions-1170x516.jpg'
-                        className='mt-6 object-contain'
-                        style={{height:'300px'}}
-                        />
-
-                    </div>
-                   </div>
-
                 </div>
-
             </section>
         </>
     );

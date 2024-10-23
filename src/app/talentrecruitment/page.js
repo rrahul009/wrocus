@@ -25,14 +25,14 @@ const Page = () => {
                 }}
             >
 
-                <p className='text-4xl font-extrabold text-white text-center'>Exceptional Talent Recruitment Services</p>
+                <p className='text-2xl lg:text-4xl font-extrabold text-white text-center'>Exceptional Talent Recruitment Services</p>
 
 
             </div>
 
             <div className='flex justify-between items-center mx-5 mt-5' data-aos="fade-up-left">
-                <div className="p-3 mx-5 rounded-lg  w-2/5">
-                    <h2 className="text-2xl font-bold mb-2" style={{color:'#0056b3'}}>Welcome to Wrocus Technology!</h2>
+                <div className="p-3 mx-5 rounded-lg  lg:w-2/5 w-full">
+                    <h2 className="text-2xl font-bold mb-2" style={{ color: '#0056b3' }}>Welcome to Wrocus Technology!</h2>
                     <p className="text-md text-gray-600 mt-12">
                         We specialize in providing top-notch recruitment services tailored to meet the unique needs of your organization.
                         Our dedicated team of experts is committed to finding the right talent to elevate your business and drive success.
@@ -43,7 +43,7 @@ const Page = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center w-1/2 mt-2">
+                <div className="flex justify-center items-center w-1/2 mt-2 lg:block hidden ">
                     <img
                         src='https://media.licdn.com/dms/image/D5612AQE3ifh6UbMB3g/article-cover_image-shrink_720_1280/0/1679283002104?e=2147483647&v=beta&t=EN1mEcjp7vqoci35-564zAexavjWOiRzfXKFZABovgE'
                         alt='Recruitment Image'
@@ -54,23 +54,23 @@ const Page = () => {
             </div>
 
             {/* Service Offerings */}
-            <p className='text-start mt-6 text-3xl font-bold text-black-600 p-8 bg-gray-100 ' >Service Offerings</p>
+            <p className='text-center mt-6 lg:text-3xl text-2xl font-bold text-black-600 p-4 bg-gray-100 ' >Service Offerings</p>
             {/* 1st Service */}
-            <div className='flex p-10  bg-white flex-col md:flex-row justify-center items-center md:space-x-8 mt-6' data-aos="zoom-in-up">
-                <div className='p-6 rounded-lg   transform transition-transform hover:scale-105 w-1/2'>
-                    <h3 className='text-3xl font-bold mb-2 text-blue-700'>Talent Sourcing:</h3>
-                    <p className='text-gray-700 p-5'>
+            <div className='flex p-5 bg-white flex-col md:flex-row justify-center items-center md:space-x-8 lg:mt-6 mt-2' data-aos="zoom-in-up">
+                <div className='lg:p-6 rounded-lg   transform transition-transform hover:scale-105 lg:w-1/2 w-full'>
+                    <h3 className='text-3xl font-bold mb-3 text-blue-700'>Talent Sourcing:</h3>
+                    <p className='text-gray-700 lg:p-5 p-2 text-start'>
                         We employ a comprehensive strategy to identify and attract top talent tailored to your specific needs.
                         Our methods include leveraging online job boards, social media platforms, and tapping into our extensive
                         network of industry contacts. By focusing on both active and passive candidates, we ensure that you have
                         access to a diverse pool of skilled individuals who align with your company culture and values.
                     </p>
                 </div>
-                <div className=' w-1/2'>
+                <div className=' lg:w-1/2'>
                     <img
                         src='https://blog.mettl.com/wp-content/uploads/2022/04/Cover-Image-1.png'
                         alt='Talent image'
-                        className='shadow-lg rounded-lg mt-12 md:mt-0 w-full h-auto'
+                        className='shadow-lg rounded-lg mt-12 md:mt-0 lg:w-full h-auto '
                         style={{ height: '320px' }}
 
                     />
@@ -79,9 +79,9 @@ const Page = () => {
 
 
             {/* 2nd Service */}
-            <div className='py-5 p-10'>
+            <div className='lg:py-5 lg:p-10 p-4'>
                 <div className='flex flex-col md:flex-row justify-center items-center md:space-x-8' data-aos="zoom-in-up">
-                    <div className='w-full md:w-1/2'>
+                    <div className='w-full md:w-1/2 lg:w-1/2'>
                         <img
                             src='https://media.licdn.com/dms/image/C5612AQFD3INR32n-Iw/article-cover_image-shrink_600_2000/0/1520103948386?e=2147483647&v=beta&t=jDBb58njZxnkjRvZPs2IkAkeOsRlrSvFUsPqPuC2npI'
                             alt='Talent image'
@@ -89,9 +89,9 @@ const Page = () => {
                             style={{ height: '360px' }} // Set height for uniformity
                         />
                     </div>
-                    <div className='p-6 rounded-lg   transform transition-transform hover:scale-105 w-full md:w-1/2'>
-                        <h3 className='text-3xl font-bold mb-2 text-blue-700'>Screening & Selection:</h3>
-                        <p className='text-gray-700 p-5'>
+                    <div className='p-3 mt-3 lg:p-6 rounded-lg   transform transition-transform hover:scale-105  md:w-1/2 lg:1/2'>
+                        <h3 className=' text-3xl lg:text-3xl font-bold mb-2 text-blue-700 sm:text-start'>Screening & Selection:</h3>
+                        <p className='text-gray-700 lg:p-5 text-start'>
                             In our Screening & Selection process, we implement a multi-step vetting approach to ensure we present only the most qualified candidates. Initially, we conduct thorough resume screenings to identify key skills and relevant experience. This is followed by in-depth phone interviews, where we assess candidates’ soft skills, cultural fit, and motivations.
                         </p>
                     </div>
@@ -101,11 +101,11 @@ const Page = () => {
 
 
             {/* 3rd Service */}
-            <div className='py-5 p-10' data-aos="zoom-in-up">
+            <div className='lg:py-5 lg:p-10 p-3' data-aos="zoom-in-up">
                 <div className='flex flex-col md:flex-row justify-center items-center md:space-x-8'>
                     <div className='p-6 rounded-lg    transform transition-transform hover:scale-105 w-full md:w-1/2'>
-                        <h3 className='text-3xl font-bold mb-2 text-blue-700'>Interview Coordination:</h3>
-                        <p className='text-gray-700 p-5'>
+                        <h3 className='text-3xl lg:text-3xl font-bold lg:mb-2 text-blue-700'>Interview Coordination:</h3>
+                        <p className='text-gray-700 lg:p-5 '>
                             Our Interview Coordination service streamlines the entire interview process, making it as efficient and stress-free as possible for both your team and candidates. We handle all scheduling logistics, ensuring that interviews are arranged at convenient times for everyone involved. Additionally, we prepare candidates by providing them with insights into your company culture and interview expectations, helping them perform at their best.
                         </p>
                     </div>
@@ -121,7 +121,7 @@ const Page = () => {
             </div>
 
             {/* 4th Service */}
-            <div className='py-5 p-10' data-aos="zoom-in-up">
+            <div className='py-5 lg:p-10 p-3' data-aos="zoom-in-up">
                 <div className='flex flex-col md:flex-row justify-center items-center md:space-x-8'>
                     <div className='w-full md:w-1/2'>
                         <img
@@ -133,7 +133,7 @@ const Page = () => {
                     </div>
                     <div className='p-6 rounded-lg    transform transition-transform hover:scale-105 w-full md:w-1/2'>
                         <h3 className='text-3xl font-bold mb-2 text-blue-700'>Onboarding Support:</h3>
-                        <p className='text-gray-700 p-5'>
+                        <p className='text-gray-700 lg:p-5 p-3'>
                             Our onboarding support ensures that new hires have a smooth transition into your organization. We provide resources, training, and guidance to help them acclimate to your company culture, understand their roles, and foster early engagement. This comprehensive support ultimately leads to higher retention rates and employee satisfaction.
                         </p>
                     </div>
@@ -145,7 +145,7 @@ const Page = () => {
 
             {/* The Recruitment Process */}
             <div className='mt-8 p-4 bg-gray-50 rounded-lg shadow-md' data-aos="zoom-in-up">
-                <h2 className='text-center text-4xl font-bold mb-5 text-blue-700'>The Recruitment Process</h2>
+                <h2 className='text-center  text-2xl lg:text-4xl font-bold mb-5 text-blue-700'>The Recruitment Process</h2>
 
                 <div className='flex flex-col items-center'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>

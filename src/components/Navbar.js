@@ -13,35 +13,18 @@ const Navbar = () => {
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isNavbarFixed, setIsNavbarFixed] = useState(false);
     const [dropdown, setDropdown] = useState(null);
+    const dropdownRef = useRef(null);
 
-    const dropdownRef = useRef(null); // Create a ref for the dropdown
-
-    // Toggle mobile sidebar
     const toggleSidebar = () => setIsSidebarOpen(prevState => !prevState);
 
-    // Handle scroll event
     const handleScroll = () => {
         const scrollTop = window.scrollY;
-
         setShowScrollTop(scrollTop > 300);
-
-        if (scrollTop > 50) {
-            setIsNavbarFixed(true);
-        } else {
-            setIsNavbarFixed(false);
-        }
-
-        if (scrollTop > lastScrollTop) {
-            if (scrollTop > 50) {
-                setNavbarStyle('-translate-y-20');
-            }
-        } else {
-            setNavbarStyle('translate-y-0');
-        }
+        setIsNavbarFixed(scrollTop > 50);
+        setNavbarStyle(scrollTop > lastScrollTop ? '-translate-y-20' : 'translate-y-0');
         setLastScrollTop(scrollTop);
     };
 
-    // Scroll to top function
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -49,32 +32,69 @@ const Navbar = () => {
         });
     };
 
-    // Close dropdown when clicking outside
     const handleClickOutside = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setDropdown(null);
         }
     };
 
-    // Setup event listeners
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('click', handleClickOutside); // Add click event for outside clicks
+        window.addEventListener('click', handleClickOutside);
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('click', handleClickOutside); // Clean up
+            window.removeEventListener('click', handleClickOutside);
         };
     }, [lastScrollTop]);
 
     return (
         <>
-            {/* Sidebar for mobile view */}
-            {/* ... your existing sidebar code ... */}
+            {/* Mobile Sidebar */}
+            {isSidebarOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-10">
+                    <div className="absolute top-20 right-0 bg-white w-64 h-full shadow-lg">
+                        <button className=" mt-4  p-2 lg:p-4 text-lg font-semibold" onClick={toggleSidebar}>
+                            Close
+                        </button>
+                        <nav className="flex flex-col p-4">
+                            <Link href="/" className="py-2 lg:text-lg text-sm">Home</Link>
+                            <Link href="/talentrecruitment" className="py-2 lg:text-lg text-sm">Talent Recruitment</Link>
+
+                            <div className="relative"
+                                onMouseEnter={() => setDropdown('services')}
+                                onMouseLeave={() => setDropdown(null)}
+
+                                ref={dropdownRef}
+                            >
+                                <button className="flex justify-between items-center text-black hover:text-blue-800 focus:outline-none w-full lg:text-lg text-sm">
+                                    Services <ArrowDropDownIcon />
+                                </button>
+                                {dropdown === 'services' && (
+                                    <ul className="absolute top-full left-0 bg-white text-black rounded-lg shadow-md w-48">
+                                        <li><Link href="/design" className="block px-4 py-2 hover:bg-gray-200 text-sm">Design & Build</Link></li>
+                                        <li><Link href="/cloudconsulting" className="block px-4 py-2 hover:bg-gray-200 text-sm">Cloud Consultancy</Link></li>
+                                        <li><Link href="/managedservice" className="block px-4 py-2 hover:bg-gray-200 text-sm">Advisory & Managed Services</Link></li>
+                                        <li><Link href="/salesforce" className="block px-4 py-2 hover:bg-gray-200 text-sm">Salesforce Services</Link></li>
+                                        <li><Link href="/quality" className="block px-4 py-2 hover:bg-gray-200 text-sm">Quality Automation</Link></li>
+                                        <li><Link href="/analytics" className="block px-4 py-2 hover:bg-gray-200 text-sm">Web Analytics</Link></li>
+                                        <li><Link href="/staffaugmentation" className="block px-4 py-2 hover:bg-gray-200 text-sm">Staff Augmentation</Link></li>
+                                    </ul>
+                                )}
+                            </div>
+
+                            <Link href="/odoo" className="py-2 lg:text-lg text-sm">Odoo</Link>
+                            <Link href="/about" className="py-2 lg:text-lg text-sm">About</Link>
+                        </nav>
+                    </div>
+                </div>
+            )}
+
+
 
             {/* Main Navbar */}
-            <nav className={`sticky top-0 bg-white p-2  z-40 w-full transition-transform duration-300 ${navbarStyle}`}>
+            <nav className={`sticky top-0 bg-white p-2 z-40 w-full transition-transform duration-300 ${navbarStyle}`}>
                 <div className="container mx-auto flex items-center justify-between px-4">
-                    <div className="text-white text-lg font-bold p-5">
+                    <div className="text-black text-lg font-bold p-5">
                         <Link href="/">
                             <img src="wrocus.png" style={{ height: '40px' }} alt="Logo" />
                         </Link>
@@ -82,7 +102,6 @@ const Navbar = () => {
                     <button
                         aria-label="Toggle navigation"
                         aria-expanded={isSidebarOpen}
-                        aria-controls="sidebar-menu"
                         className="text-black lg:hidden"
                         onClick={toggleSidebar}
                     >
@@ -100,19 +119,12 @@ const Navbar = () => {
                         <ul className="flex flex-col lg:flex-row lg:space-x-6 space-y-4 lg:space-y-0 gap-2 text-md ">
                             <li><Link href="/" className="text-black hover:text-blue-800">Home</Link></li>
                             <li><Link href="/talentrecruitment" className="text-black hover:text-blue-800">Talent Recruitment</Link></li>
-                            {/* service dropdown */}
-                            <li className="relative"
-                                onMouseEnter={() => setDropdown('services')} // Open on hover
-                                onMouseLeave={() => setDropdown(null)} // Close on mouse leave
-                                ref={dropdownRef}
-                            >
-                                <button
-                                    className="text-black hover:text-blue-800 focus:outline-none"
-                                >
+                            <li className="relative" onMouseEnter={() => setDropdown('services')} onMouseLeave={() => setDropdown(null)} ref={dropdownRef}>
+                                <button className="text-black hover:text-blue-800 focus:outline-none">
                                     Services <ArrowDropDownIcon />
                                 </button>
                                 {dropdown === 'services' && (
-                                    <ul className="absolute top-full left-0  bg-white text-black   rounded-lg" style={{ width: '250px' }}>
+                                    <ul className="absolute top-full left-0 bg-white text-black rounded-lg" style={{ width: '250px' }}>
                                         <li><Link href="/design" className="block px-4 py-2 hover:bg-gray-200">Design & Build</Link></li>
                                         <li><Link href="/cloudconsulting" className="block px-4 py-2 hover:bg-gray-200">Cloud consultancy</Link></li>
                                         <li><Link href="/managedservice" className="block px-4 py-2 hover:bg-gray-200">Advisory & Managed Services</Link></li>
@@ -120,49 +132,15 @@ const Navbar = () => {
                                         <li><Link href="/quality" className="block px-4 py-2 hover:bg-gray-200">Quality Automation</Link></li>
                                         <li><Link href="/analytics" className="block px-4 py-2 hover:bg-gray-200"> Web analytics</Link></li>
                                         <li><Link href="/staffaugmentation" className="block px-4 py-2 hover:bg-gray-200"> Staff Augmentaion</Link></li>
-                                        
+
+                                        {/* Other services... */}
                                     </ul>
                                 )}
                             </li>
-
-
-                            {/* odoo developement */}
-                            <li className="relative"
-                                onMouseEnter={() => setDropdown('odoo')} // Open on hover
-                                onMouseLeave={() => setDropdown(null)} // Close on mouse leave
-                                ref={dropdownRef}
-                            >
-                              <Link href="/odoo">
-                              <button
-                                    className="text-black hover:text-blue-800 focus:outline-none"
-                                >
-                                    Odoo 
-                                    {/* <ArrowDropDownIcon /> */}
-                                </button>
-                              </Link>
-                                {/* {dropdown === 'odoo' && (
-                                    <ul className="absolute top-full left-0  bg-white text-black   rounded-lg" style={{ width: '250px' }}>
-                                        <li><Link href="/about" className="block px-4 py-2 hover:bg-gray-200"> Odoo Consulting</Link></li>
-                                        <li><Link href="/about" className="block px-4 py-2 hover:bg-gray-200">Odoo Website Development</Link></li>
-                                        <li><Link href="/service3" className="block px-4 py-2 hover:bg-gray-200">Odoo App Development</Link></li>
-                                        <li><Link href="/service4" className="block px-4 py-2 hover:bg-gray-200">Odoo Theme Development</Link></li>
-                                        <li><Link href="/service5" className="block px-4 py-2 hover:bg-gray-200">Odoo Customization</Link></li>
-                                        <li><Link href="/service6" className="block px-4 py-2 hover:bg-gray-200">Odoo Migration</Link></li>
-                                        <li><Link href="/service7" className="block px-4 py-2 hover:bg-gray-200">Odoo Integration</Link></li>
-                                        <li><Link href="/service8" className="block px-4 py-2 hover:bg-gray-200">Odoo Implementation</Link></li>
-                                        <li><Link href="/service8" className="block px-4 py-2 hover:bg-gray-200"> Odoo Support</Link></li>
-
-                                    </ul>
-                                )} */}
-                            </li>
-                            {/* <li><Link href="/about" className="text-black hover:text-blue-800">Technologies</Link></li> */}
+                            <li><Link href="/odoo" className="text-black hover:text-blue-800">Odoo</Link></li>
                             <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li>
-                            {/* <li><Link href="/blog" className="text-black hover:text-blue-800">Contact</Link></li> */}
                         </ul>
                     </div>
-                    {/* <div className="text-gray-800 text-lg flex items-center space-x-4">
-                        <button>Case Study</button>
-                    </div> */}
                 </div>
             </nav>
 
@@ -170,7 +148,7 @@ const Navbar = () => {
             {showScrollTop && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-4 right-4 bg-gray-500 z-20 text-white p-3 rounded-full   hover:bg-black transition-colors duration-300"
+                    className="fixed bottom-4 right-4 bg-gray-500 z-20 text-white p-3 rounded-full hover:bg-black transition-colors duration-300"
                     aria-label="Scroll to top"
                 >
                     <ArrowUpwardIcon style={{ fontSize: 30 }} />

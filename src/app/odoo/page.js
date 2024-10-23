@@ -1,3 +1,4 @@
+'use client'
 import Navbar from '@/components/Navbar'
 import OdooAppdev from '@/components/OdooAppdev'
 import OdooConsulting from '@/components/OdooConsulting'
@@ -9,9 +10,15 @@ import OdooMigration from '@/components/OdooMigration'
 import OdooModuleDevelopment from '@/components/OdooModuleDevelopment'
 import OdooWebsiteDev from '@/components/OdooWebsiteDev'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { initializeAOS } from '../utils/Aos_setup'
+
 
 const page = () => {
+  useEffect(() => {
+    const cleanupAOS = initializeAOS();
+    return cleanupAOS; // Cleanup AOS on unmount
+  }, []);
   return (
     <>
       <Navbar />
@@ -20,62 +27,60 @@ const page = () => {
         <div
           className='flex justify-center p-4 py-12 relative'
           style={{
-            backgroundImage: 'url(/bg-pheader.jpg)', // Ensure the image path is correct
-            backgroundSize: 'cover', // Optional: Adjust background size
-            backgroundPosition: 'center', // Optional: Adjust background position
-            height: '110px',
-             
-
+            backgroundImage: 'url(/bg-pheader.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         >
-          <ul className="absolute flex bottom-3  left-0 w-full text-white p-4">
-            <li><Link href="#odoo-consulting" className="block px-4 py-2  ">Odoo Consulting</Link></li>
-            <li><Link href="#odoo-website-dev" className="block px-4 py-2  ">Odoo Website Development</Link></li>
-            <li><Link href="#odoo-appdev" className="block px-4 py-2  ">Odoo App Development</Link></li>
-            <li><Link href="#odoo-module-developement" className="block px-4 py-2  ">Odoo Theme Development</Link></li>
-            <li><Link href="#odoo-customization" className="block px-4 py-2  ">Odoo Customization</Link></li>
-            <li><Link href="#odoo-migration" className="block px-4 py-2 ">Odoo Migration</Link></li>
-            <li><Link href="#odoo-integration" className="block px-4 py-2 ">Odoo Integration</Link></li>
-            <li><Link href="#odoo-implementaion" className="block px-4 py-2 ">Odoo Implementation</Link></li>
-            {/* <li><Link href="/service9" className="block px-4 py-2 ">Odoo Support</Link></li> */}
+          <ul className="absolute flex flex-col md:flex-row bottom-3 top-5 left-0 w-full text-white p-4 overflow-x-auto whitespace-nowrap space-x-0 md:space-x-4 space-y-2 md:space-y-0">
+            <li><Link href="#odoo-consulting" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Consulting</Link></li>
+            <li><Link href="#odoo-website-dev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Website Development</Link></li>
+            <li><Link href="#odoo-appdev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo App Development</Link></li>
+            <li><Link href="#odoo-module-developement" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Theme Development</Link></li>
+            <li><Link href="#odoo-customization" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Customization</Link></li>
+            <li><Link href="#odoo-migration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Migration</Link></li>
+            <li><Link href="#odoo-integration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Integration</Link></li>
+            <li><Link href="#odoo-implementaion" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Implementation</Link></li>
           </ul>
         </div>
       </section>
 
-      <section className='scroll-m-4'>
+
+
+      <section className='scroll-m-4' data-aos="flip-up">
         <OdooDevelopment />
       </section>
-      <section>
 
-        <section className="mb-2 py-6 flex flex-col md:flex-row items-center bg-gray-50" data-aos="zoom-in-up">
-          <div className="md:w-1/2 p-4">
-            <img
-              src="https://media.licdn.com/dms/image/D5612AQFvVi1RQi2s4A/article-cover_image-shrink_720_1280/0/1683108858545?e=2147483647&v=beta&t=vuDPF_SxmJR5QSAwLD1GpECwLw3FYiDw1z_eK1CrRBc"
-              alt="Development Process"
-              className="rounded-lg "
-            />
-          </div>
-          <div className="md:w-1/2 p-4">
-            <h2 className="text-5xl font-bold text-gray-950 mb-8 text-center md:text-left">Our Development Process</h2>
-            <p className="mb-4 text-lg text-gray-950">
-              Our development process is designed to deliver high-quality, custom solutions that align perfectly with your business objectives.
-            </p>
-            <ol className="list-decimal list-inside space-y-2">
-              {[
-                "Consultation: We begin by understanding your business needs and objectives.",
-                "Planning: We create a roadmap detailing features, timelines, and milestones.",
-                "Development: Our team builds the application, ensuring adherence to best practices and industry standards.",
-                "Testing: Rigorous testing is conducted to identify and fix any issues before launch.",
-                "Deployment: We assist with the smooth deployment of your custom app.",
-                "Training & Support: We provide training for your team and ongoing support to maximize your app's effectiveness."
-              ].map((step, index) => (
-                <li key={index}><strong>{step.split(':')[0]}</strong> {step.split(':')[1]}</li>
-              ))}
-            </ol>
-          </div>
-        </section>
 
-        {/* <section className="py-12 bg-gray-50">
+      <section className="mb-2 py-6 flex flex-col md:flex-row items-center bg-gray-50" data-aos="zoom-in-up">
+        <div className="md:w-1/2 p-4">
+          <img
+            src="https://media.licdn.com/dms/image/D5612AQFvVi1RQi2s4A/article-cover_image-shrink_720_1280/0/1683108858545?e=2147483647&v=beta&t=vuDPF_SxmJR5QSAwLD1GpECwLw3FYiDw1z_eK1CrRBc"
+            alt="Development Process"
+            className="rounded-lg "
+          />
+        </div>
+        <div className="md:w-1/2 p-4">
+          <h2 className=" text-2xl lg:text-3xl font-bold text-gray-950 mb-8 text-center md:text-left">Our Development Process</h2>
+          <p className="mb-4  text-md lg:text-lg text-gray-950">
+            Our development process is designed to deliver high-quality, custom solutions that align perfectly with your business objectives.
+          </p>
+          <ol className="list-decimal list-inside space-y-2 text-sm">
+            {[
+              "Consultation: We begin by understanding your business needs and objectives.",
+              "Planning: We create a roadmap detailing features, timelines, and milestones.",
+              "Development: Our team builds the application, ensuring adherence to best practices and industry standards.",
+              "Testing: Rigorous testing is conducted to identify and fix any issues before launch.",
+              "Deployment: We assist with the smooth deployment of your custom app.",
+              "Training & Support: We provide training for your team and ongoing support to maximize your app's effectiveness."
+            ].map((step, index) => (
+              <li key={index}><strong>{step.split(':')[0]}</strong> {step.split(':')[1]}</li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-extrabold mb-10 text-center text-gray-800">Our Approach to Odoo Development</h2>
             <p className="text-lg mb-8 text-center text-gray-600">
@@ -128,30 +133,30 @@ const page = () => {
           </div>
         </section>  */}
 
-      </section>
-      <section id='odoo-consulting'>
+
+      <section id='odoo-consulting' data-aos="zoom-in-up">
         <OdooConsulting />
       </section>
-      <section id='odoo-website-dev'>
+      <section id='odoo-website-dev' data-aos="zoom-in-left">
         <OdooWebsiteDev />
       </section>
 
-      <section id='odoo-customization'>
+      <section id='odoo-customization' data-aos="zoom-in-left">
         <OdooCustomization />
       </section>
-      <section id='odoo-appdev'>
+      <section id='odoo-appdev' data-aos="zoom-in-left">
         <OdooAppdev />
       </section>
-      <section id='odoo-module-developement'>
+      <section id='odoo-module-developement' data-aos="zoom-in-left" style={{ width: '100%', overflowX: 'hidden' }}>
         <OdooModuleDevelopment />
       </section>
-      <section id='odoo-migration'>
+      <section id='odoo-migration' data-aos="zoom-in-left" style={{ width: '100%', overflowX: 'hidden' }}>
         <OdooMigration />
       </section>
-      <section id='odoo-integration'>
+      <section id='odoo-integration' data-aos="zoom-in-left" style={{ width: '100%', overflowX: 'hidden' }}>
         <OdooIntegration />
       </section>
-      <section id='odoo-implementaion'>
+      <section id='odoo-implementaion' data-aos="zoom-in-left" style={{ width: '100%', overflowX: 'hidden' }}>
         <OdooImplementation />
       </section>
 
