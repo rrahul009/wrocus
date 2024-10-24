@@ -10,7 +10,7 @@ const Comparision = () => {
     const features = [
         {
             title: "Minimize Development Challenges:",
-            description: "At our core, we focus on simplifying the development process. By gaining deep insights into each client's unique requirements, we create customized solutions that address specific challenges. Our goal is to streamline workflows and enhance efficiency, ensuring a smoother development experience.",
+            description: "At our core, we focus on simplifying the development process. By gaining deep insights into each client's unique requirements, we create customized solutions that address specific challenges.",
             img: 'https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/05/senior-developer-vs-lead-developer-1128x635.jpg'
         },
         {
@@ -20,7 +20,7 @@ const Comparision = () => {
         },
         {
             title: "Free Expert Consultation:",
-            description: "Take advantage of our complimentary expert consultation, designed to help you identify your unique challenges and opportunities. Our experienced consultants will provide personalized insights and recommendations tailored to your specific goals, ensuring you receive the guidance needed to drive your project forward.",
+            description: "Take advantage of our complimentary expert consultation, designed to help you identify your unique challenges and opportunities. Our experienced consultants will provide personalized insights and recommendations tailored to your specific goals.",
             img: 'https://media.istockphoto.com/id/1347197740/photo/business-people-having-casual-discussion-during-meeting.jpg?s=612x612&w=0&k=20&c=HSnFzyuwUDZFCehBv0W0jjRfwY1eKjGV1Lkek8lXY2Q='
         },
         {
@@ -59,7 +59,7 @@ const Comparision = () => {
                                 className="h-48 w-full object-cover mb-4 rounded"
                             />
                             <h3 className="text-2xl font-semibold mb-2">{feature.title}</h3>
-                            <p className="text-gray-600 text-sm mb-2">{feature.description}</p>
+                            <p className="text-gray-600 text-sm mb-2 leading-6">{feature.description}</p>
                             {/* <button className=" mt-2 text-blue-500  px-4 rounded transition-colors duration-300">
                                 Talk with our experts
                             </button> */}

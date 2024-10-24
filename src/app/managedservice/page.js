@@ -6,6 +6,7 @@ import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail }
 import Footer from '@/components/Footer';
 import { initializeAOS } from '../utils/Aos_setup';
 import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 
 const ManagedServicesPage = () => {
     useEffect(() => {
@@ -122,7 +123,7 @@ const ManagedServicesPage = () => {
         <p className="text-xl mb-8 max-w-3xl text-center">
             Optimize your IT operations and focus on your core business with our expert-managed services. We handle your IT infrastructure, support, and maintenance so you can achieve operational excellence without the hassle.
         </p>
-        <a href="/contact" className="bg-blue-950 text-white py-3 px-6 rounded-lg font-semibold text-lg transition duration-300">
+        <a   className="bg-blue-950 text-white py-3 px-6 rounded-lg font-semibold text-lg transition duration-300">
             Learn More
         </a>
     </div>
@@ -214,13 +215,15 @@ const ManagedServicesPage = () => {
                         Comprehensive managed services that ensure your IT infrastructure runs smoothly.
                     </p>
 
-                    <button
+                <Link href="contact">
+                <button
                         type="button"
                         className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition"
-                        onClick={() => setFormVisible(true)}
+                        // onClick={() => setFormVisible(true)}
                     >
                         GET IN TOUCH
                     </button>
+                </Link>
 
                     {isFormVisible && (
                         <>

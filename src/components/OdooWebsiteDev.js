@@ -11,7 +11,7 @@ const OdooWebsiteDev = () => {
     return (
         <>
             <section className='bg-gray-100' id='odoo-website-dev'>
-                <div className='mx-3 py-8'>
+                <div className='mx-3 py-8'data-aos="zoom-in">
                     <p className='text-center lg:text-3xl text-2xl p-4 font-bold' style={{ color: '#0056b3' }}>
                         Odoo Website Development
                     </p>

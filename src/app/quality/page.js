@@ -6,6 +6,7 @@ import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail }
 import { initializeAOS } from '../utils/Aos_setup';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 const QualityAutoPage = () => {
     useEffect(() => {
@@ -95,7 +96,7 @@ const QualityAutoPage = () => {
                     <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
                         Streamline your quality control processes with our cutting-edge automation services. Enhance efficiency, reduce errors, and achieve superior quality outcomes.
                     </p>
-                    <a href="/contact" className="bg-blue-400 text-blue-900 py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-300 transition duration-300">
+                    <a   className="bg-blue-400 text-blue-900 py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-300 transition duration-300">
                         Get Started
                     </a>
                 </div>
@@ -222,15 +223,15 @@ const QualityAutoPage = () => {
                     </p>
                 </div>
 
-                <div>
+                <Link href="contact">
                     <button
                         type="button"
                         className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
-                        onClick={() => setFormVisible(true)}
+                        // onClick={() => setFormVisible(true)}
                     >
                         GET IN TOUCH
                     </button>
-                </div>
+                </Link>
             </div>
 
             {/* Modal */}

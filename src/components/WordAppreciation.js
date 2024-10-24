@@ -69,8 +69,8 @@ const WordAppreciation = () => {
                         testimonials.map((item, index) => (
                             <div key={index} className='border p-12 mr-6 rounded bg-white'>
                                 <p className='font-semibold text-gray-950 mb-3 text-xl'>{item.name}</p>
-                                <p className='text-gray-950'>{item.shortText}</p>
-                                {expendedIndex === index && <p className='text-gray-950'>{item.fullText}</p>}
+                                <p className='text-gray-950 leading-7'>{item.shortText}</p>
+                                {expendedIndex === index && <p className='text-gray-950 leading-7'>{item.fullText}</p>}
                                 <button onClick={() => toggleExpanded(index)} className='text-blue-500'>
                                     {expendedIndex === index ? "Read Less" : "Read More"}
                                 </button>

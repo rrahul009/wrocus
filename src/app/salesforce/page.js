@@ -162,10 +162,10 @@ const Page = () => {
         ))}
     </div>
   
-    <section className="bg-white p-8 mb-16 rounded-lg shadow-md">
+    {/* <section className="bg-white p-8 mb-16 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold mb-6 text-blue-600 text-center">What Our Clients Say</h2>
         <div className="space-y-8">
-            {/* Testimonial 1 */}
+            
             <div className="flex items-center space-x-4">
                 <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client 1" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -176,7 +176,7 @@ const Page = () => {
                     <p className="text-gray-600">CTO, Example Corp</p>
                 </div>
             </div>
-            {/* Testimonial 2 */}
+        
             <div className="flex items-center space-x-4">
                 <img src="https://randomuser.me/api/portraits/women/80.jpg" alt="Client 2" className="w-16 h-16 rounded-full object-cover" />
                 <div>
@@ -188,16 +188,16 @@ const Page = () => {
                 </div>
             </div>
         </div>
-    </section>
+    </section> */}
 
-    <section id="contact" className="text-center mb-16">
+    <section id="contact" className="text-center mb-8 mt-12">
         <h2 className="text-3xl font-semibold mb-6 text-blue-600">Ready to Transform Your Business?</h2>
         <p className="text-lg text-gray-700 mb-4">
             Contact us today to learn more about how our Salesforce integration services can help your business succeed.
         </p>
-        <a href="mailto:info@example.com" className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+        <Link href="contact" className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
             Get in Touch
-        </a>
+        </Link>
     </section>
 
 

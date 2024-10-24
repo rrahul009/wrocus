@@ -6,6 +6,7 @@ import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail }
 import { initializeAOS } from '../utils/Aos_setup';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 const AnalyticsPage = () => {
   useEffect(() => {
@@ -95,7 +96,7 @@ const AnalyticsPage = () => {
           </p>
 
           <div className="flex justify-center mt-8">
-            <a href="/contact" className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
+            <a   className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
               Explore Our Services
             </a>
           </div>
@@ -162,16 +163,16 @@ const AnalyticsPage = () => {
                 <p className="text-black mb-4">
                   “The insights provided by their analytics services have been invaluable to our business. We've seen a significant improvement in user engagement and conversions. Highly recommend!”
                 </p>
-                <p className="font-semibold text-black">Alex Johnson</p>
-                <p className="text-black">CEO, Tech Innovations</p>
+                <p className="font-semibold text-black">Anil Gupta Johnson</p>
+                <p className="text-black">Sun Max Gears Ltd</p>
               </div>
               {/* Testimonial 2 */}
               <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 max-w-md">
                 <p className="text-black mb-4">
                   “Thanks to their analytics solutions, we have gained actionable insights that have streamlined our operations and boosted our overall performance. Their expertise is unmatched!”
                 </p>
-                <p className="font-semibold text-black">Maria Lopez</p>
-                <p className="text-black">COO, Dynamic Solutions</p>
+                <p className="font-semibold text-black">Shekar Mehta  </p>
+                <p className="text-black">Udaan Infotech</p>
               </div>
 
               {/* Testimonial 3 */}
@@ -224,12 +225,14 @@ const AnalyticsPage = () => {
           <p className="text-lg text-gray-700 mb-8">
             Contact us today to learn how our analytics services can benefit your business.
           </p>
-          <button
+        <Link href="contact">
+        <button
             className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold"
-            onClick={() => setFormVisible(true)}
+            // onClick={() => setFormVisible(true)}
           >
             Contact Us
           </button>
+        </Link>
         </section>
       </main>
 

@@ -139,8 +139,13 @@ const Navbar = () => {
                             </li>
                             <li><Link href="/odoo" className="text-black hover:text-blue-800">Odoo</Link></li>
                             <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li>
+                            
                         </ul>
+
                     </div>
+                    <Link href="/contact">
+                    <button className='bg-black text-white p-3 rounded-lg'>Get In Touch</button>
+                    </Link>
                 </div>
             </nav>
 

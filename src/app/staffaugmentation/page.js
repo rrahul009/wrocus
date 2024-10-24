@@ -5,6 +5,7 @@ import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail }
 import { initializeAOS } from '../utils/Aos_setup';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 const StaffAugmentationServices = () => {
   useEffect(() => {
@@ -86,23 +87,25 @@ const StaffAugmentationServices = () => {
      
 
       {/* Hero Section */}
-      <section className="bg-blue-50 text-gray-900 py-24" data-aos="zoom-in-up">
-        <div className="container mt-12 px-4 text-center">
-          <h1 className="text-4xl font-extrabold mb-6 leading-tight">
-            Enhance Your Team with Our Staff Augmentation Services
-          </h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Access top talent quickly and efficiently with our staff augmentation services. Scale your team on demand and fill skill gaps without the long-term commitment.
-          </p>
-          <button
-            type="button"
-            className="bg-blue-950 text-white py-3 px-6 rounded-lg font-semibold text-lg transition duration-300"
-            onClick={() => setFormVisible(true)}
-          >
-            Get Started
-          </button>
-        </div>
-      </section>
+      <section className="bg-blue-50 text-gray-900 py-16 md:py-24" data-aos="zoom-in-up">
+  <div className="container mx-auto mt-12 px-4 text-center">
+    <h1 className="text-3xl md:text-4xl font-extrabold mb-6">
+      Enhance Your Team with Our Staff Augmentation Services
+    </h1>
+    <p className="text-lg md:text-xl mb-8">
+      Access top talent quickly and efficiently with our staff augmentation services.
+      Scale your team on demand and fill skill gaps without the long-term commitment.
+    </p>
+    <button
+      type="button"
+      className="bg-blue-950 text-white py-3 px-6 rounded-lg font-semibold text-lg transition duration-300 hover:bg-blue-800"
+      // onClick={() => setFormVisible(true)}
+    >
+      Get Started
+    </button>
+  </div>
+</section>
+
 
       {/* Our Process */}
       <section className="py-12 bg-white" data-aos="zoom-in-up">
@@ -180,34 +183,35 @@ const StaffAugmentationServices = () => {
 
       {/* Insights & Resources */}
       <section className="py-12 bg-gray-200" data-aos="zoom-in-up">
-        <div className="container mt-4 px-4">
-          <h2 className="text-4xl font-extrabold mb-6 text-center text-gray-800">Insights & Resources</h2>
-          <p className="text-lg mb-8 text-center text-gray-800">
-            Stay informed and make better decisions with our curated insights and resources on staff augmentation. Explore industry trends, best practices, and valuable content to enhance your understanding of how staff augmentation can benefit your organization.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" data-aos="zoom-in-up">
-            {[
-              {
-                title: "Industry Trends",
-                description: "Discover the latest trends in staff augmentation and how they can impact your business. Stay ahead with insights into market dynamics and evolving workforce strategies."
-              },
-              {
-                title: "Best Practices",
-                description: "Learn best practices for implementing staff augmentation effectively. From selecting the right talent to integrating them into your team, get practical tips and guidelines."
-              },
-              {
-                title: "Case Studies & White Papers",
-                description: "Access detailed case studies and white papers that showcase real-world examples and research on staff augmentation. Understand how other organizations have benefited from similar solutions."
-              }
-            ].map((resource, index) => (
-              <div key={index} className="bg-blue-50 p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4 text-blue-950">{resource.title}</h3>
-                <p className="text-gray-800">{resource.description}</p>
-              </div>
-            ))}
-          </div>
+  <div className="container mx-auto mt-4 px-4">
+    <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-gray-800">Insights & Resources</h2>
+    <p className="text-base md:text-lg mb-8 text-center text-gray-800">
+      Stay informed and make better decisions with our curated insights and resources on staff augmentation. Explore industry trends, best practices, and valuable content to enhance your understanding of how staff augmentation can benefit your organization.
+    </p>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12" data-aos="zoom-in-up">
+      {[
+        {
+          title: "Industry Trends",
+          description: "Discover the latest trends in staff augmentation and how they can impact your business. Stay ahead with insights into market dynamics and evolving workforce strategies."
+        },
+        {
+          title: "Best Practices",
+          description: "Learn best practices for implementing staff augmentation effectively. From selecting the right talent to integrating them into your team, get practical tips and guidelines."
+        },
+        {
+          title: "Case Studies & White Papers",
+          description: "Access detailed case studies and white papers that showcase real-world examples and research on staff augmentation. Understand how other organizations have benefited from similar solutions."
+        }
+      ].map((resource, index) => (
+        <div key={index} className="bg-blue-50 p-6 md:p-8 rounded-lg shadow-lg">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4 text-blue-950">{resource.title}</h3>
+          <p className="text-gray-800">{resource.description}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Custom Contact Section */}
       <div className="py-24 bg-blue-50 text-center" data-aos="zoom-in-up">
@@ -215,13 +219,15 @@ const StaffAugmentationServices = () => {
         <p className="text-lg md:text-lg mb-8">
           Get in touch with us today to learn more about our staff augmentation services and how we can help you achieve your business objectives with the right talent.
         </p>
-        <button
+       <Link href="contact">
+       <button
           type="button"
           className="bg-blue-500 text-white py-2 px-4 rounded-md"
-          onClick={() => setFormVisible(true)}
+          // onClick={() => setFormVisible(true)}
         >
           CONTACT US
         </button>
+       </Link>
       </div>
 
       {/* Modal for Contact Form */}

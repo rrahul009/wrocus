@@ -23,54 +23,54 @@ const page = () => {
     <>
       <Navbar />
 
-      <section>
-        <div
-          className='flex justify-center p-4 py-4 relative'
-          style={{
-            backgroundImage: 'url(/bg-pheader.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '120px'
-          }}
-        >
-          <ul className="absolute flex flex-col md:flex-row bottom-3 left-0 w-full text-white p-4 sm:overflow-y-auto lg:overflow-x-auto whitespace-nowrap space-x-0 md:space-x-4 space-y-2 md:space-y-0 hide-scrollbar">
-            <li><Link href="#odoo-consulting" className="block px-4  py-2 hover:bg-opacity-75 transition">Odoo Consulting</Link></li>
-            <li><Link href="#odoo-website-dev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Website Development</Link></li>
-            <li><Link href="#odoo-appdev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo App Development</Link></li>
-            <li><Link href="#odoo-module-developement" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Theme Development</Link></li>
-            <li><Link href="#odoo-customization" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Customization</Link></li>
-            <li><Link href="#odoo-migration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Migration</Link></li>
-            <li><Link href="#odoo-integration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Integration</Link></li>
-            <li><Link href="#odoo-implementaion" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Implementation</Link></li>
-          </ul>
-        </div>
-      </section>
+        <section>
+          <div
+            className='flex justify-center p-4 py-4 relative'
+            style={{
+              backgroundImage: 'url(/bg-pheader.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              height: '100px'
+            }}
+          >
+            <ul className="absolute flex flex-col items-center md:flex-row bottom-3 left-0 w-full text-white p-4 sm:overflow-y-auto lg:overflow-x-auto whitespace-nowrap space-x-0 md:space-x-4 space-y-2 md:space-y-0 hide-scrollbar">
+              <li className='items-center' ><Link href="#odoo-consulting" className="block px-4 py-2    hover:bg-opacity-75 transition">Odoo Consulting</Link></li>
+              <li><Link href="#odoo-website-dev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Website Development</Link></li>
+              <li><Link href="#odoo-appdev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo App Development</Link></li>
+              <li><Link href="#odoo-module-developement" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Theme Development</Link></li>
+              <li><Link href="#odoo-customization" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Customization</Link></li>
+              <li><Link href="#odoo-migration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Migration</Link></li>
+              <li><Link href="#odoo-integration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Integration</Link></li>
+              <li><Link href="#odoo-implementaion" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Implementation</Link></li>
+            </ul>
+          </div>
+        </section>
 
-      <style jsx>{`
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
-  
-  .hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  @media (max-width: 768px) {
-    .flex {
-      flex-direction: row; /* Ensure horizontal layout on mobile */
-      overflow-x: auto; /* Allow horizontal scrolling */
-      white-space: nowrap; /* Prevent wrapping */
+        <style jsx>{`
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
     }
-  }
-`}</style>
+    
+    .hide-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    @media (max-width: 768px) {
+      .flex {
+        flex-direction: row; /* Ensure horizontal layout on mobile */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        white-space: nowrap; /* Prevent wrapping */
+      }
+    }
+  `}</style>
 
 
       <section data-aos="flip-up">
         <OdooDevelopment />
       </section>
 
-    {/* <section className="mb-2 py-6 flex flex-col md:flex-row items-center bg-gray-50" data-aos="zoom-in-up">
+      {/* <section className="mb-2 py-6 flex flex-col md:flex-row items-center bg-gray-50" data-aos="zoom-in-up">
   <div className="hidden md:block md:w-1/2 p-4 flex justify-center">
     <img
       src="https://media.licdn.com/dms/image/D5612AQFvVi1RQi2s4A/article-cover_image-shrink_720_1280/0/1683108858545?e=2147483647&v=beta&t=vuDPF_SxmJR5QSAwLD1GpECwLw3FYiDw1z_eK1CrRBc"
@@ -99,7 +99,7 @@ const page = () => {
   </div>
 </section> */}
 
-<style jsx>{`
+      <style jsx>{`
   @media (max-width: 768px) {
     section {
       flex-direction: column; /* Stack elements on smaller screens */

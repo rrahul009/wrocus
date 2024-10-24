@@ -57,7 +57,7 @@ const OdooDevelopment = () => {
   return (
     <div className='bg-blue-50 py-4 p-5'>
       <div className='py-2'>
-        <h2 className='text-3xl lg:text-4xl text-center py-1 p-4 font-bold text-black'>Odoo Development Services We Offer</h2>
+        <h2 className='text-2xl lg:text-4xl text-center py-1 p-4 font-bold text-black'>Odoo Development Services We Offer</h2>
         <p className='text-center mb-5 text-black'>Explore our diverse Odoo ERP solutions and development services to elevate your digital transformation.</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 cursor-pointer'>
           {odooService.map((item, id) => (

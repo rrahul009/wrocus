@@ -171,7 +171,7 @@ const page = () => {
                     </div>
                 </section>
 
-                <section className="py-20 bg-blue-50 text-center mb-2 mt-4" data-aos="zoom-in-up">
+                {/* <section className="py-20 bg-blue-50 text-center mb-2 mt-4" data-aos="zoom-in-up">
                     <h2 className="text-4xl font-semibold mb-4">Ready to Start Your Project?</h2>
                     <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
                         Contact us today to discuss your mobile app development needs!
@@ -182,7 +182,7 @@ const page = () => {
                     >
                         Contact Us
                     </button>
-                </section>
+                </section> */}
 
                 {isFormVisible && (
                     <>

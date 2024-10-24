@@ -4,7 +4,7 @@ const OdooAppDev = () => {
     return (
         <div className="bg-gray-100 min-h-screen py-4"id='odoo-appdev'>
             {/* Hero Section */}
-            <section className="relative bg-white   ">
+            <section className="relative bg-white"data-aos="zoom-in">
 
                 <div className="absolute inset-0 " />
                 <div className="relative text-center py-6">
@@ -16,7 +16,7 @@ const OdooAppDev = () => {
             </section>
 
             {/* Services Section */}
-            <section className="p-8 bg-white">
+            <section className="p-8 bg-white"data-aos="zoom-in">
 
 
 

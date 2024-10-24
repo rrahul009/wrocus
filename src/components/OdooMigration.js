@@ -10,40 +10,54 @@ const OdooMigration = () => {
 
     return (
         <>
-            <section className="bg-gray-50 p-4"  id='odoo-migration' >
-                <h1 className="text-center text-2xl lg:text-3xl font-bold text-blue-800 mb-2">Odoo Migration Services</h1>
-                <p className="text-center text-gray-950 mb-2">
+            <section className="bg-gray-50 lg:p-8"  id='odoo-migration' >
+               <div data-aos="zoom-in">
+               <h1 className="text-center text-2xl lg:text-3xl font-bold text-blue-800 mb-2 mt-3">Odoo Migration Services</h1>
+                <p className="text-center text-gray-950  text text-sm lg:text-xl">
                     Seamlessly transition to the latest version of Odoo with our expert migration services.
                 </p>
-                <p className="text-center text-gray-950 mb-8">
+                <p className="text-center p-2 text-gray-950 mb-2 lg:mb-4 text-sm lg:text-xl">
                     At Wrocus Technology, we ensure a smooth migration process tailored to your business needs.
                 </p>
 
-                <div className="flex flex-col md:flex-row justify-between gap-8">
-                    <div className="bg-gray-50 rounded-lg p-6 flex-1">
-                        <h2 className="text-xl font-semibold text-gray-800 mb-4">Why Migrate to Odoo?</h2>
-                        <ul className="list-disc list-inside text-gray-600">
-                            <li className="mb-2">Access to the latest features and improvements.</li>
-                            <li className="mb-2">Enhanced performance and security.</li>
-                            <li className="mb-2">Improved user experience with a modern interface.</li>
-                            <li className="mb-2">Better integration with third-party applications.</li>
-                            <li className="mb-2">Increased scalability to support business growth.</li>
-                            <li className="mb-2">Regular updates and maintenance to keep systems running smoothly.</li>
-                        </ul>
-                    </div>
+                <div className="flex flex-col md:flex-row justify-center gap-8">
+                <div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8">
+    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">Why Migrate to Odoo?</h2>
+    <ul className="list-disc list-inside text-gray-600 text-left space-y-2">
+        {[
+            "Access to the latest features and improvements.",
+            "Enhanced performance and security.",
+            "Improved user experience with a modern interface.",
+            "Better integration with third-party applications.",
+            "Increased scalability to support business growth.",
+            "Regular updates and maintenance to keep systems running smoothly."
+        ].map((item, index) => (
+            <li key={index}>{item}</li>
+        ))}
+    </ul>
+</div>
 
-                    <div className="bg-gray-50 rounded-lg p-6 lg:mt-8 flex-1">
-                        <h2 className="text-xl font-semibold text-gray-800 mb-4">Our Migration Process</h2>
-                        <ol className="list-decimal list-inside text-gray-600">
-                            <li className="mb-2">Assessment of current system and data.</li>
-                            <li className="mb-2">Planning and strategy development for migration.</li>
-                            <li className="mb-2">Data backup and preparation for transfer.</li>
-                            <li className="mb-2">Execution of migration to the new Odoo version.</li>
-                            <li className="mb-2">Post-migration testing and validation.</li>
-                            <li className="mb-2">Training for users on the new system.</li>
-                        </ol>
-                    </div>
+
+
+<div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8">
+    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 mt-3">Our Migration Process</h2>
+    <ul className="list-disc list-inside text-gray-600 space-y-2">
+        {[
+            "Assessment of current system and data.",
+            "Planning and strategy development for migration.",
+            "Data backup and preparation for transfer.",
+            "Execution of migration to the new Odoo version.",
+            "Post-migration testing and validation.",
+            "Training for users on the new system."
+        ].map((item, index) => (
+            <li key={index} className="">{item}</li>
+        ))}
+    </ul>
+</div>
+
+
                 </div>
+               </div>
             </section>
 
             <section className="bg-white p-8" data-aos="flip-up">

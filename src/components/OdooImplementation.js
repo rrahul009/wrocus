@@ -4,8 +4,10 @@ import Footer from './Footer';
 const OdooImplementation = () => {
   return (
     <>
+     <div >
       <section className="p-8 mt-2" id='odoo-implementaion' >
-        <h1 className="text-center  text-2xl lg:text-4xl font-bold lg:mb-4" style={{ color: '#0056b3' }}>
+       
+        <h1 className="text-center  text-2xl lg:text-4xl font-bold lg:mb-4" style={{ color: '#0056b3' }} data-aos="zoom-in">
           Odoo Implementation Services
         </h1>
         <p className="text-center text-gray-950 mb-4 font-semibold">
@@ -13,7 +15,7 @@ const OdooImplementation = () => {
         </p>
       </section>
 
-      <section className="p-8 bg-white shadow-md">
+      <section className="p-8 bg-white shadow-md"data-aos="zoom-in">
         <div className="flex flex-col md:flex-row justify-between p-6">
           <div className="mx-4 w-full md:w-1/2">
             <h2 className="text-3xl font-bold mb-4">Our Services</h2>
@@ -58,7 +60,10 @@ const OdooImplementation = () => {
             Contact Us
           </button>
         </div>
+       
       </section>
+      </div>
+   
       <Footer />
     </>
   );

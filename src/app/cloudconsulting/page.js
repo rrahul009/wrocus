@@ -7,6 +7,7 @@ import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail }
 import { initializeAOS } from '../utils/Aos_setup';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 
 const page = () => {
     useEffect(() => {
@@ -121,7 +122,7 @@ const page = () => {
                             Unlock the power of the cloud with our expert consulting services. We help businesses of all sizes leverage cloud technologies to optimize operations, reduce costs, and drive innovation.
                         </p>
                         <div className="flex justify-center mt-8">
-                            <a href="/contact" className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
+                            <a  className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
                                 Explore Our Services
                             </a>
                         </div>
@@ -277,12 +278,14 @@ const page = () => {
                     <p className="text-xl mt-6 text-gray-600 mb-6">
                         Expert cloud consulting services designed to optimize your operations, enhance scalability.
                     </p>
-                    <button
-                        onClick={() => setFormVisible(true)}
+                   <Link href="contact">
+                   <button
+                        // onClick={() => setFormVisible(true)}
                         className="bg-blue-950 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-blue-700"
                     >
                         Get In Touch
                     </button>
+                   </Link>
                 </div>
 
                 {/* Modal */}

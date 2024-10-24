@@ -2,11 +2,14 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { initializeAOS } from '../utils/Aos_setup';
+import ContactForm from '@/components/ContactForm';
+import Modal from '@/components/Modal';
 
 const Page = () => {
+    const[openForm,setOpenForm]=useState(false)
     useEffect(() => {
         const cleanupAOS = initializeAOS();
         return cleanupAOS; // Cleanup AOS on unmount
@@ -33,13 +36,15 @@ const Page = () => {
             <div className='flex justify-between items-center mx-5 mt-5' data-aos="fade-up-left">
                 <div className="p-3 mx-5 rounded-lg  lg:w-2/5 w-full">
                     <h2 className="text-2xl font-bold mb-2" style={{ color: '#0056b3' }}>Welcome to Wrocus Technology!</h2>
-                    <p className="text-md text-gray-600 mt-12">
+                    <p className="text-md text-gray-600 mt-12 ">
                         We specialize in providing top-notch recruitment services tailored to meet the unique needs of your organization.
                         Our dedicated team of experts is committed to finding the right talent to elevate your business and drive success.
                         Partner with us to discover skilled professionals who align with your company’s goals and culture.
                     </p>
                     <div className='mt-12'>
+                        <Link href="contact">
                         <button className='bg-blue-600 p-3 text-white'>Schedule A Call</button>
+                        </Link>
                     </div>
                 </div>
 
@@ -242,7 +247,7 @@ const Page = () => {
                 </div>
             </div>
 
-            <div className='py-6 bg-gray-100 mt-8 p-4'>
+            {/* <div className='py-6 bg-gray-100 mt-8 p-4'>
                 <h2 className='text-center text-4xl font-bold mb-6 text-black-600'>Success Stories</h2>
 
                 <div className='max-w-4xl mx-auto text-gray-800'>
@@ -268,7 +273,7 @@ const Page = () => {
 
 
                 </div>
-            </div>
+            </div> */}
 
 
             {/* contact to us */}
@@ -278,7 +283,15 @@ const Page = () => {
                         <p className='text-lg text-gray-800'>
                             Choose us for a recruitment experience that prioritizes your needs and delivers results. Let’s build your dream team together!
                         </p>
-                        <button className='text-white bg-blue-600 p-3 mt rounded-lg mt-8'>schedule a Meeting</button>
+                        <button className='text-white bg-blue-600 p-3 mt rounded-lg mt-8'onClick={()=>setOpenForm(true)} >
+                            
+                            schedule a Meeting</button>
+                            {openForm ?
+                          <Modal isOpen={openForm} onClose={() => setOpenForm(false)}>
+                          <ContactForm/>
+                      </Modal>
+                            
+                            :''}
                     </div>
 
 

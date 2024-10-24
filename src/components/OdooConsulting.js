@@ -10,7 +10,7 @@ const OdooConsulting = () => {
     return (
         <>
             <section className='bg-white px-5 py-2 shadow-inner'  id='odoo-consulting'>
-                <div className='mt-2'>
+                <div className='mt-2' data-aos="zoom-in">
                     <p className='text-center text-3xl lg:text-4xl font-bold mb-4' style={{ color: '#0056b3' }}>Odoo Consulting</p>
                     <div className='mt-2 flex flex-col md:flex-row justify-between items-center'>
                         <div className='w-full md:w-1/2 mx-6'>
@@ -26,7 +26,7 @@ const OdooConsulting = () => {
             </section>
 
             <section className='p-12 shadow-inner' data-aos="zoom-in">
-                <div className='flex flex-col md:flex-row justify-between gap-5'>
+                <div className='flex flex-col md:flex-row justify-between gap-5'data-aos="zoom-in">
                     <div className='w-full md:w-1/2 flex justify-center'>
                         <img src='https://www.o2btechnologies.com/static/o2b_consulting/Odoo%20Functional%20Consultant.webp' className='h-auto max-h-[300px] w-full object-contain' />
                     </div>
