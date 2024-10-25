@@ -24,7 +24,7 @@ const ContactForm = () => {
         e.preventDefault();
         try {
             // await axios.post('http://localhost:3000/api/users', userData);
-            await axios.post('https://wrocus.vercel.app/', userData);
+            await axios.post('https://wrocus.vercel.app/api/users', userData);
            
             toast.success('Your message has been sent successfully!', { autoClose: 3000 });
             setUserData({
