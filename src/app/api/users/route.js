@@ -1,8 +1,6 @@
 const nodemailer = require("nodemailer");
 const cors = require('cors');
-app.use(cors({
-    origin: 'https://wrocus.vercel.app' // Allow requests from this origin
-}));
+ 
 
 export async function POST(request) {
     try {
