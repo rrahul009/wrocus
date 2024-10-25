@@ -1,4 +1,9 @@
 import nodemailer from 'nodemailer';
+import cors from 'cors';
+import express from 'express';
+const app = express();
+app.use(cors()); // Enable CORS for all routes
+app.use(express.json()); // Parse JSON request bodies
 
 export async function POST(request) {
   try {
