@@ -6,8 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
 
-    const domainName = window.location.hostname;
-    console.log(domainName)
+ 
     const [userData, setUserData] = useState({
         firstname: '',
         lastname: '',
@@ -26,8 +25,8 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // await axios.post('http://localhost:3000/api/user', userData);
-            await axios.post('https://wrocus.vercel.app/api/user', userData);
+            await axios.post('http://localhost:3000/api/users', userData);
+            // await axios.post('https://wrocus.vercel.app/api/users', userData);
            
             toast.success('Your message has been sent successfully!', { autoClose: 3000 });
             setUserData({
