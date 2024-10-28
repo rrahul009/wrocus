@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const OurLeadership = () => {
@@ -18,17 +19,19 @@ const OurLeadership = () => {
                         src='slider/Aseemsir.jpg'
                         alt='Aseem Gupta'
                     />
-                    {/* <p className='text-center font-bold text-xl md:text-2xl mt-4'>Aseem Gupta</p>
-                    <h2 className='text-center text-lg md:text-xl'>ASSOCIATE DIRECTOR</h2> */}
+                     <p className='text-center font-bold text-xl md:text-2xl mt-4'>Aseem Gupta</p>
+                     <Link href="https://www.linkedin.com/in/aseemgupta04/" target='blank'>Connect to linkedin</Link>
+                     {/* <h2 className='text-center text-lg md:text-xl'>ASSOCIATE DIRECTOR</h2>  */}
                 </div>
-                <div className='flex flex-col items-center mt-6 w-full md:w-1/2 lg:w-1/3'>
+                <div className='flex flex-col items-center mt-6 w-full md:w-1/2 lg:w-1/3 '>
                     <img
-                        className='rounded-full  w-[200px] h-[200px] md:w-[250px] md:h-[250px] lg:w-[320px] lg:h-[320px] lg:mt-4 '
+                        className='rounded-full  w-[200px] h-[200px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:mt-4 '
                         src='Atulsir.jpg'
                         alt='Atul Singhal'
                     />
-                    {/* <p className='text-center font-bold text-xl md:text-2xl mt-4'>Atul Singhal</p>
-                    <h2 className='text-center text-lg md:text-xl'>DIRECTOR</h2> */}
+                     <p className='text-center font-bold text-xl md:text-2xl mt-6'>Atul Singhal</p>
+                     <Link href="https://www.linkedin.com/in/atulsinghal789/" target='blank' >Connect to linkedin</Link>
+                    {/* <h2 className='text-center text-lg md:text-xl'>DIRECTOR</h2> */} 
                 </div>
                
             </div>
