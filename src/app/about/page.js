@@ -9,6 +9,7 @@ import OurLeaderShip from '@/components/OurLeaderShip';
 import ClientProject from '@/components/ClientProject';
 import Link from 'next/link';
 import { initializeAOS } from '../utils/Aos_setup';
+import Footer from '@/components/Footer';
 
 const cardData = [
   {
@@ -68,22 +69,22 @@ const Page = () => {
     {
       number: '02',
       text: 'Process ideas from concept to market launch.',
-      img: 'https://img.lovepik.com/png/20231024/White-shopping-cart-round-cartoon-instagram-icon-social-cart-icons_332314_wh1200.png'
+      img: 'https://png.pngtree.com/png-vector/20230415/ourmid/pngtree-creative-process-line-icon-vector-png-image_6707063.png'
     },
     {
       number: '03',
       text: 'Adoption of the latest technology.',
-      img: 'https://img.freepik.com/premium-vector/technology-adoption-icon-vector-image-can-be-used-business-performance_120816-346904.jpg'
+      img: 'https://img.freepik.com/premium-vector/technology-adoption-icon-vector-image-can-be-used-business-performance_120816-343040.jpg'
     },
     {
       number: '04',
       text: 'Scalability and customization of each prototype.',
-      img: 'https://miro.medium.com/v2/resize:fit:1400/1*jnVaAudSAchg9hzZAI2USQ.jpeg'
+      img: 'https://img.freepik.com/premium-vector/scalability-icon-vector-image-can-be-used-mass-production_120816-50379.jpg'
     },
     {
       number: '05',
       text: 'Usability of design in the enterprise ecosystem.',
-      img: 'https://e7.pngegg.com/pngimages/310/332/png-clipart-computer-icons-home-house-desktop-service-home-blue-logo.png'
+      img: 'https://static.thenounproject.com/png/986434-200.png'
     },
   ];
   const handlePlayClick = () => {
@@ -180,32 +181,34 @@ const Page = () => {
 
       {/* wrocus known for */}
       <section className="p-6 bg-gray-50" data-aos="zoom-in">
-  <p className="text-start  lg:text-2xl font-semibold text-gray-800 mb-8">
-    WROCUS is known to make IT happen with end-to-end engineering and strict deadlines. Our deep strategic organization is built on five key pillars.
+  <p className="text-center mx-8 lg:text-lg font-semibold text-gray-800 mb-2">
+    WROCUS is known to make IT happen with end-to-end engineering and strict deadlines.
+  </p>
+  <p className="text-center mx-8 lg:text-lg font-semibold text-gray-800 mb-8">
+    Our deep strategic organization is built on five key pillars.
   </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5" data-aos="zoom-in">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5 mt-4">
     {items.map((item, index) => (
       <div
         key={index}
-        className="relative p-4 bg-aboutBackground hover:bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 flex flex-col justify-between"
+        className="relative p-6  rounded-lg shadow-lg transition-transform transform hover:scale-105 flex flex-col justify-between  "
         onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
       >
-        <div>
-          <h3 className={`text-3xl font-bold ${hoveredIndex === index ? 'text-black' : 'text-white'}`}>
+        <div className="flex-grow">
+          {/* <h3 className={`text-4xl font-bold text-center ${hoveredIndex === index ? 'text-blue-600' : 'text-white'}`}>
             {item.number}
-          </h3>
-          <p className={`text-xl font-bold ${hoveredIndex === index ? 'text-black' : 'text-white'}`}>
+          </h3> */}
+          <p className={`text-xl font-bold text-center mt-2 ${hoveredIndex === index ? 'text-black-950' : 'text-black-600'}`}>
             {item.text}
           </p>
         </div>
-        <div className='flex items-end justify-end mt-4'>
+        <div className='flex items-end justify-center mt-4'>
           <img
             src={item.img}
             alt={`Icon for ${item.number}`}
-            className='h-20'
-            style={{ backgroundColor: 'white' }}
+            className='h-24 transition-transform duration-300 transform hover:scale-110'
           />
         </div>
       </div>
@@ -216,16 +219,17 @@ const Page = () => {
 
 
 
+
       <section data-aos="zoom-in">
-        <ActualWork />
+        <section>
+          <ClientProject />
+        </section>
       </section>
       <section>
         <OurLeaderShip />
       </section>
-      <section>
-        <ClientProject />
-      </section>
 
+      <Footer />
 
     </>
   );

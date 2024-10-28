@@ -12,7 +12,7 @@ const OdooIntegration = () => {
                             At Wrocus Technology, we specialize in integrating Odoo with your existing systems to enhance functionality and improve business processes. Our team ensures a seamless connection between Odoo and third-party applications, making your operations more efficient.
                     </p>
                         <h3 className='text-2xl font-semibold mt-6 mb-2'>Our Integration Services Include:</h3>
-                        <ul className="list-disc list-inside text-gray-950 mb-4">
+                        <ul className="list-disc list-inside text-gray-950 mb-4 text-start">
                             <li className="mb-2">ERP and CRM integration for better data flow.</li>
                             <li className="mb-2">E-commerce platform integration for seamless online sales.</li>
                             <li className="mb-2">Payment gateway integration for secure transactions.</li>

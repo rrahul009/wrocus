@@ -80,7 +80,7 @@ const page = () => {
 
                 <header className="relative bg-blue-50 text-gray-800 py-8  bg-cover bg-center" style={{ backgroundImage: "url('https://example.com/your-background-image.jpg')" }}>
                     <div className="relative z-10 container mx-auto text-center mt-4 mb-1">
-                        <h1 className="text-5xl font-extrabold leading-tight relative">
+                        <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight relative">
                             Design & Build Exceptional Solutions
                             <span className="absolute inset-0 bg-gradient-to-r opacity-30 rounded-lg"></span>
                         </h1>
@@ -97,16 +97,11 @@ const page = () => {
                     </div>
                 </header>
 
-                <section className="text-center mb-16 mt-8 ">
-                    <h2 className="text-4xl font-bold mb-4">Turn Your Ideas into Stunning Apps</h2>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto font-semibold leading-relaxed">
-                        Our mobile app development services create feature-rich applications for both iOS and Android, tailored to your specific business needs.
-                    </p>
-                </section>
+            
 
                 {/* Services Section */}
-                <section id="services" className="mb-16">
-                    <h2 className="text-4xl font-bold mb-8 text-center">Our Services</h2>
+                <section id="services" className="mb-16 mt-7">
+                    <h2 className="text-2xl font-bold mb-8 text-center">Our Services</h2>
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {[
                             { title: 'Custom App Development', description: 'We build custom mobile applications from scratch, tailored to your specific needs.', imageUrl: 'https://www.tangenttek.com/storage/app/public/UploadedBlogs/3St8SGSqca9nI4is2lYDHdeX3Rwb5LVOaURLUZMs.jpg' },

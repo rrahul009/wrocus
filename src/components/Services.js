@@ -41,14 +41,14 @@ export default function ServiceCards() {
                         <div data-aos="zoom-in-left" data-aos-delay="400">
                             <img src='https://ivrnet.com/wp-content/uploads/2020/04/icon-aa-1.png' style={{ height: '80px', width: '80px' }} />
                             <p className='text-2xl font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer'>Experience</p>
-                            <p className='text-md text-gray-600 mt-2'>Our great team of more than <br />250+ software experts.</p>
+                            <p className='text-md text-gray-600 mt-4'>Our great team of more than <br />250+ software experts.</p>
                         </div>
-                        <div data-aos="zoom-in-left" data-aos-delay="400">
+                        <div data-aos="zoom-in-left mt-2 " data-aos-delay="600">
                             <img src='https://img.freepik.com/premium-vector/flat-icon-representing-settings_941526-9336.jpg'
-                            className=' hover:border-blue-600 cursor-pointer'
-                            style={{ height: '70px', width: '70px' }} />
-                            <p className='text-2xl  font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer'>Quick Support</p>
-                            <p className='text-md text-gray-600 mt-2'>The pilot team provides <br /> valuable expertise.</p>
+                                className=' hover:border-blue-600 cursor-pointer '
+                                style={{ height: '70px', width: '70px' }} />
+                            <p className='text-2xl  font-bold border-b-2 border-transparent hover:border-blue-600 cursor-pointer mt-2'>Quick Support</p>
+                            <p className='text-md text-gray-600 mt-4'>The pilot team provides <br /> valuable expertise.</p>
                         </div>
                     </div>
 

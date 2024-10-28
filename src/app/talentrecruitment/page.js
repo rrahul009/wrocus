@@ -198,7 +198,7 @@ const Page = () => {
             {/* Why Choose us */}
 
             <div className='py-6 bg-gray-100 mt-5'>
-                <h2 className='text-center text-4xl font-bold mb-6 text-blue-600'>Why Choose Us?</h2>
+                <h2 className='text-center text-4xl font-bold mb-6 text-blue-600'>Why Choose Our Talent Recruitment Services</h2>
 
                 <div className='flex flex-col items-center'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' data-aos="zoom-in-up">

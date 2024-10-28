@@ -34,14 +34,14 @@ const page = () => {
             }}
           >
             <ul className="absolute flex flex-col items-center md:flex-row bottom-3 left-0 w-full text-white p-4 sm:overflow-y-auto lg:overflow-x-auto whitespace-nowrap space-x-0 md:space-x-4 space-y-2 md:space-y-0 hide-scrollbar">
-              <li className='items-center' ><Link href="#odoo-consulting" className="block px-4 py-2    hover:bg-opacity-75 transition">Odoo Consulting</Link></li>
-              <li><Link href="#odoo-website-dev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Website Development</Link></li>
-              <li><Link href="#odoo-appdev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo App Development</Link></li>
-              <li><Link href="#odoo-module-developement" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Theme Development</Link></li>
-              <li><Link href="#odoo-customization" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Customization</Link></li>
-              <li><Link href="#odoo-migration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Migration</Link></li>
-              <li><Link href="#odoo-integration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Integration</Link></li>
+              <li className='items-center' ><Link href="#odoo-consulting" className="block px-4 py-2    hover:bg-opacity-75 transition">Odoo Consultant</Link></li>
               <li><Link href="#odoo-implementaion" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Implementation</Link></li>
+              <li><Link href="#odoo-integration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Integration</Link></li>
+              <li><Link href="#odoo-migration" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Migration</Link></li>
+              <li><Link href="#odoo-appdev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo App Development</Link></li>
+              <li><Link href="#odoo-module-development" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Module Development</Link></li>
+              <li><Link href="#odoo-customization" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Customization</Link></li>
+              <li><Link href="#odoo-website-dev" className="block px-4 py-2 hover:bg-opacity-75 transition">Odoo Website Development</Link></li>
             </ul>
           </div>
         </section>

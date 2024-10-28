@@ -87,9 +87,9 @@ const StaffAugmentationServices = () => {
      
 
       {/* Hero Section */}
-      <section className="bg-blue-50 text-gray-900 py-16 md:py-24" data-aos="zoom-in-up">
-  <div className="container mx-auto mt-12 px-4 text-center">
-    <h1 className="text-3xl md:text-4xl font-extrabold mb-6">
+      <section className="bg-blue-50 text-gray-900 py-8 md:py-12" data-aos="zoom-in-up">
+  <div className="container mx-auto mt-5 px-4 text-center">
+    <h1 className="text-2xl md:text-4xl font-extrabold mb-6">
       Enhance Your Team with Our Staff Augmentation Services
     </h1>
     <p className="text-lg md:text-xl mb-8">
@@ -110,11 +110,11 @@ const StaffAugmentationServices = () => {
       {/* Our Process */}
       <section className="py-12 bg-white" data-aos="zoom-in-up">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-extrabold mb-6 text-center text-gray-800">Our Staff Augmentation Process</h2>
+          <h2 className="text-2xl lg:text-4xl font-extrabold mb-6 text-center text-gray-800">Our Staff Augmentation Process</h2>
           <div className="flex flex-col lg:flex-row items-center lg:justify-between">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <p className="text-lg mb-4 text-gray-800">
-                At <strong>[Wrocus Technology],</strong> we follow a structured process to ensure that we meet your staffing needs efficiently and effectively. Our approach includes:
+                At <strong>Wrocus Technology,</strong> we follow a structured process to ensure that we meet your staffing needs efficiently and effectively. Our approach includes:
               </p>
               <ol className="list-decimal pl-5 space-y-4 text-gray-800">
                 <li>
@@ -144,7 +144,7 @@ const StaffAugmentationServices = () => {
       {/* Key Benefits */}
       <section className="py-12 bg-gray-50" data-aos="zoom-in-up">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-extrabold mb-6 text-center text-gray-800">Key Benefits of Staff Augmentation</h2>
+          <h2 className="text-2xl lg:text-4xl font-extrabold mb-6 text-center text-gray-800">Key Benefits of Staff Augmentation</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-aos="zoom-in-up">
             {[
               {

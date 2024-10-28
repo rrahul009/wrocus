@@ -11,11 +11,11 @@ const OdooCustomization = () => {
     return (
         <>
             <section className='bg-white py-4' id='odoo-customization'>
-                <p className='text-center text-3xl font-bold text-gray-950 lg:py-6'>Odoo Customization</p>
+                <p className='text-center text-3xl font-bold text-gray-950 lg:py-6' style={{ color: '#0056b3' }}>Odoo Customization</p>
                 
                 <div className="flex flex-col md:flex-row justify-between p-6 rounded-lg mx-4 lg:my-8" data-aos="zoom-in-left">
                     <div className='w-full md:w-1/2 mb-6 md:mb-0 py-5'>
-                        <h2 className='text-2xl font-bold text-gray-950 mb-4'>Odoo Customization Services</h2>
+                        <h2 className='text-2xl font-bold text-gray-950 mb-4'style={{ color: '#0056b3' }}>Odoo Customization Services</h2>
                         <p className='lg:mt-4 text-start text-gray-700'>
                             At Wrocus Technology, we understand that every business has unique needs. Our Odoo customization services are designed to tailor the platform specifically for you, enhancing functionality and user experience.
                         </p>
@@ -44,7 +44,7 @@ const OdooCustomization = () => {
 
                 <div className='p-4 mx-4 md:mx-8 flex flex-col md:flex-row justify-around gap-8' data-aos="zoom-in-left">
                     <div className='w-full md:w-1/2'>
-                        <h3 className='text-2xl font-semibold mt-6 text-gray-800 text-start'>Our Customization Services Include:</h3>
+                        <h3 className='text-2xl font-semibold mt-6 text-gray-800 text-start'style={{ color: '#0056b3' }}>Our Customization Services Include:</h3>
                         <ul className='list-disc list-inside font-normal text-gray-950 mt-4 text-start'>
                             <li className='mb-2'>Custom Module Development</li>
                             <li className='mb-2'>Workflow Optimization</li>

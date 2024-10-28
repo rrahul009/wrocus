@@ -1,341 +1,153 @@
-'use client';
-import React, { useEffect, useState, useRef } from 'react';
- 
- 
-import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail } from 'react-icons/hi';
-import { initializeAOS } from '../utils/Aos_setup';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import React from 'react';
+
+const services = [
+  {
+    title: 'Web Analytics',
+    description: 'Track website traffic, user behavior, and conversion rates to optimize your online presence.',
+    benefits: [
+      'User acquisition and retention',
+      'Conversion rate optimization (CRO)',
+      'A/B testing'
+    ],
+    img: 'https://media.licdn.com/dms/image/D4E12AQGsP9ccZDQ2fQ/article-cover_image-shrink_720_1280/0/1702464637647?e=2147483647&v=beta&t=HwLz7wrGOBbN9Y-lIyWgvNeF01wD2-HzImrPpniX9nI',
+  },
+  {
+    title: 'Mobile App Analytics',
+    description: 'Understand how users interact with your mobile app and identify areas for improvement.',
+    benefits: [
+      'User engagement analysis',
+      'App store optimization (ASO)',
+      'Crash reporting'
+    ],
+    img: 'https://mobisoftinfotech.com/resources/wp-content/uploads/2021/11/the-role-of-mobile-app-analytics-to-build-successful-apps.png',
+  },
+  {
+    title: 'Data Visualization',
+    description: 'Transform raw data into actionable insights with visually appealing and informative dashboards.',
+    benefits: [
+      'Custom dashboard development',
+      'Data storytelling',
+      'Interactive visualizations'
+    ],
+    img: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Data_Visualization.jpg',
+  },
+];
+
+const successStories = [
+  {
+    title: 'E-Commerce Growth',
+    description: 'Our client, an e-commerce store, saw a 30% increase in sales after implementing our web analytics and conversion rate optimization strategies.',
+    // img: 'https://www.servcorp.co.uk/media/34561/e-commerce-img.jpeg',
+  },
+  {
+    title: 'Mobile App Engagement',
+    description: 'We helped a mobile app company improve user engagement by 40% through targeted analytics and user feedback analysis.',
+    // img: 'https://via.placeholder.com/150?text=Mobile+App',
+  },
+  {
+    title: 'Data-Driven Decisions',
+    description: 'Our data visualization solutions empowered a finance firm to make data-driven decisions that resulted in a 25% increase in profitability.',
+    // img: 'https://via.placeholder.com/150?text=Data+Visualization',
+  },
+];
+
+const ServiceCard = ({ title, description, img, benefits }) => (
+  <div className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
+    <img src={img} alt={`${title} image`} className="w-full h-48 object-cover object-center" />
+    <div className="p-6">
+      <h3 className="text-2xl font-semibold mb-3">{title}</h3>
+      <p className="text-gray-600 mb-4">{description}</p>
+      <div className="mb-4">
+        <strong className="text-lg">Key Benefits:</strong>
+        <ul className="list-disc list-inside text-gray-600 mt-2">
+          {benefits.map((benefit, index) => (
+            <li key={index} className="flex items-center">
+              <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 7l-12 12-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {benefit}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
+const SuccessCard = ({ title, description, img }) => (
+  <div className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl p-4">
+    {/* <img src={img} alt={`${title} image`} className="w-full h-32 object-cover object-center mb-4" /> */}
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p className="text-gray-600">{description}</p>
+  </div>
+);
 
 const AnalyticsPage = () => {
-  useEffect(() => {
-    const cleanupAOS = initializeAOS();
-    return cleanupAOS;
-  }, []);
-
-  const [isFormVisible, setFormVisible] = useState(false);
-  const [isLoading, setLoading] = useState(false);
-  const formRef = useRef();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const formData = {
-      company_name: e.target.company_name.value,
-      your_name: e.target.your_name.value,
-      phone: e.target.phone.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-    };
-
-    try {
-      const response = await fetch('/api/email-send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        const errorResponse = await response.json();
-        throw new Error(errorResponse.error || 'An error occurred.');
-      }
-
-      alert('Message sent successfully!');
-      e.target.reset();
-      setFormVisible(false);
-    } catch (error) {
-      console.error('Fetch error:', error);
-      alert(`Error: ${error.message}`);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleClickOutside = (event) => {
-    if (formRef.current && !formRef.current.contains(event.target)) {
-      setFormVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    if (isFormVisible) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isFormVisible]);
-
-  // Styles for the container
-  const containerStyle = {
-    backgroundColor: 'rgb(243 244 246)',
-    height: '350px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    textAlign: 'center',
-  };
-
   return (
-    <div>
-      
-      <Navbar/>
-      
-
-      <main>
-        {/* Hero Section */}
-        <section className="text-center py-6 bg-blue-50 mb-4" data-aos="zoom-in-up">
-          <h1 className="text-3xl mt-6 font-bold mb-4 text-black">Transform Your Business with Expert Analytics Services</h1>
-          <p className="text-lg text-black">
+    <>
+      <Navbar />
+      <header className="relative bg-blue-50 text-gray-800 py-8 bg-cover bg-center" style={{ backgroundImage: "url('https://example.com/your-background-image.jpg')" }}>
+        <div className="relative z-10 container mx-auto text-center mt-4 mb-1">
+          <h1 className="text-2xl lg:text-4xl font-extrabold leading-tight relative">
+            Transform Your Business with Expert Analytics Services
+            <span className="absolute inset-0 bg-gradient-to-r opacity-30 rounded-lg"></span>
+          </h1>
+          <p className="text-lg md:text-xl mt-4 max-w-3xl mx-auto font-semibold leading-relaxed">
             We provide in-depth insights that empower you to make informed, data-driven decisions and enhance operational efficiency.
           </p>
-
-          <div className="flex justify-center mt-8">
-            <a   className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
-              Explore Our Services
+          <div className="mt-8">
+            <a href="/contact" className="block">
+              <button className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                Get in Touch
+              </button>
             </a>
           </div>
-        </section>
-
-        {/* Service Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" data-aos="zoom-in-up">
-          {/* Web Analytics Card */}
-          <div className="bg-blue-950 border border-gray-200 rounded-lg shadow-md p-6 text-center">
-            <h3 className="text-xl font-bold mb-2 text-white">Web Analytics</h3>
-            <p className="text-white mb-4">
-              Track website traffic, user behavior, and conversion rates to optimize your online presence.
-            </p>
-            <ul className="list-disc list-inside text-white text-left mb-4">
-              <li>User acquisition and retention</li>
-              <li>Conversion rate optimization (CRO)</li>
-              <li>A/B testing</li>
-            </ul>
-            <p className="text-white mb-4">
-              With our web analytics services, you’ll gain actionable insights into how users interact with your site, allowing you to make data-driven decisions to improve user engagement and increase conversions.
-            </p>
-          </div>
-
-          {/* Mobile App Analytics Card */}
-          <div className="bg-blue-950 border border-gray-200 rounded-lg shadow-md p-6 text-center">
-            <h3 className="text-xl font-bold mb-2 text-white">Mobile App Analytics</h3>
-            <p className="text-white mb-4">
-              Understand how users interact with your mobile app and identify areas for improvement.
-            </p>
-            <ul className="list-disc text-white list-inside text-left mb-4">
-              <li>User engagement analysis</li>
-              <li>App store optimization (ASO)</li>
-              <li>Crash reporting</li>
-            </ul>
-            <p className="text-white mb-4">
-              Our mobile app analytics will help you monitor user interactions and performance metrics, enabling you to enhance app functionality, optimize user experience, and drive user retention.
-            </p>
-          </div>
-
-          {/* Data Visualization Card */}
-          <div className="bg-blue-950 border border-gray-200 rounded-lg shadow-md p-6 text-center">
-            <h3 className="text-xl font-bold mb-2 text-white">Data Visualization</h3>
-            <p className="text-white mb-4">
-              Transform raw data into actionable insights with visually appealing and informative dashboards.
-            </p>
-            <ul className="list-disc text-white list-inside text-left mb-4">
-              <li>Custom dashboard development</li>
-              <li>Data storytelling</li>
-              <li>Interactive visualizations</li>
-            </ul>
-            <p className="text-white mb-4">
-              Our data visualization solutions turn complex data into clear, visually engaging formats, making it easier for you to understand trends and make informed decisions quickly.
-            </p>
-          </div>
         </div>
+      </header>
+      
+      <section className="container mx-auto p-6">
+        <h2 className="text-3xl font-semibold mb-6 text-blue-600 text-center">Our Analytics Services</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              img={service.img}
+              benefits={service.benefits}
+            />
+          ))}
+        </div>
+      </section>
 
-        {/* Testimonial Section */}
-        <section className="bg-gray-100 py-12 px-4" data-aos="zoom-in-up">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8 text-gray-950">What Our Clients Say</h2>
-            <div className="flex flex-wrap justify-center gap-8">
-              {/* Testimonial 1 */}
-              <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 max-w-md">
-                <p className="text-black mb-4">
-                  “The insights provided by their analytics services have been invaluable to our business. We've seen a significant improvement in user engagement and conversions. Highly recommend!”
-                </p>
-                <p className="font-semibold text-black">Anil Gupta Johnson</p>
-                <p className="text-black">Sun Max Gears Ltd</p>
-              </div>
-              {/* Testimonial 2 */}
-              <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 max-w-md">
-                <p className="text-black mb-4">
-                  “Thanks to their analytics solutions, we have gained actionable insights that have streamlined our operations and boosted our overall performance. Their expertise is unmatched!”
-                </p>
-                <p className="font-semibold text-black">Shekar Mehta  </p>
-                <p className="text-black">Udaan Infotech</p>
-              </div>
-
-              {/* Testimonial 3 */}
-              <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 max-w-md">
-                <p className="text-black mb-4">
-                  “Their data visualization tools made it so much easier to understand our performance metrics. We now have a clearer picture of our business and can make more informed decisions.”
-                </p>
-                <p className="font-semibold text-black">Jessica Smith</p>
-                <p className="text-black">Marketing Director, Creative Solutions</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Case Study Section */}
-        <section className="py-12 bg-blue-50 px-4">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8 text-gray-800">Case Studies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Case Study 1 */}
-              <div className="bg-blue-950 border border-gray-200 rounded-lg shadow-md p-12" data-aos="zoom-in-up">
-                <h3 className="text-xl font-semibold mb-4 text-white">E-Commerce Growth</h3>
-                <p className="text-white mb-4">
-                  Our client, an e-commerce store, saw a 30% increase in sales after implementing our web analytics and conversion rate optimization strategies.
-                </p>
-              </div>
-
-              {/* Case Study 2 */}
-              <div className="bg-blue-950 border border-gray-200 rounded-lg shadow-md p-12" data-aos="zoom-in-up">
-                <h3 className="text-xl font-semibold mb-4 text-white">Mobile App Engagement</h3>
-                <p className="text-white mb-4">
-                  We helped a mobile app company improve user engagement by 40% through targeted analytics and user feedback analysis.
-                </p>
-              </div>
-
-              {/* Case Study 3 */}
-              <div className="bg-blue-950 border border-gray-200 rounded-lg shadow-md p-12" data-aos="zoom-in-up">
-                <h3 className="text-xl font-semibold mb-4 text-white">Data-Driven Decisions</h3>
-                <p className="text-white mb-4">
-                  Our data visualization solutions empowered a finance firm to make data-driven decisions that resulted in a 25% increase in profitability.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action Section */}
-        <section className="py-12 text-center" data-aos="zoom-in-up">
-          <h2 className="text-3xl font-bold mb-4 text-black">Ready to Get Started?</h2>
-          <p className="text-lg text-gray-700 mb-8">
-            Contact us today to learn how our analytics services can benefit your business.
-          </p>
-        <Link href="contact">
-        <button
-            className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold"
-            // onClick={() => setFormVisible(true)}
-          >
-            Contact Us
-          </button>
-        </Link>
-        </section>
-      </main>
-
-      {/* Modal for Contact Form */}
-      {isFormVisible && (
-        <>
-          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-10" />
-          <div className="fixed inset-0 flex items-center justify-center z-20">
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className="bg-white p-4 rounded-lg w-full max-w-sm mx-4" style={{paddingLeft:"40px",paddingRight:"40px"}}
-              data-aos="zoom-in-up"
-            >
-              <button
-                type="button"
-                className="absolute top- right-2 text-gray-600 hover:text-gray-800 text-lg"
-                onClick={() => setFormVisible(false)}
-                aria-label="Close form"
-              >
-                &times;
-              </button>
-              <h2 className="text-lg font-semibold mb-2 text-center text-blue-700">Contact Us</h2>
-
-              {/* {error && <p className="text-red-500 text-center mb-4">{error}</p>} */}
-
-              <div className="mb-4">
-                <label className="flex items-center mb-1">
-                  <HiOutlineOfficeBuilding className="mr-2 text-gray-500" />
-                  <span className="text-sm font-medium text-gray-800">Company Name</span>
-                </label>
-                <input
-                  type="text"
-                  name="company_name"
-                  required
-                  className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="flex items-center mb-1">
-                  <HiOutlineUser className="mr-2 text-gray-500" />
-                  <span className="text-sm font-medium text-gray-800">Your Name</span>
-                </label>
-                <input
-                  type="text"
-                  name="your_name"
-                  required
-                  className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="flex items-center mb-1">
-                  <HiOutlinePhone className="mr-2 text-gray-500" />
-                  <span className="text-sm font-medium text-gray-800">Phone</span>
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  required
-                  className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="flex items-center mb-1">
-                  <HiOutlineMail className="mr-2 text-gray-500" />
-                  <span className="text-sm font-medium text-gray-800">Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="block mb-1 text-sm font-medium text-gray-800">Query</label>
-                <textarea
-                  name="message"
-                  required
-                  className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                  rows="3"
-                  style={{ resize: 'none' }} // Prevent resizing
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all duration-200"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Sending...' : 'Send Message'}
-              </button>
-            </form>
-          </div>
-        </>
-      )}
-
+      <section className="container mx-auto p-6">
+        <h2 className="text-3xl font-semibold mb-6 text-blue-600 text-center">Success Stories</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {successStories.map((story, index) => (
+            <SuccessCard
+              key={index}
+              title={story.title}
+              description={story.description}
+              img={story.img}
+            />
+          ))}
+        </div>
+      </section>
+      
+      <section id="contact" className="text-center mb-8 mt-12">
+                        <h2 className="text-3xl font-semibold mb-6 text-blue-600">Ready to Transform Your Business?</h2>
+                        <p className="text-lg text-gray-700 mb-4">
+                            Contact us today to learn more about how our Salesforce integration services can help your business succeed.
+                        </p>
+                        <Link href="contact" className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                            Get in Touch
+                        </Link>
+                    </section>
       <Footer/>
-    </div>
+    </>
   );
 };
 

@@ -117,10 +117,10 @@ const ManagedServicesPage = () => {
                 {/* Hero Section */}
                 <section className="bg-blue-50 py-6 text-black" data-aos="zoom-in-up">
     <div className="container mx-auto flex flex-col items-center px-4 py-12">
-        <h2 className="text-4xl font-extrabold mb-6 mt-6 text-center">
+        <h2 className="text-2xl lg:text-4xl font-extrabold mb-6 mt-2 text-center">
             Comprehensive Managed Services for Seamless Operations
         </h2>
-        <p className="text-xl mb-8 max-w-3xl text-center">
+        <p className="text-md lg:text-xl mb-8 max-w-3xl text-center">
             Optimize your IT operations and focus on your core business with our expert-managed services. We handle your IT infrastructure, support, and maintenance so you can achieve operational excellence without the hassle.
         </p>
         <a   className="bg-blue-950 text-white py-3 px-6 rounded-lg font-semibold text-lg transition duration-300">
@@ -161,7 +161,7 @@ const ManagedServicesPage = () => {
                 {/* Benefits of Managed Services */}
                 <section className="py-12 bg-white">
                     <div className="container mx-auto px-4" data-aos="zoom-in-up">
-                        <h2 className="text-4xl font-extrabold mb-10 text-center text-gray-800">Benefits of Managed Services</h2>
+                        <h2 className="text-2xl lg:text-4xl font-extrabold mb-10 text-center text-gray-800">Benefits of Managed Services</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                             <div className="bg-blue-950 p-8 rounded-lg shadow-lg" data-aos="zoom-in-up">
                                 <h3 className="text-2xl font-semibold mb-4 text-white">Cost Efficiency</h3>

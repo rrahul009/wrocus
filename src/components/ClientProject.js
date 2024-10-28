@@ -17,16 +17,20 @@ const ClientProject = () => {
             >
                 <div className="flex flex-col md:flex-row items-center justify-around w-full max-w-4xl gap-5">
                     <div className="flex flex-col items-center">
-                        <h2 className="text-4xl font-bold">105+</h2>
+                        <h2 className="text-4xl font-bold">100+</h2>
                         <p className="text-lg font-bold">ACTIVE CLIENT</p>
                     </div>
                     <div className="flex flex-col items-center">
-                        <h2 className="text-4xl font-bold">200+</h2>
+                        <h2 className="text-4xl font-bold">150+</h2>
                         <p className="text-lg font-bold">PROJECT COMPLETE</p>
                     </div>
                     <div className="flex flex-col items-center">
                         <h2 className="text-4xl font-bold">150+</h2>
                         <p className="text-lg font-bold">SUCCESS PLACEMENT</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <h2 className="text-4xl font-bold">250+</h2>
+                        <p className="text-lg font-bold">  Happy Customers</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +89,7 @@ const ClientProject = () => {
                     <img src='slider/image2-about.png' className='w-full h-auto' alt="Tech Trends" />
                 </div>
             </div>
-            <Footer />
+          
         </>
     );
 };

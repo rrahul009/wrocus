@@ -13,7 +13,7 @@ const OdooMigration = () => {
             <section className="bg-gray-50 lg:p-8"  id='odoo-migration' >
                <div data-aos="zoom-in">
                <h1 className="text-center text-2xl lg:text-3xl font-bold text-blue-800 mb-2 mt-3">Odoo Migration Services</h1>
-                <p className="text-center text-gray-950  text text-sm lg:text-xl">
+                <p className="text-center text-gray-950  text text-sm lg:text-md">
                     Seamlessly transition to the latest version of Odoo with our expert migration services.
                 </p>
                 <p className="text-center p-2 text-gray-950 mb-2 lg:mb-4 text-sm lg:text-xl">
@@ -22,7 +22,7 @@ const OdooMigration = () => {
 
                 <div className="flex flex-col md:flex-row justify-center gap-8">
                 <div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8">
-    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">Why Migrate to Odoo?</h2>
+    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 mt-4">Why Migrate to Odoo?</h2>
     <ul className="list-disc list-inside text-gray-600 text-left space-y-2">
         {[
             "Access to the latest features and improvements.",
@@ -41,7 +41,7 @@ const OdooMigration = () => {
 
 <div className="bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8">
     <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 mt-3">Our Migration Process</h2>
-    <ul className="list-disc list-inside text-gray-600 space-y-2">
+    <ul className="list-disc list-inside text-gray-600 space-y-2 text-start">
         {[
             "Assessment of current system and data.",
             "Planning and strategy development for migration.",
@@ -65,7 +65,7 @@ const OdooMigration = () => {
                 <p className="text-center text-gray-600 mb-4">
                     Our experienced team at Wrocus Technology is dedicated to providing:
                 </p>
-                <div className='flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col md:flex-row justify-between lg:p-8'>
                     <div className='w-full md:w-1/2 mt-2'>
                         <ul className="list-disc list-inside text-gray-600 text-start">
                             <li className="mb-2">Tailored migration solutions to fit your unique business requirements.</li>

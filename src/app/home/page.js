@@ -18,7 +18,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Carausel/>
-      {/* <OurClient /> */}
+      <OurClient />
       <Services />
       <OurServices />
       <Comparision />

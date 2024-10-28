@@ -2,73 +2,63 @@ import React from 'react';
 
 const OdooAppDev = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-4"id='odoo-appdev'>
+        <div className="bg-gray-100 min-h-screen py-4" id='odoo-appdev'>
             {/* Hero Section */}
-            <section className="relative bg-white"data-aos="zoom-in">
-
-                <div className="absolute inset-0 " />
+            <section className="relative bg-white" data-aos="zoom-in">
+                <div className="absolute inset-0" />
                 <div className="relative text-center py-6">
-                    <h1 className="text-4xl font-bold text-gray-950">Odoo App Development</h1>
-                    <p className="text-lg text-gray-950 mt-4 max-w-2xl mx-auto">
+                    <h1 className="text-4xl font-bold text-gray-950 transition-opacity duration-500 ease-in" style={{ color: '#0056b3' }}>
+                        Odoo App Development
+                    </h1>
+                    <p className="text-lg text-gray-950 mt-4 max-w-3xl mx-auto transition-opacity duration-500 ease-in">
                         Custom applications designed to fit your business needs and optimize your workflows.
                     </p>
                 </div>
             </section>
 
             {/* Services Section */}
-            <section className="p-8 bg-white"data-aos="zoom-in">
-
-
-
+            <section className="p-8 bg-white" data-aos="zoom-in">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
+                    <div className="bg-white shadow-md rounded-lg p-6 text-center transition-transform transform hover:scale-105">
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">Custom App Development</h3>
-                        <img src='https://techspawn.com/wp-content/uploads/2021/09/Odoo-Dedicated-Developer.png'
+                        <img
+                            src='https://techspawn.com/wp-content/uploads/2021/09/Odoo-Dedicated-Developer.png'
+                            className="transition-opacity duration-500 ease-in"
                         />
-                        <p className="text-gray-600">Build tailored applications that align with your business processes.</p>
+                        <p className="text-gray-600 text-start">
+                            Develop customized applications that perfectly align with your unique business processes, driving operational efficiency and empowering your teams to achieve their goals with intuitive and robust solutions.
+                        </p>
                     </div>
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
+
+                    <div className="bg-white shadow-md rounded-lg p-6 text-center transition-transform transform hover:scale-105">
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">Integration Services</h3>
                         <img
                             src='https://indexworld.net/wp-content/uploads/2024/07/OSINT-2000x1200-1.jpg'
-                            className='mt-12 lg:ml-16'
+                            className='mt-12 lg:ml-16 transition-opacity duration-500 ease-in'
                             style={{ height: '250px' }}
                         />
-
-                        <p className="text-gray-600 mt-16">Seamlessly connect your Odoo apps with existing systems.</p>
+                        <p className="text-gray-600 mt-16 text-start">
+                            Effortlessly integrate your Odoo applications with your existing systems, ensuring a smooth flow of information and empowering your teams to make data-driven decisions that enhance productivity and streamline operations.
+                        </p>
                     </div>
-                    <div className="bg-white shadow-md rounded-lg p-6 flex justify-center flex-col">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">UI/UX Design</h3>
-                        <img src='https://buildfire.com/wp-content/themes/buildfire/assets/images/hub-hero.webp'
 
-                        // style={{height:'280px'}}
-                        />
-
-                        <p className="text-gray-600 text-center mt-14">Enhance user experience with intuitive designs tailored for your applications.</p>
+                    <div className="bg-white shadow-md rounded-lg flex flex-col transition-transform transform hover:scale-105">
+                        <h3 className="text-xl font-semibold text-gray-800 text-center mb-4 mt-5 p-2 ">UI/UX Design</h3>
+                        <div className="flex-grow mb-4 flex justify-center">
+                            <img
+                                src='https://buildfire.com/wp-content/themes/buildfire/assets/images/hub-hero.webp'
+                                className="transition-opacity duration-500 ease-in object-cover mt-8"
+                                style={{ height: '220px', width: 'auto' }} // Adjusted for consistent sizing
+                                alt="UI/UX Design"
+                            />
+                        </div>
+                        <p className="text-gray-600 text-center flex-grow mt-4">
+                            Elevate user experience through thoughtfully crafted, intuitive designs tailored for your applications, making every interaction not only efficient but also enjoyable for your users.
+                        </p>
                     </div>
+
                 </div>
             </section>
-
-            {/* <section className='p-6'>
-             <div className='flex'>
-
-             <div>
-                    <img
-                    src='https://www.flexsin.com/blog/wp-content/uploads/2021/12/odoo.jpg'
-             
-                    />
-                </div>
-                <div>
-                    <img 
-                    src='https://i0.wp.com/www.noitechnologies.com/wp-content/uploads/Odoo-ERP-Development.png?fit=1024%2C576&ssl=1'
-                    style={{height:'400px'}}
-                    />
-                </div>
-             </div>
-            </section> */}
-
-
-
         </div>
     );
 };

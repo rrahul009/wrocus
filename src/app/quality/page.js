@@ -90,7 +90,7 @@ const QualityAutoPage = () => {
             {/* Hero Section */}
             <section className="relative bg-blue-50 text-black py-8">
                 <div className="relative container mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-4xl mt-6 font-extrabold mb-6 leading-tight">
+                    <h1 className="text-2xl md:text-4xl mt-6 font-extrabold mb-6 leading-tight">
                         Revolutionize Your Quality Control with Our Automation Solutions
                     </h1>
                     <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
@@ -145,39 +145,40 @@ const QualityAutoPage = () => {
 
             {/* Industry Insights */}
             <section className="py-12 bg-gray-100">
-                <div className=" text-center" data-aos="zoom-in-up">
-                    <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-gray-950">Industry Insights</h2>
-                    <div className="flex justify-around gap-4">
-                        {/* Insights */}
-                        {[
-                            {
-                                title: 'The Benefits of Quality Automation',
-                                description: 'Quality automation enhances efficiency, reduces human error, and ensures consistent product quality by automating repetitive tasks.',
-                            },
-                            {
-                                title: 'Key Strategies for Quality Automation',
-                                description: 'Discover essential strategies to implement quality automation effectively, including best practices for tool selection and workflow integration.',
-                            },
-                            {
-                                title: 'Latest Trends in Automation',
-                                description: 'Stay informed about the latest trends in automation technologies and how they are transforming quality control across industries.',
-                            },
-                            {
-                                title: 'Impact of Automation on Quality',
-                                description: 'Discover how automation impacts quality assurance and the overall effectiveness of quality control processes.',
-                            },
-                        ].map((insight, index) => (
-                            <div
-                                key={index}
-                                className="bg-blue-950 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-xs"
-                            >
-                                <h3 className="text-2xl font-semibold mb-4 text-white">{insight.title}</h3>
-                                <p className="text-gray-200">{insight.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+  <div className="text-center" data-aos="zoom-in-up">
+    <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-gray-950">Industry Insights</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">
+      {/* Insights */}
+      {[
+        {
+          title: 'The Benefits of Quality Automation',
+          description: 'Quality automation enhances efficiency, reduces human error, and ensures consistent product quality by automating repetitive tasks.',
+        },
+        {
+          title: 'Key Strategies for Quality Automation',
+          description: 'Discover essential strategies to implement quality automation effectively, including best practices for tool selection and workflow integration.',
+        },
+        {
+          title: 'Latest Trends in Automation',
+          description: 'Stay informed about the latest trends in automation technologies and how they are transforming quality control across industries.',
+        },
+        {
+          title: 'Impact of Automation on Quality',
+          description: 'Discover how automation impacts quality assurance and the overall effectiveness of quality control processes.',
+        },
+      ].map((insight, index) => (
+        <div
+          key={index}
+          className="bg-blue-950 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <h3 className="text-2xl font-semibold mb-4 text-white">{insight.title}</h3>
+          <p className="text-gray-200">{insight.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
             {/* Resources Section */}
             <section className="py-12 bg-blue-50">

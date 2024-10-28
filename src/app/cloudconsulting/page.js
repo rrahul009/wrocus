@@ -216,8 +216,8 @@ const page = () => {
                 </main>
 
                 <section className="text-center mb-3 py-4 bg-gray-100">
-                    <h2 className="text-4xl font-bold mb-4 text-black">Our Cloud Consulting Offerings</h2>
-                    <p className="text-2xl font-semibold text-black max-w-3xl mx-auto mb-6">
+                    <h2 className="text-2xl lg:text-4xl font-bold mb-4 text-black">Our Cloud Consulting Offerings</h2>
+                    <p className="text-md font-semibold text-black max-w-3xl mx-auto mb-6">
                         Explore our comprehensive range of services designed to elevate your cloud journey:
                     </p>
 
@@ -274,7 +274,7 @@ const page = () => {
 
 
                 <div style={containerStyle} data-aos="zoom-in-up">
-                    <h2 className="text-4xl font-bold text-gray-800">Elevating Your Business with Cloud Solutions</h2>
+                    <h2 className="text-2xl lg:text-4xl font-bold text-gray-800">Elevating Your Business with Cloud Solutions</h2>
                     <p className="text-xl mt-6 text-gray-600 mb-6">
                         Expert cloud consulting services designed to optimize your operations, enhance scalability.
                     </p>

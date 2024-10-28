@@ -9,17 +9,17 @@ const Comparision = () => {
     }, []);
     const features = [
         {
-            title: "Minimize Development Challenges:",
+            title: "Minimize Development Challenges",
             description: "At our core, we focus on simplifying the development process. By gaining deep insights into each client's unique requirements, we create customized solutions that address specific challenges.",
             img: 'https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/05/senior-developer-vs-lead-developer-1128x635.jpg'
         },
         {
-            title: "Hire Top Talent: ",
+            title: "Hire Top Talent ",
             description: "We understand that the success of your projects hinges on the people behind them. That's why we prioritize connecting you with the industry's best talent. Our rigorous selection process ensures that you hire skilled professionals who not only meet your technical requirements but also fit seamlessly into your team culture.",
             img: 'https://cdn.prod.website-files.com/627cdcca8bc0d22df9b2672f/6583ed03555ae237432a0ed0_Recruit-the-Recruiter-Guide-to-Building-a-Kickass-Recruitment-Team.webp'
         },
         {
-            title: "Free Expert Consultation:",
+            title: "Free Expert Consultation",
             description: "Take advantage of our complimentary expert consultation, designed to help you identify your unique challenges and opportunities. Our experienced consultants will provide personalized insights and recommendations tailored to your specific goals.",
             img: 'https://media.istockphoto.com/id/1347197740/photo/business-people-having-casual-discussion-during-meeting.jpg?s=612x612&w=0&k=20&c=HSnFzyuwUDZFCehBv0W0jjRfwY1eKjGV1Lkek8lXY2Q='
         },
@@ -51,7 +51,7 @@ const Comparision = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"data-aos="zoom-in">
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md cursor-pointer p-6 hover:shadow-lg transition-shadow duration-300"data-aos="zoom-in">
+                        <div key={index} className="bg-white rounded-lg shadow-md  p-6 hover:shadow-lg transition-shadow duration-300"data-aos="zoom-in">
 
                             <img
                                 src={feature.img}

@@ -124,7 +124,7 @@ const Navbar = () => {
                                     Services <ArrowDropDownIcon />
                                 </button>
                                 {dropdown === 'services' && (
-                                    <ul className="absolute top-full left-0 bg-white text-black rounded-lg" style={{ width: '250px' }}>
+                                    <ul className="absolute top-full left-0 bg-white text-black font-medium rounded-lg p-6" style={{ width: '280px' }}>
                                         <li><Link href="/design" className="block px-4 py-2 hover:bg-gray-200">Design & Build</Link></li>
                                         <li><Link href="/cloudconsulting" className="block px-4 py-2 hover:bg-gray-200">Cloud consultancy</Link></li>
                                         <li><Link href="/managedservice" className="block px-4 py-2 hover:bg-gray-200">Advisory & Managed Services</Link></li>
