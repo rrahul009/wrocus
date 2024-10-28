@@ -114,7 +114,7 @@ const Carausel = () => {
             <div className='bg-gray-100 ' style={containerStyle}>
                 <div style={textContainerStyle}>
                     <h1 className="carousel-text " style={headingStyle}  data-aos="zoom-in" data-aos-delay="200">
-                        Stunning App Development
+                        Web & App Development
                     </h1>
                     <h1 className="carousel-text " style={middleTextStyle} data-aos="zoom-in" data-aos-delay="400">
                         Turn Your Ideas into Stunning Apps
@@ -201,7 +201,7 @@ const Carausel = () => {
 
             {/* second Section */}
 
-            <div className='bg-gray-100 ' style={containerStyle}>
+            {/* <div className='bg-gray-100 ' style={containerStyle}>
                 <div style={textContainerStyle}>
                     <h1 className="carousel-text " style={headingStyle}>
                         Our Capabilities
@@ -214,7 +214,7 @@ const Carausel = () => {
                     </p>
                     {/* Additional Content (Desktop Only) */}
                     {/* {!isMobile && ( */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
+                    {/* <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
                         <div className='mt-4' style={{ flex: 1, paddingRight: '10px' }}>
                             <h2 className='text-blue-600 md:text-3xl text-xl font-bold mb-3' data-aos="zoom-in">Our Commitment</h2>
                             <p style={paragraphStyle} data-aos="zoom-in">
@@ -227,17 +227,17 @@ const Carausel = () => {
                                 We promise personalized support and expert guidance throughout your journey.
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                     {/* )} */}
-                    <br />
-                    <Link href="/sfdc">
+                    {/* <br /> */}
+                    {/* <Link href="/sfdc">
                         <button className="bg-blue-600 text-white p-4 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 flex items-center justify-center" style={{ width: "200px" }}>
                             Discover More
                         </button>
-                    </Link>
-                </div>
-                {!isMobile && <img src="wrcous image.png" className='md:mb-24' alt='Service Image' style={imageStyle} />}
-            </div>
+                    </Link> */}
+                {/* </div> */}
+                {/* {!isMobile && <img src="wrcous image.png" className='md:mb-24' alt='Service Image' style={imageStyle} />} */}
+            {/* </div> */} 
 
             {/* third section */}
             <div className='bg-gray-100 ' style={containerStyle}>

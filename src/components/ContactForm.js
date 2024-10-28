@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ContactForm = () => {
+const ContactForm = ({onClose}) => {
     const[loading,setLoading]=useState(false)
 
  
@@ -25,6 +25,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true)
         try {
             await axios.post('http://localhost:3000/api/users', userData);
             // await axios.post('https://wrocus.vercel.app/api/users', userData);
@@ -39,6 +40,10 @@ const ContactForm = () => {
                 phonenumber: '',
                 message: ''
             });
+             setTimeout(()=>{
+                onClose();
+                setLoading(false)
+             },3000)
         } catch (error) {
             console.error("Error submitting form:", error);
             toast.error('There was an error sending your message. Please try again.', { autoClose: 3000 });
@@ -49,9 +54,15 @@ const ContactForm = () => {
 
     return (
         <div className='justify-center'>
-            <ToastContainer
-                
-                
+             <ToastContainer 
+                style={{
+                    position: 'fixed',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    zIndex: 9999,
+                    pointerEvents: 'none',
+                }} 
             />
             <div className='bg-gray-100 p-10'>
                 <div className='bg-white p-10'>
@@ -129,7 +140,20 @@ const ContactForm = () => {
                                 value={userData.message}
                             />
                         </div>
-                        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                       <div className='flex justify-between'>
+                       <button type="submit"
+                        disabled={loading} 
+                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                            
+                            {loading ? 'Sending...' : 'Submit'}
+                            
+                            </button>
+                            <button className="text-white  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" 
+                            style={{backgroundColor:'red'}}
+                            onClick={()=>onClose()}
+                            >Close </button>
+
+                       </div>
                     </form>
                 </div>
             </div>

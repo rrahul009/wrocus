@@ -95,8 +95,8 @@ const CardGrid = () => {
                         <h2 className='text-4xl' style={{ fontWeight: 'bold' }}> Introduce Our Projects</h2>
                     </div>
                     <div className='w-1/3 pl-4 '>
-                        <p style={{ fontFamily: "Nunito Sans", color: '#6d6d6d', fontSize: '17px' }}>
-                            Software development outsourcing is just a tool to achieve business goals. But there is no way to get worthwhile results without cooperation and trust between a client company.</p>
+                        {/* <p  >
+                            Software development outsourcing is just a tool to achieve business goals. But there is no way to get worthwhile results without cooperation and trust between a client company.</p> */}
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ import ContactForm from '@/components/ContactForm';
 import Modal from '@/components/Modal';
 
 const Page = () => {
-    const[openForm,setOpenForm]=useState(false)
+    const [openForm, setOpenForm] = useState(false)
     useEffect(() => {
         const cleanupAOS = initializeAOS();
         return cleanupAOS; // Cleanup AOS on unmount
@@ -33,30 +33,34 @@ const Page = () => {
 
             </div>
 
-            <div className='flex justify-between items-center mx-5 mt-5' data-aos="fade-up-left">
-                <div className="p-3 mx-5 rounded-lg  lg:w-2/5 w-full">
-                    <h2 className="text-2xl font-bold mb-2" style={{ color: '#0056b3' }}>Welcome to Wrocus Technology!</h2>
-                    <p className="text-md text-gray-600 mt-12 ">
-                        We specialize in providing top-notch recruitment services tailored to meet the unique needs of your organization.
-                        Our dedicated team of experts is committed to finding the right talent to elevate your business and drive success.
-                        Partner with us to discover skilled professionals who align with your company’s goals and culture.
-                    </p>
-                    <div className='mt-12'>
-                        <Link href="contact">
-                        <button className='bg-blue-600 p-3 text-white'>Schedule A Call</button>
-                        </Link>
-                    </div>
-                </div>
+            <div className='flex flex-col lg:flex-row justify-between items-center mx-5 mt-5 bg-white rounded-lg p-6' data-aos="fade-up-left">
+    <div className="lg:w-2/5 w-full p-5">
+        <h2 className="text-3xl font-extrabold mb-4 text-black">Unlocking Talent for Your Success!</h2>
+        <p className="text-md text-gray-700 mt-4 leading-relaxed">
+            We specialize in providing top-notch recruitment services tailored to meet the unique needs of your organization.
+            Our dedicated team of experts is committed to finding the right talent to elevate your business and drive success.
+            Partner with us to discover skilled professionals who align with your company’s goals and culture.
+        </p>
+        <div className='mt-8'>
+            <Link href="contact">
+                <button className='bg-blue-600 p-4 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out shadow-md'>
+                    Schedule A Call
+                </button>
+            </Link>
+        </div>
+    </div>
 
-                <div className="flex justify-center items-center w-1/2 mt-2 lg:block hidden ">
-                    <img
-                        src='https://media.licdn.com/dms/image/D5612AQE3ifh6UbMB3g/article-cover_image-shrink_720_1280/0/1679283002104?e=2147483647&v=beta&t=EN1mEcjp7vqoci35-564zAexavjWOiRzfXKFZABovgE'
-                        alt='Recruitment Image'
-                        className="w-full     "
-                        style={{ height: '370px' }}
-                    />
-                </div>
-            </div>
+    <div className="flex justify-center items-center w-full lg:w-1/2 mt-5 lg:mt-0">
+        <img
+            src='https://media.licdn.com/dms/image/D5612AQE3ifh6UbMB3g/article-cover_image-shrink_720_1280/0/1679283002104?e=2147483647&v=beta&t=EN1mEcjp7vqoci35-564zAexavjWOiRzfXKFZABovgE'
+            alt='Recruitment Image'
+            className="w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+            style={{ height: '370px', objectFit: 'cover' }}
+        />
+    </div>
+</div>
+
+
 
             {/* Service Offerings */}
             <p className='text-center mt-6 lg:text-3xl text-2xl font-bold text-black-600 p-4 bg-gray-100 ' >Service Offerings</p>
@@ -189,12 +193,6 @@ const Page = () => {
 
             </div>
 
-
-
-
-
-
-
             {/* Why Choose us */}
 
             <div className='py-6 bg-gray-100 mt-5'>
@@ -283,15 +281,15 @@ const Page = () => {
                         <p className='text-lg text-gray-800'>
                             Choose us for a recruitment experience that prioritizes your needs and delivers results. Let’s build your dream team together!
                         </p>
-                        <button className='text-white bg-blue-600 p-3 mt rounded-lg mt-8'onClick={()=>setOpenForm(true)} >
-                            
+                        <button className='text-white bg-blue-600 p-3 mt rounded-lg mt-8' onClick={() => setOpenForm(true)} >
+
                             schedule a Meeting</button>
-                            {openForm ?
-                          <Modal isOpen={openForm} onClose={() => setOpenForm(false)}>
-                          <ContactForm/>
-                      </Modal>
-                            
-                            :''}
+                        {openForm ?
+                            <Modal isOpen={openForm} onClose={() => setOpenForm(false)}>
+                                <ContactForm onClose={() => setOpenForm(false)} />
+                            </Modal>
+
+                            : ''}
                     </div>
 
 

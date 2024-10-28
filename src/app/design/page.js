@@ -1,12 +1,10 @@
 'use client';
-
-
-
 import React, { useEffect, useState, useRef } from 'react';
 import { HiOutlineOfficeBuilding, HiOutlineUser, HiOutlinePhone, HiOutlineMail } from 'react-icons/hi';
 import { initializeAOS } from '../utils/Aos_setup';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ContactForm from '@/components/ContactForm';
 
 const page = () => {
     useEffect(() => {
@@ -15,69 +13,13 @@ const page = () => {
     }, []);
 
     const [isFormVisible, setFormVisible] = useState(false);
-    const [isLoading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-    const formRef = useRef();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError('');
 
-        const formData = {
-            company_name: e.target.company_name.value,
-            your_name: e.target.your_name.value,
-            phone: e.target.phone.value,
-            email: e.target.email.value,
-            message: e.target.message.value,
-        };
-
-        try {
-            const response = await fetch('/api/email-send', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                const errorResponse = await response.json();
-                throw new Error(errorResponse.error || 'An error occurred.');
-            }
-
-            alert('Message sent successfully!');
-            e.target.reset();
-            setFormVisible(false);
-        } catch (error) {
-            console.error('Fetch error:', error);
-            setError(`Error: ${error.message}`);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleClickOutside = (event) => {
-        if (formRef.current && !formRef.current.contains(event.target)) {
-            setFormVisible(false);
-        }
-    };
-
-    useEffect(() => {
-        if (isFormVisible) {
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [isFormVisible]);
 
     return (
         <>
             <Navbar />
             <div className='bg-white'>
-
-
                 <header className="relative bg-blue-50 text-gray-800 py-8  bg-cover bg-center" style={{ backgroundImage: "url('https://example.com/your-background-image.jpg')" }}>
                     <div className="relative z-10 container mx-auto text-center mt-4 mb-1">
                         <h1 className="text-3xl lg:text-5xl font-extrabold leading-tight relative">
@@ -97,7 +39,7 @@ const page = () => {
                     </div>
                 </header>
 
-            
+
 
                 {/* Services Section */}
                 <section id="services" className="mb-16 mt-7">
@@ -166,7 +108,7 @@ const page = () => {
                     </div>
                 </section>
 
-                {/* <section className="py-20 bg-blue-50 text-center mb-2 mt-4" data-aos="zoom-in-up">
+                <section className="py-20 bg-blue-50 text-center mb-2 mt-4" data-aos="zoom-in-up">
                     <h2 className="text-4xl font-semibold mb-4">Ready to Start Your Project?</h2>
                     <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
                         Contact us today to discuss your mobile app development needs!
@@ -177,105 +119,16 @@ const page = () => {
                     >
                         Contact Us
                     </button>
-                </section> */}
-
-                {isFormVisible && (
-                    <>
-                        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-10" />
-                        <div className="fixed inset-0 flex items-center justify-center z-20">
-                            <form
-                                ref={formRef}
-                                onSubmit={handleSubmit}
-                                className="bg-white p-4 rounded-lg w-full max-w-sm mx-4" style={{ paddingLeft: "40px", paddingRight: "40px" }}
-                                data-aos="zoom-in-up"
-                            >
-                                <button
-                                    type="button"
-                                    className="absolute top- right-2 text-gray-600 hover:text-gray-800 text-lg"
-                                    onClick={() => setFormVisible(false)}
-                                    aria-label="Close form"
-                                >
-                                    &times;
-                                </button>
-                                <h2 className="text-lg font-semibold mb-2 text-center text-blue-700">Contact Us</h2>
-
-                                {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-
-                                <div className="mb-4">
-                                    <label className="flex items-center mb-1">
-                                        <HiOutlineOfficeBuilding className="mr-2 text-gray-500" />
-                                        <span className="text-sm font-medium text-gray-800">Company Name</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="company_name"
-                                        required
-                                        className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                    />
-                                </div>
-
-                                <div className="mb-4">
-                                    <label className="flex items-center mb-1">
-                                        <HiOutlineUser className="mr-2 text-gray-500" />
-                                        <span className="text-sm font-medium text-gray-800">Your Name</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="your_name"
-                                        required
-                                        className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                    />
-                                </div>
-
-                                <div className="mb-4">
-                                    <label className="flex items-center mb-1">
-                                        <HiOutlinePhone className="mr-2 text-gray-500" />
-                                        <span className="text-sm font-medium text-gray-800">Phone</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="phone"
-                                        required
-                                        className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                    />
-                                </div>
-
-                                <div className="mb-4">
-                                    <label className="flex items-center mb-1">
-                                        <HiOutlineMail className="mr-2 text-gray-500" />
-                                        <span className="text-sm font-medium text-gray-800">Email</span>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        required
-                                        className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                    />
-                                </div>
-
-                                <div className="mb-4">
-                                    <label className="block mb-1 text-sm font-medium text-gray-800">Query</label>
-                                    <textarea
-                                        name="message"
-                                        required
-                                        className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                        rows="3"
-                                        style={{ resize: 'none' }} // Prevent resizing
-                                    />
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all duration-200"
-                                    disabled={isLoading}
-                                >
-                                    {isLoading ? 'Sending...' : 'Send Message'}
-                                </button>
-                            </form>
+                </section>
+                {
+                    isFormVisible && (
+                        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="bg-white p-6 rounded-lg shadow-lg">
+                                <ContactForm onClose={() => setFormVisible(false)} />
+                            </div>
                         </div>
-                    </>
-                )}
-
+                    )
+                }
                 <Footer />
             </div>
         </>

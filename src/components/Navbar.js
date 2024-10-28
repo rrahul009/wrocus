@@ -124,13 +124,13 @@ const Navbar = () => {
                                     Services <ArrowDropDownIcon />
                                 </button>
                                 {dropdown === 'services' && (
-                                    <ul className="absolute top-full left-0 bg-white text-black font-medium rounded-lg p-6" style={{ width: '280px' }}>
-                                        <li><Link href="/design" className="block px-4 py-2 hover:bg-gray-200">Design & Build</Link></li>
-                                        <li><Link href="/cloudconsulting" className="block px-4 py-2 hover:bg-gray-200">Cloud consultancy</Link></li>
+                                    <ul className="absolute top-full left-0 bg-white text-black text-sm rounded-lg p-6" style={{ width: '300px' }}>
+                                        <li><Link href="/design" className="block px-4 py-2 hover:bg-gray-200" >Design & Build</Link></li>
+                                        <li><Link href="/cloudconsulting" className="block px-4 py-2 hover:bg-gray-200">Cloud consulting</Link></li>
                                         <li><Link href="/managedservice" className="block px-4 py-2 hover:bg-gray-200">Advisory & Managed Services</Link></li>
                                         <li><Link href="/salesforce" className="block px-4 py-2 hover:bg-gray-200"> Salesforce Services</Link></li>
                                         <li><Link href="/quality" className="block px-4 py-2 hover:bg-gray-200">Quality Automation</Link></li>
-                                        <li><Link href="/analytics" className="block px-4 py-2 hover:bg-gray-200"> Web analytics</Link></li>
+                                        <li><Link href="/analytics" className="block px-4 py-2 hover:bg-gray-200"> Web Analytics</Link></li>
                                         <li><Link href="/staffaugmentation" className="block px-4 py-2 hover:bg-gray-200"> Staff Augmentaion</Link></li>
 
                                         {/* Other services... */}

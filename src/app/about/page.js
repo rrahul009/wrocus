@@ -53,11 +53,12 @@ const Page = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null)
   const images = [
-    { src: '/slider/box1.jpg', alt: 'Box 1', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
-    { src: '/slider/box2.jpg', alt: 'Box 2', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
-    { src: '/slider/box3.jpg', alt: 'Box 3', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
-    { src: '/slider/box4.jpg', alt: 'Box 4', description: 'Software product to our experienced BAs,UI/UX designer ,developer' },
+    { src: '/slider/box1.jpg', alt: 'Box 1', description: 'Innovative software solutions tailored to your business needs.' },
+    { src: '/slider/box2.jpg', alt: 'Box 2', description: 'Collaborative design and development for engaging user experiences.' },
+    { src: '/slider/box3.jpg', alt: 'Box 3', description: 'Expert analysis and strategy to enhance your digital presence.' },
+    { src: '/slider/box4.jpg', alt: 'Box 4', description: 'Robust applications built by skilled developers and designers.' },
   ];
+
 
 
   const items = [
@@ -181,40 +182,40 @@ const Page = () => {
 
       {/* wrocus known for */}
       <section className="p-6 bg-gray-50" data-aos="zoom-in">
-  <p className="text-center mx-8 lg:text-lg font-semibold text-gray-800 mb-2">
-    WROCUS is known to make IT happen with end-to-end engineering and strict deadlines.
-  </p>
-  <p className="text-center mx-8 lg:text-lg font-semibold text-gray-800 mb-8">
-    Our deep strategic organization is built on five key pillars.
-  </p>
+        <p className="text-center mx-8 lg:text-lg font-semibold text-gray-800 mb-2">
+          WROCUS is known to make IT happen with end-to-end engineering and strict deadlines.
+        </p>
+        <p className="text-center mx-8 lg:text-lg font-semibold text-gray-800 mb-8">
+          Our deep strategic organization is built on five key pillars.
+        </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5 mt-4">
-    {items.map((item, index) => (
-      <div
-        key={index}
-        className="relative p-6  rounded-lg shadow-lg transition-transform transform hover:scale-105 flex flex-col justify-between  "
-        onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(null)}
-      >
-        <div className="flex-grow">
-          {/* <h3 className={`text-4xl font-bold text-center ${hoveredIndex === index ? 'text-blue-600' : 'text-white'}`}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-5 mt-4">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="relative p-6  rounded-lg shadow-lg transition-transform transform hover:scale-105 flex flex-col justify-between  "
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="flex-grow">
+                {/* <h3 className={`text-4xl font-bold text-center ${hoveredIndex === index ? 'text-blue-600' : 'text-white'}`}>
             {item.number}
           </h3> */}
-          <p className={`text-xl font-bold text-center mt-2 ${hoveredIndex === index ? 'text-black-950' : 'text-black-600'}`}>
-            {item.text}
-          </p>
+                <p className={`text-xl font-bold text-center mt-2 ${hoveredIndex === index ? 'text-black-950' : 'text-black-600'}`}>
+                  {item.text}
+                </p>
+              </div>
+              <div className='flex items-end justify-center mt-4'>
+                <img
+                  src={item.img}
+                  alt={`Icon for ${item.number}`}
+                  className='h-24 transition-transform duration-300 transform hover:scale-110'
+                />
+              </div>
+            </div>
+          ))}
         </div>
-        <div className='flex items-end justify-center mt-4'>
-          <img
-            src={item.img}
-            alt={`Icon for ${item.number}`}
-            className='h-24 transition-transform duration-300 transform hover:scale-110'
-          />
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+      </section>
 
 
 

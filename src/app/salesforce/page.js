@@ -130,12 +130,13 @@ const ServiceCard = ({ title, description, img, benefits }) => {
 };
 
 const Page = () => {
+    // const[is]
     return (
         <>
             <Navbar />
             <div className="min-h-screen bg-gray-50">
                 <main className="container mx-auto p-6">
-                     
+
                     <section className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 mb-8">
                         <div className="container mx-auto px-6 text-center">
                             <h1 className="text-4xl md:text-4xl font-extrabold mb-1 leading-tight text-shadow-lg">
@@ -164,9 +165,12 @@ const Page = () => {
                         <p className="text-lg text-gray-700 mb-4">
                             Contact us today to learn more about how our Salesforce integration services can help your business succeed.
                         </p>
-                        <Link href="contact" className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                        <button
+
+                            className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
                             Get in Touch
-                        </Link>
+                        </button>
+
                     </section>
                 </main>
                 <Footer />

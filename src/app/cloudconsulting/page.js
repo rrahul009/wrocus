@@ -8,6 +8,7 @@ import { initializeAOS } from '../utils/Aos_setup';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import ContactForm from '@/components/ContactForm';
 
 const page = () => {
     useEffect(() => {
@@ -16,87 +17,9 @@ const page = () => {
     }, []);
 
     const [isFormVisible, setFormVisible] = useState(false);
-    const [isLoading, setLoading] = useState(false);
-    const formRef = useRef();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
 
-        const formData = {
-            company_name: e.target.company_name.value,
-            your_name: e.target.your_name.value,
-            phone: e.target.phone.value,
-            email: e.target.email.value,
-            message: e.target.message.value,
-        };
 
-        try {
-            const response = await fetch('/api/email-send', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                const errorResponse = await response.json();
-                throw new Error(errorResponse.error || 'An error occurred.');
-            }
-
-            // Use toast or inline message instead of alert
-            alert('Message sent successfully!');
-            e.target.reset();
-            setFormVisible(false);
-        } catch (error) {
-            console.error('Fetch error:', error);
-            alert(`Error: ${error.message}`);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleClickOutside = (event) => {
-        if (formRef.current && !formRef.current.contains(event.target)) {
-            setFormVisible(false);
-        }
-    };
-
-    useEffect(() => {
-        if (isFormVisible) {
-            document.addEventListener('mousedown', handleClickOutside);
-            formRef.current.querySelector('input').focus(); // Focus the first input
-
-            // Trap focus within modal
-            const focusableElements = formRef.current.querySelectorAll('input, textarea, button');
-            const firstElement = focusableElements[0];
-            const lastElement = focusableElements[focusableElements.length - 1];
-
-            const trapFocus = (e) => {
-                if (e.key === 'Tab') {
-                    if (e.shiftKey) { // Shift + Tab
-                        if (document.activeElement === firstElement) {
-                            e.preventDefault();
-                            lastElement.focus();
-                        }
-                    } else { // Tab
-                        if (document.activeElement === lastElement) {
-                            e.preventDefault();
-                            firstElement.focus();
-                        }
-                    }
-                }
-            };
-
-            document.addEventListener('keydown', trapFocus);
-
-            return () => {
-                document.removeEventListener('keydown', trapFocus);
-                document.removeEventListener('mousedown', handleClickOutside);
-            };
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-    }, [isFormVisible]);
 
     // Styles for the container
     const containerStyle = {
@@ -122,7 +45,7 @@ const page = () => {
                             Unlock the power of the cloud with our expert consulting services. We help businesses of all sizes leverage cloud technologies to optimize operations, reduce costs, and drive innovation.
                         </p>
                         <div className="flex justify-center mt-8">
-                            <a  className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
+                            <a className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold">
                                 Explore Our Services
                             </a>
                         </div>
@@ -278,107 +201,28 @@ const page = () => {
                     <p className="text-xl mt-6 text-gray-600 mb-6">
                         Expert cloud consulting services designed to optimize your operations, enhance scalability.
                     </p>
-                   <Link href="contact">
-                   <button
-                        // onClick={() => setFormVisible(true)}
+
+                    <button
+                    onClick={()=>setFormVisible(true)}
+
                         className="bg-blue-950 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-blue-700"
                     >
                         Get In Touch
                     </button>
-                   </Link>
+
                 </div>
+                {
+                 isFormVisible &&(
 
-                {/* Modal */}
-                {isFormVisible && (
-                    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                        <form
-                            ref={formRef}
-                            onSubmit={handleSubmit}
-                            className="bg-white p-4 rounded-lg w-full max-w-sm mx-4" style={{ paddingLeft: "40px", paddingRight: "40px" }}
-                            data-aos="zoom-in-up"
-                        >
-                            <button
-                                type="button"
-                                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-                                onClick={() => setFormVisible(false)}
-                            >
-                                &times;
-                            </button>
-                            <h2 className="text-lg font-semibold mb-2 text-center text-blue-700">Contact Us</h2>
-
-                            <div className="mb-4">
-                                <label className="flex items-center mb-1">
-                                    <HiOutlineOfficeBuilding className="mr-2 text-gray-500" />
-                                    <span className="text-sm font-medium text-gray-800">Company Name</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="company_name"
-                                    required
-                                    className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                />
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="flex items-center mb-1">
-                                    <HiOutlineUser className="mr-2 text-gray-500" />
-                                    <span className="text-sm font-medium text-gray-800">Your Name</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="your_name"
-                                    required
-                                    className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                />
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="flex items-center mb-1">
-                                    <HiOutlinePhone className="mr-2 text-gray-500" />
-                                    <span className="text-sm font-medium text-gray-800">Phone</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="phone"
-                                    required
-                                    className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                />
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="flex items-center mb-1">
-                                    <HiOutlineMail className="mr-2 text-gray-500" />
-                                    <span className="text-sm font-medium text-gray-800">Email</span>
-                                </label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                />
-                            </div>
-
-                            <div className="mb-4">
-                                <label className="block mb-1 text-sm font-medium text-gray-800">Query</label>
-                                <textarea
-                                    name="message"
-                                    required
-                                    className="block w-full border border-blue-400 focus:ring-blue-500 focus:border-blue-500 p-2 rounded-md"
-                                    rows="3"
-                                    style={{ resize: 'none' }}
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all duration-200"
-                                disabled={isLoading}
-                            >
-                                {isLoading ? 'Sending...' : 'Send Message'}
-                            </button>
-                        </form>
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <ContactForm onClose={() => setFormVisible(false)} />
                     </div>
-                )}
+                </div>
+                 )
+                }
+
+
 
                 <Footer />
             </div>
