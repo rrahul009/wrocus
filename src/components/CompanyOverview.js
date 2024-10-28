@@ -13,7 +13,7 @@ const CompanyOverview = () => {
   const [countries, setCountries] = useState(0);
   const [happyCustomers, setHappyCustomers] = useState(0);
   const [teamMembers, setTeamMembers] = useState(0);
-  const [projectsCompleted, setProjectsCompleted] = useState(0);
+  const [projectsCompleted, setProjectsCompleted] = useState(400);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
