@@ -64,7 +64,7 @@ const ClientProject = () => {
                     <img src='slider/image2-about.png' className='w-full h-auto' alt="Tech Trends" />
                 </div>
             </div>
-            <Footer />
+           
         </>
     );
 };
