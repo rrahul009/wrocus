@@ -20,7 +20,7 @@ const cardData = [
     },
     {
         id: 2,
-        imgSrc: 'https://xcitingmedia.com/wp-content/uploads/2024/04/rdchiro2.png',
+        imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project-details-7.jpg',
         title: 'Social Media App',
         description: 'DESIGN / TECHNOLOGY',
         name: <ArrowForwardIcon />
