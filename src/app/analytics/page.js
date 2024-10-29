@@ -1,7 +1,9 @@
+'use client'
+import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 const services = [
   {
@@ -86,6 +88,7 @@ const SuccessCard = ({ title, description, img }) => (
 );
 
 const AnalyticsPage = () => {
+  const [isFormVisible, setFormVisible] = useState(false)
   return (
     <>
       <Navbar />
@@ -98,16 +101,10 @@ const AnalyticsPage = () => {
           <p className="text-lg md:text-xl mt-4 max-w-3xl mx-auto font-semibold leading-relaxed">
             We provide in-depth insights that empower you to make informed, data-driven decisions and enhance operational efficiency.
           </p>
-          <div className="mt-8">
-            <a href="/contact" className="block">
-              <button className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
-                Get in Touch
-              </button>
-            </a>
-          </div>
+
         </div>
       </header>
-      
+
       <section className="container mx-auto p-6">
         <h2 className="text-3xl font-semibold mb-6 text-blue-600 text-center">Our Analytics Services</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -136,17 +133,32 @@ const AnalyticsPage = () => {
           ))}
         </div>
       </section>
-      
+
       <section id="contact" className="text-center mb-8 mt-12">
-                        <h2 className="text-3xl font-semibold mb-6 text-blue-600">Ready to Transform Your Business?</h2>
-                        <p className="text-lg text-gray-700 mb-4">
-                            Contact us today to learn more about how our Salesforce integration services can help your business succeed.
-                        </p>
-                        <Link href="contact" className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
-                            Get in Touch
-                        </Link>
-                    </section>
-      <Footer/>
+        <h2 className="text-3xl font-semibold mb-6 text-blue-600">Ready to Transform Your Business?</h2>
+        <p className="text-lg text-gray-700 mb-4">
+          Contact us today to learn more about how our Salesforce integration services can help your business succeed.
+        </p>
+        <div className="mt-8">
+
+          <button
+            onClick={() => setFormVisible(true)}
+            className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+            Get in Touch
+          </button>
+
+        </div>
+        {
+          isFormVisible && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <ContactForm onClose={() => setFormVisible(false)} isCloseBtnVisible />
+              </div>
+            </div>
+          )
+        }
+      </section>
+      <Footer />
     </>
   );
 };

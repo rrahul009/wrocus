@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Footer';
+import ContactForm from './ContactForm';
 
 const OdooImplementation = () => {
+  const[isFormVisible,setFormVisible]=useState(false)
   return (
     <>
       <div >
@@ -68,12 +70,23 @@ const OdooImplementation = () => {
             <p className="text-gray-600 mb-4">
               Ready to transform your business with Odoo? Contact us today to learn more about our implementation services!
             </p>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-              Contact Us
+            <button
+            onClick={()=>setFormVisible(true)}
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+            Contact Us
             </button>
           </div>
 
         </section>
+        {
+                    isFormVisible && (
+                        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="bg-white p-6 rounded-lg shadow-lg">
+                                <ContactForm onClose={() => setFormVisible(false)} isCloseBtnVisible />
+                            </div>
+                        </div>
+                    )
+                }
       </div>
 
       <Footer />

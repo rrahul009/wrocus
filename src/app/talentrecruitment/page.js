@@ -32,18 +32,17 @@ const Page = () => {
 
 
             </div>
-
             <div className='flex flex-col lg:flex-row justify-between items-center mx-5 mt-5 bg-white rounded-lg p-6' data-aos="fade-up-left">
     <div className="lg:w-2/5 w-full p-5">
-        <h2 className="text-3xl font-extrabold mb-4 text-black">Unlocking Talent for Your Success!</h2>
-        <p className="text-md text-gray-700 mt-4 leading-relaxed">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-black">Unlocking Talent for Your Success!</h2>
+        <p className="text-md md:text-lg text-gray-700 mt-4 leading-relaxed">
             We specialize in providing top-notch recruitment services tailored to meet the unique needs of your organization.
             Our dedicated team of experts is committed to finding the right talent to elevate your business and drive success.
             Partner with us to discover skilled professionals who align with your company’s goals and culture.
         </p>
         <div className='mt-8'>
             <Link href="contact">
-                <button className='bg-blue-600 p-4 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out shadow-md'>
+                <button className='bg-blue-600 w-full md:w-auto p-4 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out shadow-md'>
                     Schedule A Call
                 </button>
             </Link>
@@ -52,10 +51,10 @@ const Page = () => {
 
     <div className="flex justify-center items-center w-full lg:w-1/2 mt-5 lg:mt-0">
         <img
-            src='https://media.licdn.com/dms/image/D5612AQE3ifh6UbMB3g/article-cover_image-shrink_720_1280/0/1679283002104?e=2147483647&v=beta&t=EN1mEcjp7vqoci35-564zAexavjWOiRzfXKFZABovgE'
+            src='https://schaeffler-tomorrow.com/images/lg/21073'
             alt='Recruitment Image'
-            className="w-full rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            style={{ height: '370px', objectFit: 'cover' }}
+            className="w-full     transition-transform duration-300 ease-in-out transform hover:scale-105"
+            style={{ height: '350px', objectFit: 'cover' }} // Adjusted height for better responsiveness
         />
     </div>
 </div>

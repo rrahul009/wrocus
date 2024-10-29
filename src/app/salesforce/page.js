@@ -1,4 +1,5 @@
 'use client'
+import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
@@ -130,7 +131,7 @@ const ServiceCard = ({ title, description, img, benefits }) => {
 };
 
 const Page = () => {
-    // const[is]
+     const[isFormVisible,setFormVisible]=useState(false)
     return (
         <>
             <Navbar />
@@ -166,12 +167,23 @@ const Page = () => {
                             Contact us today to learn more about how our Salesforce integration services can help your business succeed.
                         </p>
                         <button
+                        onClick={()=>setFormVisible(true)}
 
                             className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
                             Get in Touch
                         </button>
-
+ 
                     </section>
+                    {
+                    isFormVisible && (
+                        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                            <div className="bg-white p-6 rounded-lg shadow-lg">
+                                <ContactForm onClose={() => setFormVisible(false)} isCloseBtnVisible />
+                            </div>
+                        </div>
+                    )
+                }
+                  
                 </main>
                 <Footer />
             </div>

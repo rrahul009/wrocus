@@ -5,6 +5,7 @@ import { initializeAOS } from '../utils/Aos_setup';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ContactForm from '@/components/ContactForm';
+import Link from 'next/link';
 
 const page = () => {
     useEffect(() => {
@@ -15,7 +16,7 @@ const page = () => {
     const [isFormVisible, setFormVisible] = useState(false);
 
 
-    
+
     return (
         <>
             <Navbar />
@@ -30,11 +31,11 @@ const page = () => {
                             Transform your ideas into reality with our expert design and development services. We specialize in crafting tailored solutions that elevate your brand and enhance user experiences across all platforms.
                         </p>
                         <div className="mt-8">
-                            <a href="/contact" className="block">
+                            <Link href="/contact" className="block">
                                 <button className="bg-blue-950 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
                                     Get in Touch
                                 </button>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </header>
