@@ -17,6 +17,23 @@ const page = () => {
     }, []);
 
     const [isFormVisible, setFormVisible] = useState(false);
+    const modalRef = useRef(null);
+    const handleCloseModal = () => {
+        setFormVisible(false);
+    };
+    const handleClickOutside = (event) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) {
+            handleCloseModal();
+        }
+    };
+    useEffect(() => {
+        if (isFormVisible) {
+            window.addEventListener('click', handleClickOutside);
+        }
+        return () => {
+            window.removeEventListener('click', handleClickOutside);
+        };
+    }, [isFormVisible]);
 
 
 
@@ -216,11 +233,13 @@ const page = () => {
 
                     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <ContactForm onClose={() => setFormVisible(false)} />
+                        <ContactForm onClose={() => setFormVisible(false)}  />
                     </div>
                 </div>
                  )
                 }
+
+      
 
 
 

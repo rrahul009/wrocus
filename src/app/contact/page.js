@@ -46,7 +46,7 @@ const Page = () => {
                     {/* Right Side */}
                     <div className='w-full lg:w-1/2 p-4 lg:p-6 flex flex-col items-center lg:items-start'>
                         <p className='text-2xl font-semibold'>Send Your Query</p>
-                        <ContactForm />
+                        <ContactForm/>
                     </div>
                 </div>
             </section>

@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ContactForm = ({onClose}) => {
+const ContactForm = ({onClose, isCloseBtnVisible = false}) => {
     const[loading,setLoading]=useState(false)
+    
 
  
     const [userData, setUserData] = useState({
@@ -27,8 +28,8 @@ const ContactForm = ({onClose}) => {
         e.preventDefault();
         setLoading(true)
         try {
-            await axios.post('http://localhost:3000/api/users', userData);
-            // await axios.post('https://wrocus.vercel.app/api/users', userData);
+            // await axios.post('http://localhost:3000/api/users', userData);
+            await axios.post('https://wrocus.com/api/users', userData);
            
             toast.success('Your message has been sent successfully!', { autoClose: 3000 });
             setUserData({
@@ -41,7 +42,7 @@ const ContactForm = ({onClose}) => {
                 message: ''
             });
              setTimeout(()=>{
-                onClose();
+                onClose(false);
                 setLoading(false)
              },3000)
         } catch (error) {
@@ -148,10 +149,14 @@ const ContactForm = ({onClose}) => {
                             {loading ? 'Sending...' : 'Submit'}
                             
                             </button>
-                            <button className="text-white  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" 
-                            style={{backgroundColor:'red'}}
-                            onClick={()=>onClose()}
-                            >Close </button>
+                           {isCloseBtnVisible && <button type="submit"
+                        disabled={loading} 
+                        className="text-white bg-red-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                            
+                           close
+                            
+                            </button>}
+                           
 
                        </div>
                     </form>
