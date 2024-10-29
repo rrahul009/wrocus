@@ -29,7 +29,8 @@ const ContactForm = ({onClose, isCloseBtnVisible = false}) => {
         setLoading(true)
         try {
             // await axios.post('http://localhost:3000/api/users', userData);
-            await axios.post('https://wrocus.com/api/users', userData);
+            await axios.post('https://www.wrocus.com/api/users', userData);
+
            
             toast.success('Your message has been sent successfully!', { autoClose: 3000 });
             setUserData({
@@ -41,10 +42,10 @@ const ContactForm = ({onClose, isCloseBtnVisible = false}) => {
                 phonenumber: '',
                 message: ''
             });
-             setTimeout(()=>{
-                onClose(false);
+            //  setTimeout(()=>{
+                // onClose(false);
                 setLoading(false)
-             },3000)
+            //  },3000)
         } catch (error) {
             console.error("Error submitting form:", error);
             toast.error('There was an error sending your message. Please try again.', { autoClose: 3000 });
