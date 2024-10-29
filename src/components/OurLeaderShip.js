@@ -19,8 +19,8 @@ const OurLeadership = () => {
                         src='slider/Aseemsir.jpg'
                         alt='Aseem Gupta'
                     />
-                     <p className='text-center font-bold text-xl md:text-2xl mt-8'>Aseem Gupta</p>
-                     <Link href="https://www.linkedin.com/in/aseemgupta04/" target='blank'>Connect to linkedin</Link>
+                     <p className='text-center font-bold text-xl md:text-2xl mt-6'>Aseem Gupta</p>
+                     <Link href="https://www.linkedin.com/in/aseemgupta04/" target='_blank'>Connect to linkedin</Link>
                      {/* <h2 className='text-center text-lg md:text-xl'>ASSOCIATE DIRECTOR</h2>  */}
                 </div>
                 <div className='flex flex-col items-center mt-6 w-full md:w-1/2 lg:w-1/3 '>
@@ -30,7 +30,7 @@ const OurLeadership = () => {
                         alt='Atul Singhal'
                     />
                      <p className='text-center font-bold text-xl md:text-2xl mt-6'>Atul Singhal</p>
-                     <Link href="https://www.linkedin.com/in/atulsinghal789/" target='blank' >Connect to linkedin</Link>
+                     <Link href="https://www.linkedin.com/in/atulsinghal789/" target='_blank' >Connect to linkedin</Link>
                     {/* <h2 className='text-center text-lg md:text-xl'>DIRECTOR</h2> */} 
                 </div>
                
