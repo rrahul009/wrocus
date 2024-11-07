@@ -13,35 +13,35 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const cardData = [
     {
         id: 1,
-        imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project8-e1635161793154.jpg',
+        imgSrc: 'https://www.localwebsitedesign.com/wp-content/uploads/2014/02/responsive-web-design.png',
         title: 'Basic Project ',
         description: 'DESIGN / DEVELOPMENT',
         name: <ArrowForwardIcon />
     },
     {
         id: 2,
-        imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project-details-7.jpg',
+        imgSrc: 'https://img.freepik.com/premium-photo/low-angle-view-group-young-teenagers-holding-cell-phones-surprised-faces-looking-screen-concept-technology-connection-colorful_325573-674.jpg?semt=ais_hybrid',
         title: 'Social Media App',
         description: 'DESIGN / TECHNOLOGY',
         name: <ArrowForwardIcon />
     },
     {
         id: 3,
-        imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project1.jpg',
+        imgSrc: 'https://img.freepik.com/premium-photo/professional-architect-working-office-desk-wearing-vr-headset-he-is-viewing-virtual-reality-interface_141188-6206.jpg',
         title: 'App for Virtual Reality',
         description: 'DESIGN / IDEA',
         name: <ArrowForwardIcon />
     },
     {
         id: 4,
-        imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project3.jpg',
+        imgSrc: 'https://www.securitymagazine.com/ext/resources/Default-images/Responsive-Defaults/cyber-900.jpg?1554749582',
         title: 'Analysis Of Security',
         description: 'IDEAS / TECHNOLOGY',
         name: <ArrowForwardIcon />
     },
     {
         id: 5,
-        imgSrc: 'https://wrocus.com/wp-content/uploads/2019/11/project4.jpg',
+        imgSrc: 'https://www.cxtoday.com/wp-content/uploads/2022/03/ecommerce-3.png',
         title: 'eCommerce Website',
         description: 'DESIGN / IDEA',
         name: <ArrowForwardIcon />
@@ -108,6 +108,8 @@ const CardGrid = () => {
                             <img
                                 src={card.imgSrc}
                                 alt={card.title}
+                                className='object-contain'
+                                 
                                 style={{ height: '280px', width: '100%' }}
                             />
                             <div className="p-6 bg-blue-950  text-white">

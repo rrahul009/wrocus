@@ -14,6 +14,16 @@ const Navbar = () => {
     const [isNavbarFixed, setIsNavbarFixed] = useState(false);
     const [dropdown, setDropdown] = useState(null);
     const dropdownRef = useRef(null);
+    const[isAdmin,setIsAdmin]=useState(false)
+    useEffect(()=>{
+
+        const storedRole=localStorage.getItem('role');
+      
+        if(storedRole ==='true')
+        {
+            setIsAdmin(true)
+        }
+    },[])
 
     const toggleSidebar = () => setIsSidebarOpen(prevState => !prevState);
 
@@ -84,6 +94,9 @@ const Navbar = () => {
 
                             <Link href="/odoo" className="py-2 lg:text-lg text-sm">Odoo</Link>
                             <Link href="/about" className="py-2 lg:text-lg text-sm">About</Link>
+                             <Link href="/carrier" className="py-2 lg:text-lg text-sm">carrier</Link>
+                        
+                           
                         </nav>
                     </div>
                 </div>
@@ -138,13 +151,18 @@ const Navbar = () => {
                                 )}
                             </li>
                             <li><Link href="/odoo" className="text-black hover:text-blue-800">Odoo</Link></li>
-                            <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li>
-                            
+                            {/* <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li> */}
+                           <li><Link href="/carrier" className="text-black hover:text-blue-800">Carrier</Link></li>
+                           {isAdmin && <li><Link href="/createjob" className="text-black hover:text-blue-800">Create Jobs</Link></li>}
+
                         </ul>
 
                     </div>
-                    <Link href="/contact">
-                    <button className='bg-black text-white p-3 rounded-lg'>Get In Touch</button>
+                  {!isAdmin &&   <Link href="/contact">
+                        <button className='bg-black text-white p-2 rounded-lg'>Get In Touch</button>
+                    </Link>}
+                    <Link href="/userauth">
+                        <button className=' text-black ml-5 p-3 rounded-lg hidden sm:block'>Login</button>
                     </Link>
                 </div>
             </nav>
