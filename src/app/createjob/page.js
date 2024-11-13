@@ -1,8 +1,11 @@
 'use client'
 import Navbar from '@/components/Navbar'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const page = () => {
+    const router=useRouter();
 
     const [jobData, setJobData] = useState({
         jobtitle: "",
@@ -59,6 +62,10 @@ const page = () => {
             benefit: ''
 
         })
+        setTimeout(() => {
+            router.push('/admincareerpage');
+            
+        }, 2000);
 
 
        } catch (error) {
@@ -76,7 +83,12 @@ const page = () => {
             <div className='bg-gray-100 mt-3 p-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
                 <div className='bg-white p-6' style={{ width: '700px' }}>
-                    <p className='text-center text-2xl font-bold'>Create a Job</p>
+            <div className='grid grid-cols-3 items-center'>
+                <p></p>
+                <p className='text-center font-bold text-md lg:text-2xl'>CREATE JOB</p>
+               <Link href="/admincareerpage"> <button className='text-right ml-10 lg:ml-26 bg-blue-600 text-white p-2 rounded-md w-18' style={{width:'80px'}}>view job</button></Link>
+                
+            </div>
                     <p className='text-green-400 text-center mt-4'>{success}</p>
                     {error &&<p className='text-red-300'>{error}</p>}
                     <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
@@ -160,8 +172,8 @@ const page = () => {
                                     <option value="" disabled selected hidden className="text-gray-500">
                                         Select Job Type
                                     </option>
-                                    <option value="full_time">Full-time </option>
-                                    <option value="Part_time"> Part-time</option>
+                                    <option value="full_time">Full Time </option>
+                                    <option value="Part_time"> Part Time</option>
                                     <option value="Contract">Contract</option>
                                     <option value="Remote">Remote</option>
                                 </select>
@@ -383,7 +395,7 @@ const page = () => {
                             type="submit"
                             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  mt-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         >
-                            Submit
+                            Create Job
                         </button>
                     </form>
 

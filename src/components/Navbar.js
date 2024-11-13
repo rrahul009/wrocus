@@ -152,7 +152,7 @@ const Navbar = () => {
                             </li>
                             <li><Link href="/odoo" className="text-black hover:text-blue-800">Odoo</Link></li>
                             {/* <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li> */}
-                           <li><Link href="/carrier" className="text-black hover:text-blue-800">Carrier</Link></li>
+                           <li><Link href="/career" className="text-black hover:text-blue-800">Career</Link></li>
                            {isAdmin && <li><Link href="/createjob" className="text-black hover:text-blue-800">Create Jobs</Link></li>}
 
                         </ul>
