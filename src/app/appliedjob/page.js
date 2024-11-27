@@ -61,6 +61,7 @@ const page = () => {
             query: 'd',
         })
     }
+    
   const handleDelete=async(id)=>{
     try {
         const res=await fetch(`https://wrocubackendapi.onrender.com/api/deleteapplyjob/${id}`,
