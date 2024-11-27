@@ -1,10 +1,9 @@
 'use client';
 
-import AdminAuth from "@/components/AdminAuth";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { DocumentViewer } from "react-documents";
-import { Suspense } from "react";
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState, Suspense } from 'react';
+import AdminAuth from '@/components/AdminAuth';
+import { DocumentViewer } from 'react-documents';
 
 export default function DocViewer() {
     const searchParams = useSearchParams();
@@ -15,7 +14,8 @@ export default function DocViewer() {
             const userID = searchParams.get('id');
             if (userID) {
                 try {
-                    const resumeDetail = await fetch(`http://localhost:5001/api/resume/${userID}`).then((r) => r.json());
+                    const response = await fetch(`http://localhost:5001/api/resume/${userID}`);
+                    const resumeDetail = await response.json();
                     const uriResume = resumeDetail?.data.secure_url ?? '';
                     setUri(uriResume);
                 } catch (error) {
@@ -25,7 +25,7 @@ export default function DocViewer() {
         };
 
         fetchResumeData();
-    }, [searchParams]); // Dependencies array, only re-run when searchParams change
+    }, [searchParams]);
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
