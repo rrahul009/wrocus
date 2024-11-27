@@ -90,9 +90,9 @@ const Page = () => {
         <>
             {/*   <Navbar /> */}
 
-            <section className="lg:p-2 p-4 min-h-screen">
+            <section className="lg:p-2 p-4 min-h-screen bg-gray-200">
                 <div className="grid grid-cols-12 gap-4">
-                    <div className="col-span-3 bg-gray-100  rounded-lg shadow-md">
+                    <div className="col-span-3  mt-1 rounded-lg ">
                         <Sidebar onFilterApply={onFilterApply} />
                     </div>
                     {loading ?
@@ -108,7 +108,7 @@ const Page = () => {
                             </div>
                         )
 
-                        : <div className="col-span-9  p-2 rounded-lg shadow-md">
+                        : <div className="col-span-9  p-2 rounded-lg ">
                             <h2 className="text-2xl bg-gray-100 font-bold mb-3 text-center  text-black-600">
                                 {/* <span className="text-black-500">  Job Opportunities</span> */}
                             </h2>
