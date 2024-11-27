@@ -5,11 +5,14 @@ import { useEffect, useState, Suspense } from 'react';
 import AdminAuth from '@/components/AdminAuth';
 import dynamic from 'next/dynamic';
 
-// Dynamically import DocumentViewer to ensure it only renders on the client.
-const DocumentViewer = dynamic(() => import('react-documents'), { ssr: false });
+// Dynamically import DocumentViewer using named export
+const DocumentViewer = dynamic(
+    async () => (await import('react-documents')).DocumentViewer,
+    { ssr: false }
+);
 
 export default function DocViewer() {
-    const searchParams = useSearchParams(); // Works only on the client.
+    const searchParams = useSearchParams();
     const [uri, setUri] = useState('');
 
     useEffect(() => {
