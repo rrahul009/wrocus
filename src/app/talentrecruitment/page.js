@@ -16,7 +16,7 @@ const Page = () => {
     }, []);
     return (
         <div>
-            <Navbar />
+              {/* <Navbar /> */}
             {/* main page */}
 
             <div
@@ -133,7 +133,7 @@ const Page = () => {
                 <div className='flex flex-col md:flex-row justify-center items-center md:space-x-8'>
                     <div className='w-full md:w-1/2'>
                         <img
-                            src='https://www.datocms-assets.com/23428/1721385970-employee-onboarding.jpg?auto=compress'
+                            src='https://businessimprovement.group/wp-content/uploads/2017/07/image-6-1684x878.jpg'
                             alt='Talent image'
                             className='shadow-lg rounded-lg mt-4 md:mt-0 w-full h-auto'
                             style={{ height: '380px', objectFit: 'cover' }}
@@ -297,7 +297,7 @@ const Page = () => {
 
 
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

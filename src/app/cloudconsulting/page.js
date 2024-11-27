@@ -51,7 +51,7 @@ const page = () => {
 
     return (
         <>
-            <Navbar />
+            {/*   <Navbar /> */}
             <div className="bg-white">
 
 
@@ -243,7 +243,7 @@ const page = () => {
 
 
 
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </>
     );

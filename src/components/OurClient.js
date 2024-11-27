@@ -18,9 +18,9 @@ const OurClient = () => {
       size: { width: 80, height: 80 }
     },
     {
-      src: "https://wrocus.com/wp-content/uploads/2021/08/timesinternetlimited.png",
+      src: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/04/56/95/045695e7-d27b-baf0-d6a3-4a02233bfcbe/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/1024x1024.jpg",
       alt: "Times Internet",
-      size: { width: 80, height: 80 }
+      size: { width: 80, height: 200 }
     },
     {
       src: "https://cdn.brandfetch.io/id0rnPjco0/w/400/h/400/theme/dark/icon.png?k=id64Mup7ac&t=1668516570940",

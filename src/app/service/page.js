@@ -9,7 +9,7 @@ import React from 'react';
 const Page = () => {
     return (
         <div className="relative">
-            <Navbar />
+              {/* <Navbar /> */}
             <div className="relative z-10 container mx-auto px-4 text-black text-center">
                 <h1 className="text-4xl font-bold mt-5 text-blue-600">"Your Vision, Our Expertise"</h1>
                 <p className="text-lg mb-2">Transform your online presence and drive results with our tailored services.</p>

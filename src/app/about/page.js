@@ -98,7 +98,7 @@ const Page = () => {
 
   return (
     <>
-      <Navbar />
+        {/* <Navbar /> */} 
 
       <div
         className='flex justify-between p-4 py-6'
@@ -230,7 +230,7 @@ const Page = () => {
         <OurLeaderShip />
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
 
     </>
   );

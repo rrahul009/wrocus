@@ -89,7 +89,7 @@ const OdooImplementation = () => {
                 }
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

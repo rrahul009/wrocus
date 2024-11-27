@@ -6,7 +6,7 @@ import React from 'react';
 const Page = () => {
     return (
         <>
-            <Navbar />
+            {/*   <Navbar /> */}
             <section>
                 <div className='flex flex-col lg:flex-row justify-between'>
                     {/* Left Side */}
@@ -50,7 +50,7 @@ const Page = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }

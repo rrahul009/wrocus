@@ -1,5 +1,4 @@
 import Carausel from '@/components/Carausel';
-import ClientTestimonial from '@/components/ClientTestimonial';
 import CompanyOverview from '@/components/CompanyOverview';
 import Comparision from '@/components/Comparision';
 import Contacthomepage from '@/components/Contacthomepage';
@@ -16,7 +15,7 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-      <Navbar />
+        {/* <Navbar /> */}
       <Carausel/>
       <OurClient />
       <Services />
@@ -31,7 +30,7 @@ const Home = () => {
       {/* <TechnologyIndex/> */}
       {/* <ClientTestimonial/> */}
       <WordAppreciation />
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   )

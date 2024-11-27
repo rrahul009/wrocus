@@ -14,7 +14,7 @@ const ResourceCenterPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
 
-      <Navbar />
+        {/* <Navbar /> */}
 
       <main className="flex-1 p-4 md:p-8">
         <h1 className="text-3xl md:text-4xl text-center font-bold text-black mb-4">Earned Value Management System(EVMS)</h1>
@@ -156,7 +156,7 @@ const ResourceCenterPage = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

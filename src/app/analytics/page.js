@@ -91,7 +91,7 @@ const AnalyticsPage = () => {
   const [isFormVisible, setFormVisible] = useState(false)
   return (
     <>
-      <Navbar />
+      {/*   <Navbar /> */}
       <header className="relative bg-blue-50 text-gray-800 py-8 bg-cover bg-center" style={{ backgroundImage: "url('https://example.com/your-background-image.jpg')" }}>
         <div className="relative z-10 container mx-auto text-center mt-4 mb-1">
           <h1 className="text-2xl lg:text-4xl font-extrabold leading-tight relative">
@@ -158,7 +158,7 @@ const AnalyticsPage = () => {
           )
         }
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
