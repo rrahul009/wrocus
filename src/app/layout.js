@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
@@ -19,9 +20,11 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
       </Head>
       <body className={inter.className}>
+        <Suspense fallback={<div>Loading Application...</div>}>
         <Navbar />
         {children}
         <Footer />
+        </Suspense>
         </body>
     </html>
   );

@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic';
 const DocumentViewer = dynamic(() => import('react-documents'), { ssr: false });
 
 export default function DocViewer() {
-    const searchParams = useSearchParams();
+    const searchParams = useSearchParams(); // Works only on the client.
     const [uri, setUri] = useState('');
 
     useEffect(() => {
@@ -31,16 +31,18 @@ export default function DocViewer() {
     }, [searchParams]);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading DocViewer...</div>}>
             <div className="App">
                 <AdminAuth>
-                    {uri && (
+                    {uri ? (
                         <DocumentViewer
                             style={{ height: '100vh', width: '100%' }}
                             queryParams="hl=EN"
                             url={uri}
                             overrideLocalhost=""
                         />
+                    ) : (
+                        <div>Loading Document...</div>
                     )}
                 </AdminAuth>
             </div>
