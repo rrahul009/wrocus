@@ -1,5 +1,4 @@
 'use client'
-import Navbar from '@/components/Navbar'
 import useAuth from '@/hooks/useAuth'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -55,13 +54,8 @@ const page = () => {
             window.location.href = URL
         }
     }
-    const handleDocView = () => {
-        router.push({
-            pathname: 'DocViewer',
-            query: 'd',
-        })
-    }
-    
+  
+
   const handleDelete=async(id)=>{
     try {
         const res=await fetch(`https://wrocubackendapi.onrender.com/api/deleteapplyjob/${id}`,
