@@ -19,7 +19,7 @@ const page = () => {
 
     return (
         <>
-            <Navbar />
+              {/* <Navbar /> */}
             <div className='bg-white'>
                 <header className="relative bg-blue-50 text-gray-800 py-8  bg-cover bg-center" style={{ backgroundImage: "url('https://example.com/your-background-image.jpg')" }}>
                     <div className="relative z-10 container mx-auto text-center mt-4 mb-1">
@@ -130,7 +130,7 @@ const page = () => {
                         </div>
                     )
                 }
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </>
     );

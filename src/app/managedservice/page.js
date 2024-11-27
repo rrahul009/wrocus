@@ -30,7 +30,7 @@ const ManagedServicesPage = () => {
 
     return (
         <>
-            <Navbar />
+              {/* <Navbar /> */}
 
 
             <div className="bg-gray-100">
@@ -150,7 +150,7 @@ const ManagedServicesPage = () => {
                     </div>
                 )
             }
-            <Footer />
+            {/* <Footer /> */}
 
         </>
     );

@@ -26,7 +26,7 @@ const QualityAutoPage = () => {
 
     return (
         <div className="bg-white">
-            <Navbar />
+              {/* <Navbar /> */}
 
 
             {/* Hero Section */}
@@ -188,7 +188,7 @@ const QualityAutoPage = () => {
 
             
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

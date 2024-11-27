@@ -134,7 +134,7 @@ const Page = () => {
      const[isFormVisible,setFormVisible]=useState(false)
     return (
         <>
-            <Navbar />
+              {/* <Navbar /> */}
             <div className="min-h-screen bg-gray-50">
                 <main className="container mx-auto p-6">
 
@@ -185,7 +185,7 @@ const Page = () => {
                 }
                   
                 </main>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </>
     );

@@ -4,105 +4,104 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+const initialJobState = {
+    jobTitle: '',
+    jobDescription: '',
+    location: '',
+    workMode: '',
+    salary: '',
+    company: '',
+    email: '',
+    applicationDeadLine: '',
+    skill: '',
+    experience: '',
+    jobCategory: '',
+    benefit: ''
+}
+
 const page = () => {
-    const router=useRouter();
-
-    const [jobData, setJobData] = useState({
-        jobtitle: "",
-        jobdescription: '',
-        location: '',
-        jobtype: '',
-        salary: '',
-        company: '',
-        email: '',
-        applicationdeadline: '',
-        skill: '',
-        experience: '',
-        jobcategory: '',
-        benefit: ''
-    })
+    const router = useRouter();
+    const [createJob, setCreateJob] = useState(initialJobState);
+    const [successMessage, setSuccessMessage] = useState('');
     const [error, setError] = useState('')
-    const [success, setSuccess] = useState()
+    const [loading, setLoading] = useState(false)
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setJobData({
-            ...jobData, [name]: value
-        })
+
+
+    const handleJobChange = (e) => {
+        const { name, value } = e.target;
+        setCreateJob((prevState) => ({ ...prevState, [name]: value }))
 
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-       try {
-        const response = await fetch('http://localhost:5001/api/createjob', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(jobData)
+        e.preventDefault()
+        setLoading(true); // Start Loading
+        try {
+            const res = await fetch('https://wrocubackendapi.onrender.com/api/createjob', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json',
+                    //  Authorization: `Bearer ${token}`
+                 },
+                body: JSON.stringify(createJob)
+            })
+            if (!res.ok) {
+                throw new Error(`Error occurred:${res.status}`)
+            }
+            const responseData = await res.json()
+            //show the successMessage immediatly
+            setSuccessMessage(responseData.message)
+            //reset the form state immediatly
+            setCreateJob(initialJobState);
+            setTimeout(() => {
 
-        })
-
-        const data = await response.json()
-        console.log(data)
-        setSuccess(data.message)
-        setJobData({
-            jobtitle: "",
-            jobdescription: '',
-            location: '',
-            jobtype: '',
-            salary: '',
-            company: '',
-            email: '',
-            applicationdeadline: '',
-            skill: '',
-            experience: '',
-            jobcategory: '',
-            benefit: ''
-
-        })
-        setTimeout(() => {
-            router.push('/admincareerpage');
-            
-        }, 2000);
+                router.push('/admincareerpage')
 
 
-       } catch (error) {
-        setError(error)
-        
-       }
+            }, 2000);
+            console.log("responseData", responseData)
+        } catch (error) {
+            console.log(error)
+            setError(error.message)
+
+        }
+        finally {
+            setLoading(false)
+        }
 
     }
+   
+
+
 
 
     return (
         <>
-            <Navbar />
+               {/* <Navbar /> */} 
 
-            <div className='bg-gray-100 mt-3 p-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div className='bg-gray-100 mt-3 p-10' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',width:'100%' }}>
 
-                <div className='bg-white p-6' style={{ width: '700px' }}>
-            <div className='grid grid-cols-3 items-center'>
-                <p></p>
-                <p className='text-center font-bold text-md lg:text-2xl'>CREATE JOB</p>
-               <Link href="/admincareerpage"> <button className='text-right ml-10 lg:ml-26 bg-blue-600 text-white p-2 rounded-md w-18' style={{width:'80px'}}>view job</button></Link>
-                
-            </div>
-                    <p className='text-green-400 text-center mt-4'>{success}</p>
-                    {error &&<p className='text-red-300'>{error}</p>}
-                    <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
+                <div className='bg-white p-6' >
+                    <div className='grid grid-cols-4 items-center'>
+                        <p></p>
+                        <p className='text-end font-bold text-md lg:text-2xl'>CREATE JOB</p>
+                        <Link href="/admincareerpage"> <button className='text-right ml-10 lg:ml-26 bg-blue-600 text-white p-2 rounded-md w-18' style={{ width: '80px' }}>view job</button></Link>
+
+                    </div>
+                    <p className='text-green-400 text-center mt-4'>{successMessage}</p>
+                   
+                    <form  onSubmit={handleSubmit}>
                         {/* job title */}
-                        <div className="relative z-0 w-full mb-5 group">
+                        <div className="relative z-0 w-full mb-8 group">
                             <input
                                 type="text"
-                                name="jobtitle"
-                                id="Job Title"
+                                id="JobTitle"
                                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=""
                                 required
-                                onChange={handleChange}
-                                value={jobData.jobtitle}
+                                name="jobTitle"
+                                onChange={handleJobChange}
+                                value={createJob.jobTitle}
                                 autoComplete='off'
                             />
                             <label
@@ -112,17 +111,18 @@ const page = () => {
                             </label>
                         </div>
 
+
                         {/* job description  */}
-                        <div className="relative z-0 w-full mb-5 group">
+                        <div className="relative z-0 w-full mb-8 group">
                             <input
                                 type="text"
-                                name="jobdescription"
-                                id="Job Description"
+                                id="JobDescription"
                                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" "
                                 required
-                                onChange={handleChange}
-                                value={jobData.jobdescription}
+                                name="jobDescription"
+                                onChange={handleJobChange}
+                                value={createJob.jobDescription}
                                 autoComplete='off'
                             />
                             <label
@@ -135,7 +135,7 @@ const page = () => {
 
                         {/* Location */}
                         <div className="grid md:grid-cols-2 md:gap-6">
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <input
                                     type="text"
                                     name="location"
@@ -143,8 +143,8 @@ const page = () => {
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.location}
+                                    onChange={handleJobChange}
+                                    value={createJob.location}
                                     autoComplete='off'
                                 />
                                 <label
@@ -154,28 +154,31 @@ const page = () => {
                                     Location
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <label htmlFor="jobtype" className="sr-only text-gray-500">
-                                    Select Job Type
+                                    workMode
                                 </label>
                                 <select
                                     type="text"
-                                    name="jobtype"
-                                    id="jobtype"
+                                    name="workMode"
+                                    id="workMode"
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.jobtype}
+                                    onChange={handleJobChange}
+                                    value={createJob.workMode}
                                     autoComplete='off'
                                 >
-                                    <option value="" disabled selected hidden className="text-gray-500">
-                                        Select Job Type
+                                    <option value="" disabled hidden className="text-gray-50">
+                                        Work Mode
                                     </option>
-                                    <option value="full_time">Full Time </option>
-                                    <option value="Part_time"> Part Time</option>
-                                    <option value="Contract">Contract</option>
+
+                                    <option value="Onsite">Onsite</option>
                                     <option value="Remote">Remote</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                    <option value="Flexible">Flexible</option>
+                                    <option value="Shift-based">Shift-based</option>
+
                                 </select>
                                 {/* Dropdown Icon */}
                                 <svg
@@ -188,12 +191,13 @@ const page = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
+
                         </div>
 
 
                         {/* salary and company name */}
                         <div className="grid md:grid-cols-2 md:gap-6">
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <input
                                     type="text"
 
@@ -202,8 +206,8 @@ const page = () => {
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.salary}
+                                    onChange={handleJobChange}
+                                    value={createJob.salary}
                                     autoComplete='off'
                                 />
                                 <label
@@ -213,7 +217,7 @@ const page = () => {
                                     Salary
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <input
                                     type="text"
 
@@ -222,8 +226,8 @@ const page = () => {
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.company}
+                                    onChange={handleJobChange}
+                                    value={createJob.company}
                                     autoComplete='off'
                                 />
                                 <label
@@ -237,16 +241,16 @@ const page = () => {
 
 
                         <div className="grid md:grid-cols-2 md:gap-6">
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <input
                                     type="text"
                                     name="email"
                                     id="email"
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                    placeholder=" "
+                                    placeholder=""
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.email}
+                                    onChange={handleJobChange}
+                                    value={createJob.email}
                                     autoComplete='off'
                                 />
                                 <label
@@ -256,16 +260,16 @@ const page = () => {
                                     Contact Email
                                 </label>
                             </div>
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <input
                                     type="date"
-                                    name="applicationdeadline"
-                                    id="floating_last_name"
+                                    name="applicationDeadLine"
+                                    id="applicationDeadLine"
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.applicationdeadline}
+                                    onChange={handleJobChange}
+                                    value={createJob.applicationDeadLine}
                                     autoComplete='off'
                                 />
                                 <label
@@ -279,7 +283,7 @@ const page = () => {
 
                         {/* experience and skill */}
                         <div className="grid md:grid-cols-2 md:gap-6">
-                            <div className="relative z-0 w-full mb-5 group">
+                            <div className="relative z-0 w-full mb-8 group">
                                 <input
                                     type="text"
                                     name="skill"
@@ -287,8 +291,8 @@ const page = () => {
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.skill}
+                                    onChange={handleJobChange}
+                                    value={createJob.skill}
                                     autoComplete='off'
                                 />
                                 <label
@@ -299,7 +303,7 @@ const page = () => {
                                 </label>
                             </div>
                             <div className="relative z-0 w-full mb-5 group">
-                                <label htmlFor="jobtype" className="sr-only">Select Job Type</label>
+                                <label htmlFor="jobtype" className="sr-only">Experience</label>
                                 <select
                                     type="text"
                                     name="experience"
@@ -307,17 +311,19 @@ const page = () => {
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.experience}
+                                    onChange={handleJobChange}
+                                    value={createJob.experience}
                                     autoComplete='off'
                                 >
-                                    <option value="" disabled selected hidden>
+                                    <option value="" disabled hidden>
                                         Experience level
                                     </option>
-                                    <option value="full_time">Fresher </option>
-                                    <option value="Junior"> Junior</option>
-                                    <option value=" Mid-level"> Mid-level</option>
-                                    <option value="Senior">Senior</option>
+
+                                    <option value="fresher">Fresher</option>
+                                    <option value="1-2">1-2 Years</option>
+                                    <option value="3-5">3-5 Years</option>
+                                    <option value="6-10">6-10 Years</option>
+                                    <option value="10+">10+ Years</option>
 
 
                                 </select>
@@ -339,21 +345,28 @@ const page = () => {
                             <div className="relative z-0 w-full mb-5 group">
                                 <select
                                     type="text"
-                                    name="jobcategory"
-                                    id="jobcategory"
+                                    name="jobCategory"
+                                    id="jobCategory"
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.jobcategory}
+                                    onChange={handleJobChange}
+                                    value={createJob.jobCategory}
                                     autoComplete='off'
                                 >
-                                    <option value="" disabled selected hidden> Job category</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <option value="Design">Design</option>
-
+                                    <option value="" disabled hidden>Job Category</option>
+                                    <option value="Full-Time">Full-Time</option>
+                                    <option value="Part-Time">Part-Time</option>
+                                    <option value="Freelance">Freelance</option>
+                                    <option value="Internship">Internship</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Temporary">Temporary</option>
+                                    <option value="Volunteer">Volunteer</option>
+                                    <option value="Remote">Remote</option>
+                                    <option value="Work from Office">Work from Office</option>
+                                    <option value="Hybrid">Hybrid</option>
                                 </select>
+
                                 {/* Dropdown Icon */}
                                 <svg
                                     className="absolute right-2 top-1/2 transform -translate-y-1/2 w-5 h-4 text-gray-500 pointer-events-none"
@@ -364,8 +377,8 @@ const page = () => {
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
-
                             </div>
+
                             <div className="relative z-0 w-full mb-5 group">
                                 <input
                                     type="text"
@@ -374,29 +387,30 @@ const page = () => {
                                     className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" "
                                     required
-                                    onChange={handleChange}
-                                    value={jobData.benefit}
+                                    onChange={handleJobChange}
+                                    value={createJob.benefit}
                                     autoComplete='off'
                                 />
                                 <label
                                     htmlFor="benefits"
                                     className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    benefits
+                                    Benefits
                                 </label>
-
-
-
                             </div>
                         </div>
 
 
                         <button
-                            type="submit"
-                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  mt-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Create Job
-                        </button>
+            type="submit"
+            disabled={loading}
+            className={`text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none 
+                focus:ring-blue-300 font-medium rounded-lg text-sm w-full mt-5 px-5 py-2.5 text-center 
+                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
+                ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        >
+            {loading ? "Submitting..." : "Submit"}
+        </button>
                     </form>
 
 

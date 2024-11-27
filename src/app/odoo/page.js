@@ -21,7 +21,7 @@ const page = () => {
   }, []);
   return (
     <>
-      <Navbar />
+        {/* <Navbar /> */}
 
         <section>
           <div
