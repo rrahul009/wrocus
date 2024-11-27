@@ -17,7 +17,7 @@ export default function DocViewer() {
             const userID = searchParams.get('id');
             if (userID) {
                 try {
-                    const response = await fetch(`http://localhost:5001/api/resume/${userID}`);
+                    const response = await fetch(`https://wrocubackendapi.onrender.com/api/resume/${userID}`);
                     const resumeDetail = await response.json();
                     const uriResume = resumeDetail?.data.secure_url ?? '';
                     setUri(uriResume);

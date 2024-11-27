@@ -77,7 +77,7 @@ const Page = () => {
     })
   }
 
- 
+
   const handleSubmit = async (allData) => {
 
     try {
@@ -110,9 +110,9 @@ const Page = () => {
       const res = await fetch(`https://wrocubackendapi.onrender.com/api/deletejobpost/${id}`, {
 
         method: 'DELETE',
-        headers: { 
+        headers: {
           'Content-Type': 'application/json'
-         },
+        },
       })
       if (!res.ok) {
         throw new Error(`Error:${res.status}`);
@@ -149,27 +149,30 @@ const Page = () => {
   return (
     <>
 
-        {/* <Navbar /> */}
-      <section className="p-4 lg:mx-4 flex justify-center">
-        <div className="w-full max-w-lg">
-          <div className="flex shadow-md rounded-md">
-            <input
-              type="text"
-              placeholder="Search jobs..."
-              className="flex-grow p-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 placeholder-gray-400"
-            />
-            <button className="p-3 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition-colors duration-200">
-              <i className="fas fa-search"></i>search
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* <Navbar /> */}
 
-      <section className="lg:p-1 p-4 flex justify-center">
+
+      <section className="lg:p-1  flex justify-center bg-gray-100 ">
         <div className="max-w-7xl w-full">
           <div className="bg-white p-4 rounded-lg ">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold text-gray-800"> Listings All Job </h2>
+              <section className="p-4 lg:mx-4 ">
+                <div className="w-full max-w-lg">
+                  <div className="flex shadow-md rounded-md">
+                    <input
+                      type="text"
+                      placeholder="Search jobs..."
+                      className="flex-grow p-3 border border-gray-300 rounded-lg  focus:outline-none focus:ring-2
+                       focus:ring-blue-500 text-gray-700 placeholder-gray-400"
+                       style={{width:'400px'}}
+                    />
+                    {/* <button className="p-3 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition-colors duration-200">
+                      <i className="fas fa-search"></i>search
+                    </button> */}
+                  </div>
+                </div>
+              </section>
               <div className="flex justify-end">
                 {jobData.length > 0 ? (
                   <Link href="/appliedjob">
