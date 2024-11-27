@@ -106,7 +106,7 @@ const page = () => {
                                     <td className="border px-4 py-2 text-center">{item.noticeperiod}</td>
                                     <td className="border px-4 py-2 text-center">{item.jobReference?.job_title || 'N/A'}</td>
                                     <td className="border px-4 py-2 text-center">
-                                        <div className='flex gap-2 w-full justify-between'>
+                                    <div className='flex gap-2 w-full justify-between'>
                                             <button onClick={() => hanldeDownloadClick(item.resume?.secure_url)}>
 
                                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ const page = () => {
                                                     <path fillRule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clipRule="evenodd" />
                                                 </svg>
                                             </button>
-                                            <Link target='_blank'href="" >
+                                            <Link target='_blank' href={`/DocViewer/?id=${item?._id}`} >
                                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" strokeWidth="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z" />
                                                     <path stroke="currentColor" strokeWidth="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
