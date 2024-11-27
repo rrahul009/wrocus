@@ -1,53 +1,49 @@
-// 'use client';
+'use client';
 
-// import { useSearchParams } from 'next/navigation';
-// import { useEffect, useState, Suspense } from 'react';
-// import AdminAuth from '@/components/AdminAuth';
-// import { DocumentViewer } from 'react-documents';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState, Suspense } from 'react';
+import AdminAuth from '@/components/AdminAuth';
+import dynamic from 'next/dynamic';
 
-// export default function DocViewer() {
-//     const searchParams = useSearchParams();
-//     const [uri, setUri] = useState('');
+// Dynamically import DocumentViewer to ensure it only renders on the client.
+const DocumentViewer = dynamic(() => import('react-documents'), { ssr: false });
 
-//     useEffect(() => {
-//         const fetchResumeData = async () => {
-//             const userID = searchParams.get('id');
-//             if (userID) {
-//                 try {
-//                     const response = await fetch(`http://localhost:5001/api/resume/${userID}`);
-//                     const resumeDetail = await response.json();
-//                     const uriResume = resumeDetail?.data.secure_url ?? '';
-//                     setUri(uriResume);
-//                 } catch (error) {
-//                     console.error("Error fetching resume:", error);
-//                 }
-//             }
-//         };
+export default function DocViewer() {
+    const searchParams = useSearchParams();
+    const [uri, setUri] = useState('');
 
-//         fetchResumeData();
-//     }, [searchParams]);
+    useEffect(() => {
+        const fetchResumeData = async () => {
+            const userID = searchParams.get('id');
+            if (userID) {
+                try {
+                    const response = await fetch(`http://localhost:5001/api/resume/${userID}`);
+                    const resumeDetail = await response.json();
+                    const uriResume = resumeDetail?.data.secure_url ?? '';
+                    setUri(uriResume);
+                } catch (error) {
+                    console.error('Error fetching resume:', error);
+                }
+            }
+        };
 
-//     return (
-//         <Suspense fallback={<div>Loading...</div>}>
-//             <div className="App">
-//                 <AdminAuth>
-//                     <DocumentViewer
-//                         style={{ height: '100vh', width: '100%' }}
-//                         queryParams="hl=EN"
-//                         url={uri}
-//                         overrideLocalhost=''
-//                     />
-//                 </AdminAuth>
-//             </div>
-//         </Suspense>
-//     );
-// }
-import React from 'react'
+        fetchResumeData();
+    }, [searchParams]);
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <div className="App">
+                <AdminAuth>
+                    {uri && (
+                        <DocumentViewer
+                            style={{ height: '100vh', width: '100%' }}
+                            queryParams="hl=EN"
+                            url={uri}
+                            overrideLocalhost=""
+                        />
+                    )}
+                </AdminAuth>
+            </div>
+        </Suspense>
+    );
 }
-
-export default page
