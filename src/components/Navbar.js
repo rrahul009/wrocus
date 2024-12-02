@@ -170,7 +170,7 @@ const Navbar = () => {
                         </Link>
                     </IF>
                     {!name ? <Link href='/userauth'>
-                        <button className=' text-black ml-5 p-3 rounded-lg sm:block'>login</button>
+                        {/* <button className=' text-black ml-5 p-3 rounded-lg sm:block'>login</button> */}
                     </Link> : name}
                     {
                         name ? <button onClick={handleLogout} className=' text-black ml-5 p-3 rounded-lg sm:block'>logout</button>
