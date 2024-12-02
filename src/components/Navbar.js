@@ -19,6 +19,7 @@ const Navbar = () => {
     // const [name, setName] = useState('');
     const { name, isAdmin } = useAuth();
     console.log({ name, isAdmin });
+    const[user,setUser]=useState(null)
 
 
     const toggleSidebar = () => setIsSidebarOpen(prevState => !prevState);
@@ -55,6 +56,10 @@ const Navbar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token')
+        
+        
+    
+        
     }
 
     return (
@@ -151,6 +156,7 @@ const Navbar = () => {
                                 )}
                             </li>
                             <li><Link href="/odoo" className="text-black hover:text-blue-800">Odoo</Link></li>
+                            <li><Link href="/about" className="text-black hover:text-blue-800">About</Link></li>
                             <li><Link href="/career" className="text-black hover:text-blue-800">Career</Link></li>
                             <IF condition={isAdmin}>
                                 <li><Link href="/createjob" className="text-black hover:text-blue-800">create jobs</Link></li>

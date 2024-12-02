@@ -1,22 +1,22 @@
 'use client'
 import { jwtDecode } from 'jwt-decode';
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 
 export default function useAuth() {
- 
+
     const [user, setUser] = useState(null);
 
-    useEffect(()=>{
+    useEffect(() => {
         try {
             const token = localStorage?.getItem('token')
             const data = jwtDecode(token)
             setUser(data);
-                
+
         } catch (err) {
             console.log('');
-    
+
         }
-    },[])
+    }, [])
 
     return {
         id: user?.id ?? null,

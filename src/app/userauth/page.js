@@ -95,6 +95,7 @@ const page = () => {
                 password: '',
                 confirmPassword: ''
             })
+            
 
         }
 
