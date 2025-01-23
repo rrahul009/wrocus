@@ -131,23 +131,36 @@ const ServiceCard = ({ title, description, img, benefits }) => {
 };
 
 const Page = () => {
-     const[isFormVisible,setFormVisible]=useState(false)
+    const [isFormVisible, setFormVisible] = useState(false)
     return (
         <>
-              {/* <Navbar /> */}
+             
+             <section className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 py-20 px-8 text-black text-center">
+    <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight leading-tight">
+            Transform Your Business with Salesforce Solutions
+        </h2>
+        <p className="text-lg sm:text-xl max-w-5xl mx-auto">
+            Leverage Salesforce's comprehensive suite of tools to optimize your customer relationships,
+        </p>
+        <p className="text-lg sm:text-xl mb-8 max-w-5xl mx-auto">
+            drive sales growth, and enhance service delivery with seamless integration.
+        </p>
+        <button
+            className="bg-yellow-500 text-black font-semibold py-3 px-8 rounded-lg shadow-xl transform transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+            onClick={() => alert('Get Started Clicked')}
+        >
+            Get Started
+        </button>
+    </div>
+</section>
+
+ 
+            {/* <Navbar /> */}
             <div className="min-h-screen bg-gray-50">
                 <main className="container mx-auto p-6">
 
-                    <section className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 mb-8">
-                        <div className="container mx-auto px-6 text-center">
-                            <h1 className="text-4xl md:text-4xl font-extrabold mb-1 leading-tight text-shadow-lg">
-                                Our Salesforce Services
-                            </h1>
-                            <p className="text-lg md:text-md text-white opacity-90">
-                                Explore our range of Salesforce services designed to optimize your CRM and enhance business efficiency.
-                            </p>
-                        </div>
-                    </section>
+
 
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {services.map((service, index) => (
@@ -167,23 +180,23 @@ const Page = () => {
                             Contact us today to learn more about how our Salesforce integration services can help your business succeed.
                         </p>
                         <button
-                        onClick={()=>setFormVisible(true)}
+                            onClick={() => setFormVisible(true)}
 
                             className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
                             Get in Touch
                         </button>
- 
+
                     </section>
                     {
-                    isFormVisible && (
-                        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                            <div className="bg-white p-6 rounded-lg shadow-lg">
-                                <ContactForm onClose={() => setFormVisible(false)} isCloseBtnVisible />
+                        isFormVisible && (
+                            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                                <div className="bg-white p-6 rounded-lg shadow-lg">
+                                    <ContactForm onClose={() => setFormVisible(false)} isCloseBtnVisible />
+                                </div>
                             </div>
-                        </div>
-                    )
-                }
-                  
+                        )
+                    }
+
                 </main>
                 {/* <Footer /> */}
             </div>

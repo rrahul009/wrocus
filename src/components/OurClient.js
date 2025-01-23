@@ -13,8 +13,8 @@ const OurClient = () => {
       size: { width: 120, height: 80 }
     },
     {
-      src: "https://yt3.googleusercontent.com/rxxycwwjFXuC-eQNBcklj4P-uduSg-aHJJ7w77Ynf_LZV742N5tvTFSnJwRmV5CnNhFNbj7uKdQ=s900-c-k-c0x00ffffff-no-rj",
-      alt: "Client Logo",
+      src: "https://cdn.brandfetch.io/idTOhC70ZS/w/400/h/400/theme/dark/icon.jpeg?c=1bx1740288256639id64Mup7acMau5-yeL&t=1732652761071",
+      alt: "HT",
       size: { width: 80, height: 80 }
     },
     {
@@ -24,16 +24,16 @@ const OurClient = () => {
     },
     {
       src: "https://cdn.brandfetch.io/id0rnPjco0/w/400/h/400/theme/dark/icon.png?k=id64Mup7ac&t=1668516570940",
-      alt: "Brand Logo",
+      alt: "Car Dekho Logo",
       size: { width: 80, height: 60 }
     },
     {
       src: "https://www.saasbuddy.in/community/wp-content/uploads/2024/03/magicbrick-1200x900.png",
       alt: "Magicbricks",
-      size: { width: 80, height: 60 }
+      size: { width: 80, height: 80 }
     },
     {
-      src: "https://exchange4media.gumlet.io/news-photo/110551-hungamadigital1.jpg",
+      src: "https://pbs.twimg.com/media/CGLNVTSUUAAuQmG.jpg",
       alt: "Hungama",
       size: { width: 80, height: 80 }
     }

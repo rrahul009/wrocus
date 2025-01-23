@@ -37,7 +37,7 @@ const ContactHomepage = () => {
                     }}
                 >
                     <div className='absolute top-40 left-20'>
-                        <p className='text-xl'>We Carry more Than Just Good Coding Skills</p>
+                        <p className='text-xl'>We Carry more Than Just Good Coding Skills   </p>
                         <p className='text-6xl mt-5 font-semibold mb-4'>Let's Collaborate</p>
                         <p className='text-6xl font-semibold'>for some good work</p>
                     </div>

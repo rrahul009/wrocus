@@ -56,11 +56,12 @@ const Carausel = () => {
     const imageStyle = {
         maxWidth: '100%',
         width: isMobile ? '100%' : '750px',
-        height: '440px',
+        height: '460px',
         objectFit: 'cover',
         borderRadius: '10px',
         marginLeft: isMobile ? '0' : '20px',
         marginTop: isMobile ? '20px' : '0',
+        marginBottom:isMobile?'0':'40px'
     };
 
     const headingStyle = {
@@ -147,7 +148,7 @@ const Carausel = () => {
                         </button>
                     </Link>
                 </div>
-                {!isMobile && <img src="https://sundancecollege.com/wp-content/uploads/2024/06/mobile-app-developer-looking-at-multiple-screens.webp" 
+                {!isMobile && <img src="wd-removebg.png" 
                 alt='Service Image' style={imageStyle} />}
             </div>
             {/* First Section */}
